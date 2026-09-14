@@ -1,0 +1,18 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // 1. Allow anyone to submit a new contact form (create only)
+    match /inquiries/{inquiryId} {
+      allow create: if true;
+      allow read, update, delete: if false;
+    }
+    
+    // 2. Keep everything else strictly locked down for security
+    match /{document=**} {
+      allow read, write: if false;
+    }
+    
+  }
+}
