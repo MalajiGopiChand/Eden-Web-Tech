@@ -1,4 +1,4 @@
-export type ProjectCategory = "All" | "Websites" | "Mobile Apps" | "E-commerce" | "UI/UX";
+export type ProjectCategory = "All" | "Websites" | "Mobile Apps" | "E-commerce" | "UI/UX" | "Custom Software";
 
 export interface Project {
   id: string;
