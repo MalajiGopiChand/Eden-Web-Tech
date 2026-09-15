@@ -92,7 +92,7 @@ export default async function ProjectPage({
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mb-24">
         <div className="w-full h-[400px] md:h-[600px] lg:h-[700px] bg-secondary/10 rounded-3xl overflow-hidden relative group border border-border">
           <Image 
-            src={project.image}
+            src={project.showcaseImage}
             alt={`${project.title} Interface Showcase`}
             fill
             className="object-cover object-top"
