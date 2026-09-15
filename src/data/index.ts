@@ -35,7 +35,7 @@ export const projects: Project[] = [
     description: "A modern edutech platform helping students discover courses, attend live classes, and manage their learning journey.",
     industry: "Education / Technology",
     image: "/images/projects/learnify.png",
-    showcaseImage: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2000&auto=format&fit=crop",
+    showcaseImage: "/images/projects/learnify.png",
     technologies: ["React", "Next.js", "Node.js", "MongoDB"],
     caseStudy: {
       challenge: "The client needed a platform to unify course discovery, live classes, and progress tracking for students.",
@@ -53,8 +53,8 @@ export const projects: Project[] = [
     category: "Mobile Apps",
     description: "A comprehensive health companion application for booking appointments, managing medications, and accessing health records.",
     industry: "Healthcare",
-    image: "/images/projects/medicare.png",
-    showcaseImage: "https://images.unsplash.com/photo-1576091160550-2173ff9e8eb4?q=80&w=2000&auto=format&fit=crop",
+    image: "/images/projects/medicare-dashboard.jpg",
+    showcaseImage: "/images/projects/medicare-dashboard.jpg",
     technologies: ["React Native", "Node.js", "PostgreSQL"],
     caseStudy: {
       challenge: "Patients needed a centralized platform to manage their healthcare needs, from booking doctors to tracking medications.",
@@ -73,7 +73,7 @@ export const projects: Project[] = [
     description: "A complete attendance management system for educational institutions to track students and faculty.",
     industry: "Education / Management",
     image: "/images/projects/edutrack.png",
-    showcaseImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2000&auto=format&fit=crop",
+    showcaseImage: "/images/projects/edutrack.png",
     technologies: ["React", "Express", "PostgreSQL"],
     caseStudy: {
       challenge: "Schools were struggling with manual attendance tracking and lacked real-time insights into student presence.",
@@ -92,7 +92,7 @@ export const projects: Project[] = [
     description: "Smart billing software for modern businesses to create GST-ready invoices and track business growth.",
     industry: "Finance / Business",
     image: "/images/projects/billora.png",
-    showcaseImage: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=2000&auto=format&fit=crop",
+    showcaseImage: "/images/projects/billora.png",
     technologies: ["Next.js", "Tailwind CSS", "Firebase"],
     caseStudy: {
       challenge: "Small businesses needed an easy way to generate compliant invoices without complex accounting software.",
@@ -111,7 +111,7 @@ export const projects: Project[] = [
     description: "A professional business website for a pool construction and maintenance company.",
     industry: "Construction / Services",
     image: "/images/projects/pools.png",
-    showcaseImage: "https://images.unsplash.com/photo-1576013551627-0cc20b96c2a7?q=80&w=2000&auto=format&fit=crop",
+    showcaseImage: "/images/projects/pools.png",
     technologies: ["React", "Tailwind CSS"],
     caseStudy: {
       challenge: "The client needed a strong online presence to showcase their portfolio and attract new construction projects.",

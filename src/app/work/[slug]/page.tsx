@@ -91,15 +91,12 @@ export default async function ProjectPage({
       {/* Hero Image */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mb-24">
         <div className="w-full h-[400px] md:h-[600px] lg:h-[700px] bg-secondary/10 rounded-3xl overflow-hidden relative group border border-border">
-          <Image 
+          <img 
             src={project.showcaseImage}
             alt={`${project.title} Interface Showcase`}
-            fill
-            className="object-cover object-top"
-            sizes="(max-width: 1280px) 100vw, 1280px"
-            priority
+            className="w-full h-full object-cover object-top"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent pointer-events-none"></div>
         </div>
       </section>
 
