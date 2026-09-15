@@ -7,6 +7,13 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTASection";
 
+// Generate static paths for Vercel production
+export function generateStaticParams() {
+  return projects.map((project) => ({
+    slug: project.slug,
+  }));
+}
+
 // Next.js 15 requires async page props for dynamic routes
 export default async function ProjectPage({
   params,

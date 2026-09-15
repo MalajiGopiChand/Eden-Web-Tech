@@ -58,6 +58,8 @@ export default function PortfolioSection({ limit }: { limit?: number }) {
               key={project.id}
               className="group relative rounded-3xl overflow-hidden bg-background border border-border hover:border-primary/50 transition-all duration-500"
             >
+              <Link href={`/work/${project.slug}`} className="absolute inset-0 z-30" aria-label={`View ${project.title} case study`} />
+              
               {/* Actual Image */}
               <div className="w-full h-[300px] sm:h-[400px] bg-secondary/50 relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-90 z-10 transition-opacity group-hover:opacity-60 duration-500"></div>
@@ -82,12 +84,11 @@ export default function PortfolioSection({ limit }: { limit?: number }) {
                     </p>
                   </div>
                   
-                  <Link 
-                    href={`/work/${project.slug}`}
+                  <div 
                     className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-primary-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300 shadow-[0_0_15px_rgba(37,99,235,0.5)] shrink-0"
                   >
                     <ArrowRight size={20} className="-rotate-45 group-hover:rotate-0 transition-transform duration-300" />
-                  </Link>
+                  </div>
                 </div>
                 
                 <div className="flex gap-2 mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-100">
