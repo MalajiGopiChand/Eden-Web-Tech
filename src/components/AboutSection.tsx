@@ -79,8 +79,13 @@ export default function AboutSection() {
               <div className="relative h-64 w-64 md:h-72 md:w-72 rounded-full overflow-hidden p-2 border-4 border-background shadow-2xl bg-gradient-to-br from-primary/10 to-secondary/20 mb-8">
                 <div className="absolute inset-0 z-0 bg-gradient-to-br from-primary/5 to-secondary/10"></div>
                 <div className="relative z-10 w-full h-full rounded-full overflow-hidden border-2 border-border/50 bg-background flex items-center justify-center">
-                  {/* Empty state for Mercy's image */}
-                  <span className="text-6xl font-extrabold text-muted-foreground/30">M</span>
+                  <Image 
+                    src="/images/co-ceo.jpg" 
+                    alt="Mercy - Co-Founder & COO" 
+                    fill 
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
                 </div>
               </div>
               <h3 className="text-3xl font-bold text-foreground mb-2">MERCY</h3>
