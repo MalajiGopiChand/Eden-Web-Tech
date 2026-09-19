@@ -62,36 +62,86 @@ export default function AboutPage() {
 
       <section className="pt-24 sm:pt-28 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full flex-grow">
         
-        {/* Page Hero Header */}
-        <div className="max-w-4xl mb-8 sm:mb-10">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-100 text-primary text-xs font-bold uppercase tracking-wider mb-2.5 shadow-xs">
-            <Sparkles size={13} />
-            <span>Our Story & Philosophy</span>
-          </div>
+        {/* ── Hero: Full-width dramatic header ── */}
+        <div className="relative mb-10 sm:mb-12 rounded-3xl overflow-hidden bg-slate-900 text-white shadow-xl">
+          {/* Background glow orbs */}
+          <div className="absolute top-0 right-0 w-[500px] h-[350px] bg-blue-600/15 rounded-full blur-[100px] pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-[350px] h-[250px] bg-cyan-500/10 rounded-full blur-[80px] pointer-events-none" />
 
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-foreground tracking-tight mb-3 leading-[1.12]">
-            Engineered with rigor.{" "}
-            <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-emerald-500 bg-clip-text text-transparent">
-              Built by founders.
-            </span>
-          </h1>
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-0">
 
-          <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-2xl">
-            We founded Eden because we were tired of traditional agency bloat — endless meetings, junior contractors, and code that breaks the moment real traffic arrives. Here is who builds your product.
-          </p>
-        </div>
-
-        {/* Studio Stats Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 mb-10 sm:mb-12">
-          {studioStats.map((s, idx) => (
-            <div key={idx} className="p-5 rounded-2xl bg-white border border-border/80 shadow-xs flex flex-col justify-between">
+            {/* Left: headline + copy */}
+            <div className="p-8 sm:p-10 lg:p-12 flex flex-col justify-between">
               <div>
-                <span className="text-2xl sm:text-3xl font-black text-foreground tracking-tight">{s.value}</span>
-                <h4 className="text-xs font-bold uppercase tracking-wider text-primary mt-1 mb-1.5">{s.label}</h4>
-                <p className="text-xs text-muted-foreground leading-relaxed">{s.desc}</p>
+                <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 border border-white/15 text-white text-xs font-bold uppercase tracking-wider mb-5">
+                  <Sparkles size={12} />
+                  <span>Our Story & Philosophy</span>
+                </div>
+
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-[1.12] mb-5">
+                  Engineered<br className="hidden sm:block" /> with rigor.{" "}
+                  <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent">
+                    Built by founders.
+                  </span>
+                </h1>
+
+                <p className="text-sm sm:text-base text-white/65 leading-relaxed max-w-lg mb-7">
+                  We founded Eden because we were tired of traditional agency bloat: endless meetings, junior contractors, and code that breaks the moment real traffic arrives. <span className="text-white font-semibold">Here is who builds your product.</span>
+                </p>
+
+                {/* Trust bullets */}
+                <div className="flex flex-col gap-2.5">
+                  {[
+                    "Founders write every line of your code",
+                    "100% in-house — zero outsourcing, ever",
+                    "Live staging demo every Friday",
+                    "Fixed scope, fixed price — guaranteed",
+                  ].map((pt) => (
+                    <div key={pt} className="flex items-center gap-2.5 text-sm text-white/80">
+                      <CheckCircle2 size={14} className="text-emerald-400 shrink-0" />
+                      {pt}
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* CTA */}
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-slate-900 text-sm font-bold hover:bg-blue-50 transition-all shadow-md"
+                >
+                  Start a Project <ArrowRight size={15} />
+                </Link>
+                <Link
+                  href="/work"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 border border-white/20 text-white text-sm font-bold hover:bg-white/15 transition-all"
+                >
+                  See Our Work
+                </Link>
               </div>
             </div>
-          ))}
+
+            {/* Right: Stats panel */}
+            <div className="border-t lg:border-t-0 lg:border-l border-white/10 grid grid-cols-2">
+              {studioStats.map((s, idx) => (
+                <div
+                  key={idx}
+                  className={`p-6 sm:p-8 flex flex-col justify-between border-white/10 ${
+                    idx === 0 ? "border-b border-r" :
+                    idx === 1 ? "border-b" :
+                    idx === 2 ? "border-r" : ""
+                  }`}
+                >
+                  <div>
+                    <span className="text-2xl sm:text-3xl font-black text-white tracking-tight block mb-1">{s.value}</span>
+                    <h4 className="text-[10px] font-bold uppercase tracking-widest text-cyan-400 mb-2">{s.label}</h4>
+                    <p className="text-xs text-white/45 leading-relaxed">{s.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
 
         {/* The Eden Manifesto / Origin Story */}
