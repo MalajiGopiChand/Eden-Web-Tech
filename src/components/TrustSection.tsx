@@ -53,7 +53,7 @@ export default function TrustSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative p-6 rounded-3xl bg-card border border-border/70 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_15px_35px_rgba(79,70,229,0.1)] hover:-translate-y-1 flex flex-col justify-between"
+                className="group relative p-6 rounded-3xl bg-card border border-border/70 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_15px_35px_rgba(37,99,235,0.08)] hover:-translate-y-1 flex flex-col justify-between"
               >
                 {/* Top Glowing Gradient Bar */}
                 <div className={`absolute top-0 left-6 right-6 h-0.5 bg-gradient-to-r ${stat.accent} opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full`} />

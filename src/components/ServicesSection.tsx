@@ -1,6 +1,5 @@
 "use client";
 
-import { useState } from "react";
 import { services } from "@/data";
 import { ArrowRight, Globe, Smartphone, ShoppingCart, PenTool, Layout, Settings, Sparkles, CheckCircle2 } from "lucide-react";
 import Link from "next/link";
@@ -25,49 +24,25 @@ const serviceTags: Record<string, string[]> = {
 };
 
 function ServiceCard({ service, index }: { service: (typeof services)[number]; index: number }) {
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0, opacity: 0 });
   const IconComponent = iconMap[service.icon];
   const tags = serviceTags[service.id] || [];
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    setMousePos({
-      x: e.clientX - rect.left,
-      y: e.clientY - rect.top,
-      opacity: 1,
-    });
-  };
-
-  const handleMouseLeave = () => {
-    setMousePos((prev) => ({ ...prev, opacity: 0 }));
-  };
 
   return (
     <motion.div
       initial={{ opacity: 0, y: 25 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-40px" }}
-      transition={{ duration: 0.5, delay: index * 0.09 }}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      className="group relative p-8 rounded-3xl bg-card border border-border hover:border-primary/50 transition-all duration-400 hover:shadow-[0_20px_45px_rgba(79,70,229,0.14)] hover:-translate-y-1 flex flex-col justify-between h-full cursor-default overflow-hidden"
+      transition={{ duration: 0.5, delay: index * 0.08 }}
+      className="group relative p-8 rounded-3xl bg-card border border-border/80 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_16px_36px_rgba(37,99,235,0.1)] hover:-translate-y-1 flex flex-col justify-between h-full cursor-default overflow-hidden"
     >
-      {/* Aceternity Style Radial Mouse Spotlight */}
-      <div
-        className="pointer-events-none absolute -inset-px rounded-3xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-        style={{
-          background: `radial-gradient(350px circle at ${mousePos.x}px ${mousePos.y}px, rgba(79, 70, 229, 0.14), transparent 80%)`,
-        }}
-      />
-
-      {/* Top Accent Gradient Border */}
-      <div className="absolute top-0 left-8 right-8 h-[2px] bg-gradient-to-r from-transparent via-primary/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      {/* Top Accent Gradient Border on Hover */}
+      <div className="absolute top-0 left-8 right-8 h-[2px] bg-gradient-to-r from-transparent via-primary/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
       <div className="relative z-10 flex flex-col h-full">
         {/* Card Header: Icon + Step ID */}
         <div className="flex justify-between items-start mb-6">
-          <div className="w-13 h-13 rounded-2xl bg-secondary/80 border border-border/60 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110 transition-all duration-300 shadow-sm">
-            {IconComponent && <IconComponent size={24} />}
+          <div className="w-12 h-12 rounded-2xl bg-blue-50/80 border border-blue-100 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-105 transition-all duration-300 shadow-xs">
+            {IconComponent && <IconComponent size={22} />}
           </div>
           <span className="text-3xl font-black text-muted-foreground/25 font-mono group-hover:text-primary/40 transition-colors">
             {service.id}
@@ -89,7 +64,7 @@ function ServiceCard({ service, index }: { service: (typeof services)[number]; i
           {tags.map((tag, i) => (
             <span
               key={i}
-              className="text-[11px] font-medium px-2.5 py-1 rounded-full bg-secondary/70 text-foreground/80 border border-border/40 group-hover:border-primary/20 transition-colors"
+              className="text-[11px] font-medium px-2.5 py-1 rounded-full bg-secondary/80 text-foreground/80 border border-border/50 group-hover:border-primary/20 transition-colors"
             >
               {tag}
             </span>
@@ -97,7 +72,7 @@ function ServiceCard({ service, index }: { service: (typeof services)[number]; i
         </div>
 
         {/* Action Button */}
-        <div className="mt-auto pt-4 border-t border-border/40 flex items-center justify-between">
+        <div className="mt-auto pt-4 border-t border-border/50 flex items-center justify-between">
           <Link
             href="/contact"
             className="inline-flex items-center text-xs font-bold uppercase tracking-wider text-primary group-hover:text-primary transition-all duration-200"
@@ -133,7 +108,7 @@ export default function ServicesSection() {
           </h2>
           <p className="text-3xl sm:text-4xl lg:text-5xl font-black text-foreground leading-[1.1] mb-6 tracking-tight">
             FROM A SIMPLE IDEA TO A{" "}
-            <span className="bg-gradient-to-r from-primary via-indigo-500 to-sky-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-emerald-500 bg-clip-text text-transparent">
               COMPLETE DIGITAL PRODUCT.
             </span>
           </p>

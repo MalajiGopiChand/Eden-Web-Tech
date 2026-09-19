@@ -56,7 +56,7 @@ export default function PortfolioSection({ limit }: { limit?: number }) {
           {displayedProjects.map((project) => (
             <div 
               key={project.id}
-              className="group relative rounded-3xl overflow-hidden bg-card border border-border hover:border-primary/50 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(79,70,229,0.18)] hover:-translate-y-1.5"
+              className="group relative rounded-3xl overflow-hidden bg-card border border-border hover:border-primary/50 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(37,99,235,0.12)] hover:-translate-y-1.5"
             >
               <Link href={`/work/${project.slug}`} className="absolute inset-0 z-30" aria-label={`View ${project.title} case study`} />
               

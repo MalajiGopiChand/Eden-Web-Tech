@@ -66,9 +66,9 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.6 }}
-            className="group relative p-8 md:p-10 rounded-3xl bg-card border border-border/80 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_20px_50px_rgba(79,70,229,0.12)] flex flex-col items-center text-center"
+            className="group relative p-8 md:p-10 rounded-3xl bg-card border border-border/80 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_20px_50px_rgba(37,99,235,0.1)] flex flex-col items-center text-center"
           >
-            <div className="relative h-48 w-48 md:h-56 md:w-56 rounded-full p-2 bg-gradient-to-tr from-primary via-indigo-400 to-sky-400 shadow-xl mb-6 group-hover:scale-105 transition-transform duration-500">
+            <div className="relative h-48 w-48 md:h-56 md:w-56 rounded-full p-2 bg-gradient-to-tr from-blue-600 via-cyan-400 to-emerald-400 shadow-xl mb-6 group-hover:scale-105 transition-transform duration-500">
               <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-background bg-background">
                 <Image 
                   src="/images/ceo.jpg" 
@@ -100,22 +100,13 @@ export default function AboutSection() {
                 <span>LinkedIn</span>
                 <ArrowUpRight size={14} />
               </Link>
-              <Link 
-                href="https://www.instagram.com/mr.gopichand.7/" 
-                target="_blank"
-                rel="noopener noreferrer"
+              <a 
+                href="mailto:edenwebtechnologies@gmail.com" 
                 className="flex items-center gap-1.5 px-4 py-2 rounded-full bg-secondary/80 text-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-200 text-xs font-semibold shadow-xs"
               >
-                <span>Instagram</span>
-                <ArrowUpRight size={14} />
-              </Link>
-              <Link 
-                href="mailto:thegopichand@gmail.com" 
-                className="flex items-center justify-center w-9 h-9 rounded-full bg-secondary/80 text-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-200 shadow-xs"
-                title="Email CEO"
-              >
-                <Mail size={15} />
-              </Link>
+                <Mail size={14} />
+                <span>Contact</span>
+              </a>
             </div>
           </motion.div>
 
@@ -125,9 +116,9 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.6, delay: 0.15 }}
-            className="group relative p-8 md:p-10 rounded-3xl bg-card border border-border/80 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_20px_50px_rgba(79,70,229,0.12)] flex flex-col items-center text-center"
+            className="group relative p-8 md:p-10 rounded-3xl bg-card border border-border/80 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_20px_50px_rgba(37,99,235,0.1)] flex flex-col items-center text-center"
           >
-            <div className="relative h-48 w-48 md:h-56 md:w-56 rounded-full p-2 bg-gradient-to-tr from-sky-400 via-indigo-400 to-primary shadow-xl mb-6 group-hover:scale-105 transition-transform duration-500">
+            <div className="relative h-48 w-48 md:h-56 md:w-56 rounded-full p-2 bg-gradient-to-tr from-cyan-400 via-blue-500 to-emerald-400 shadow-xl mb-6 group-hover:scale-105 transition-transform duration-500">
               <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-background bg-background">
                 <Image 
                   src="/images/co-ceo.jpg" 
@@ -181,7 +172,7 @@ export default function AboutSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.4, delay: index * 0.08 }}
-                className="group p-7 rounded-3xl bg-card border border-border/70 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_10px_30px_rgba(79,70,229,0.08)] hover:-translate-y-1"
+                className="group p-7 rounded-3xl bg-card border border-border/70 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_10px_30px_rgba(37,99,235,0.08)] hover:-translate-y-1"
               >
                 <div className="flex items-center justify-between mb-4">
                   <span className="w-10 h-10 rounded-2xl bg-primary/10 text-primary font-mono font-bold text-sm flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">

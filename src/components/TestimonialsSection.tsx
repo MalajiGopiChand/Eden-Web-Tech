@@ -55,7 +55,7 @@ export default function TestimonialsSection() {
             {duplicatedTestimonials.map((testimonial, idx) => (
               <div
                 key={`testimonial-${idx}`}
-                className="w-[340px] md:w-[420px] p-7 rounded-3xl bg-card border border-border shadow-sm hover:shadow-[0_15px_40px_rgba(79,70,229,0.15)] hover:border-primary/50 transition-all flex flex-col justify-between shrink-0 group hover:-translate-y-1 duration-300"
+                className="w-[340px] md:w-[420px] p-7 rounded-3xl bg-card border border-border shadow-xs hover:shadow-[0_15px_35px_rgba(37,99,235,0.12)] hover:border-primary/50 transition-all flex flex-col justify-between shrink-0 group hover:-translate-y-1 duration-300"
               >
                 <div>
                   <div className="flex justify-between items-center mb-5">

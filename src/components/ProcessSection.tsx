@@ -69,7 +69,7 @@ export default function ProcessSection() {
           </h2>
           <p className="text-3xl sm:text-4xl lg:text-5xl font-black text-foreground tracking-tight leading-[1.1]">
             A SIMPLE PROCESS. <br />
-            <span className="bg-gradient-to-r from-primary via-indigo-500 to-sky-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-emerald-500 bg-clip-text text-transparent">
               A SERIOUS APPROACH.
             </span>
           </p>
@@ -90,7 +90,7 @@ export default function ProcessSection() {
                 onClick={() => setActiveStepIndex(idx)}
                 className={`relative px-4 py-2.5 rounded-2xl text-xs sm:text-sm font-bold transition-all duration-300 flex items-center gap-2 shrink-0 border cursor-pointer ${
                   isActive
-                    ? "bg-primary text-primary-foreground border-primary shadow-[0_4px_20px_rgba(79,70,229,0.35)]"
+                    ? "bg-primary text-primary-foreground border-primary shadow-[0_4px_16px_rgba(37,99,235,0.25)]"
                     : "bg-card/70 text-muted-foreground border-border/70 hover:text-foreground hover:border-primary/40"
                 }`}
               >
@@ -122,7 +122,7 @@ export default function ProcessSection() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -15 }}
                 transition={{ duration: 0.35 }}
-                className="mb-14 p-8 sm:p-10 rounded-3xl bg-card border border-primary/30 shadow-[0_20px_50px_rgba(79,70,229,0.1)] relative overflow-hidden"
+                className="mb-14 p-8 sm:p-10 rounded-3xl bg-card border border-blue-200/80 shadow-[0_20px_45px_rgba(37,99,235,0.08)] relative overflow-hidden"
               >
                 {/* Ambient glow in background */}
                 <div className="absolute top-0 right-0 w-80 h-80 bg-primary/10 rounded-full blur-[100px] pointer-events-none" />
@@ -196,8 +196,8 @@ export default function ProcessSection() {
                 onClick={() => setActiveStepIndex(index)}
                 className={`group relative p-7 rounded-3xl bg-card border transition-all duration-300 cursor-pointer flex flex-col justify-between h-full ${
                   isSelected
-                    ? "border-primary/70 shadow-[0_15px_40px_rgba(79,70,229,0.15)] ring-2 ring-primary/20 -translate-y-1"
-                    : "border-border/70 hover:border-primary/40 hover:shadow-[0_10px_30px_rgba(79,70,229,0.08)] hover:-translate-y-1"
+                    ? "border-primary/70 shadow-[0_15px_35px_rgba(37,99,235,0.12)] ring-2 ring-primary/20 -translate-y-1"
+                    : "border-border/70 hover:border-primary/40 hover:shadow-[0_10px_25px_rgba(37,99,235,0.08)] hover:-translate-y-1"
                 }`}
               >
                 {/* Header */}

@@ -26,7 +26,7 @@ export default function CTASection() {
 
           <h3 className="text-4xl md:text-5xl lg:text-6xl font-black text-foreground mb-8 tracking-tight leading-[1.1]">
             READY TO BUILD <br />
-            <span className="bg-gradient-to-r from-primary via-indigo-500 to-sky-400 bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-emerald-500 bg-clip-text text-transparent">
               SOMETHING EXTRAORDINARY?
             </span>
           </h3>
@@ -38,7 +38,7 @@ export default function CTASection() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link 
               href="/contact" 
-              className="relative group overflow-hidden flex items-center justify-center gap-2 px-9 py-4 bg-primary text-primary-foreground font-bold rounded-full hover:bg-primary/90 transition-all shadow-[0_10px_35px_rgba(79,70,229,0.35)] hover:shadow-[0_15px_45px_rgba(79,70,229,0.5)] w-full sm:w-auto"
+              className="relative group overflow-hidden flex items-center justify-center gap-2 px-9 py-4 bg-primary text-primary-foreground font-bold rounded-full hover:bg-primary/90 transition-all shadow-[0_10px_25px_rgba(37,99,235,0.25)] hover:shadow-[0_15px_35px_rgba(37,99,235,0.35)] w-full sm:w-auto"
             >
               <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/25 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out" />
               <span>Start a Project</span>

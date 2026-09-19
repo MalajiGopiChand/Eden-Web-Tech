@@ -17,8 +17,8 @@ export default function HeroSection() {
     <section className="relative min-h-screen flex items-center pt-28 pb-16 overflow-hidden bg-transparent">
       {/* Soft Ambient Radial Lights */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-[1200px] pointer-events-none opacity-50">
-        <div className="absolute top-[15%] left-[15%] w-[450px] h-[450px] rounded-full bg-primary/20 blur-[130px]" />
-        <div className="absolute bottom-[15%] right-[15%] w-[400px] h-[400px] rounded-full bg-accent/20 blur-[120px]" />
+        <div className="absolute top-[15%] left-[15%] w-[450px] h-[450px] rounded-full bg-blue-400/10 blur-[130px]" />
+        <div className="absolute bottom-[15%] right-[15%] w-[400px] h-[400px] rounded-full bg-cyan-300/10 blur-[120px]" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
@@ -33,7 +33,7 @@ export default function HeroSection() {
               className="text-5xl sm:text-6xl lg:text-7xl font-black tracking-tight text-foreground leading-[1.06]"
             >
               YOUR IDEA DESERVES{" "}
-              <span className="bg-gradient-to-r from-primary via-indigo-500 to-sky-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-emerald-500 bg-clip-text text-transparent">
                 MORE THAN JUST CODE.
               </span>
             </motion.h1>
@@ -61,7 +61,7 @@ export default function HeroSection() {
             >
               <Link 
                 href="/contact" 
-                className="relative group overflow-hidden flex items-center justify-center gap-2 px-8 py-4 bg-primary text-primary-foreground font-bold rounded-full hover:bg-primary/90 transition-all shadow-[0_10px_35px_rgba(79,70,229,0.35)] hover:shadow-[0_15px_45px_rgba(79,70,229,0.5)]"
+                className="relative group overflow-hidden flex items-center justify-center gap-2 px-8 py-4 bg-primary text-primary-foreground font-bold rounded-full hover:bg-primary/90 transition-all shadow-[0_10px_25px_rgba(37,99,235,0.25)] hover:shadow-[0_15px_35px_rgba(37,99,235,0.35)]"
               >
                 <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/25 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out" />
                 <span>Start Your Project</span>
@@ -70,7 +70,7 @@ export default function HeroSection() {
               
               <Link 
                 href="/work" 
-                className="group flex items-center justify-center gap-2 px-8 py-4 bg-secondary/80 text-secondary-foreground font-semibold rounded-full hover:bg-secondary transition-all border border-border hover:border-primary/40"
+                className="group flex items-center justify-center gap-2 px-8 py-4 bg-secondary text-secondary-foreground font-semibold rounded-full hover:bg-secondary/80 transition-all border border-border hover:border-primary/40"
               >
                 Explore Our Work
                 <ArrowDown size={20} className="group-hover:translate-y-1 transition-transform" />
@@ -86,7 +86,7 @@ export default function HeroSection() {
             >
               <div className="flex -space-x-2.5">
                 {avatarList.map((avatar, i) => (
-                  <div key={i} className="w-10 h-10 rounded-full border-2 border-background overflow-hidden shadow-sm">
+                  <div key={i} className="w-10 h-10 rounded-full border-2 border-background overflow-hidden shadow-xs">
                     <img src={avatar} alt="Client" className="w-full h-full object-cover" />
                   </div>
                 ))}
@@ -116,9 +116,9 @@ export default function HeroSection() {
             <motion.div
               animate={{ y: [0, -8, 0] }}
               transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-4 -right-2 z-20 px-4 py-2 rounded-2xl bg-card/90 backdrop-blur-xl border border-border shadow-xl flex items-center gap-2.5 text-xs font-bold text-foreground select-none"
+              className="absolute -top-4 -right-2 z-20 px-4 py-2 rounded-2xl bg-card border border-border shadow-lg flex items-center gap-2.5 text-xs font-bold text-foreground select-none"
             >
-              <div className="w-6 h-6 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500">
+              <div className="w-6 h-6 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-600">
                 <Zap size={13} className="fill-emerald-500" />
               </div>
               <span>Sub-second Load Speeds</span>
@@ -128,32 +128,32 @@ export default function HeroSection() {
             <motion.div
               animate={{ y: [0, 8, 0] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-              className="absolute -bottom-3 -left-3 z-20 px-4 py-2.5 rounded-2xl bg-card/90 backdrop-blur-xl border border-border shadow-xl flex items-center gap-2.5 text-xs font-bold text-foreground select-none"
+              className="absolute -bottom-3 -left-3 z-20 px-4 py-2.5 rounded-2xl bg-card border border-border shadow-lg flex items-center gap-2.5 text-xs font-bold text-foreground select-none"
             >
-              <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+              <div className="w-6 h-6 rounded-full bg-blue-500/10 flex items-center justify-center text-primary">
                 <ShieldCheck size={14} />
               </div>
               <span>Production-Grade Architecture</span>
             </motion.div>
 
             {/* Main Mockup Window */}
-            <div className="absolute inset-0 bg-gradient-to-br from-card/95 via-card/80 to-background/90 rounded-3xl backdrop-blur-2xl border border-border/80 shadow-[0_20px_60px_rgba(79,70,229,0.12)] overflow-hidden">
+            <div className="absolute inset-0 bg-card rounded-3xl border border-border/80 shadow-[0_20px_50px_rgba(37,99,235,0.08)] overflow-hidden">
               <div className="p-7 h-full flex flex-col gap-5">
                 
                 {/* Window Header with Tabs */}
                 <div className="flex justify-between items-center pb-4 border-b border-border/60">
                   <div className="flex items-center gap-3">
                     <img src="/images/logo-navbar.png" alt="Eden" className="h-8 object-contain" />
-                    <div className="hidden sm:flex items-center gap-1.5 ml-2 bg-secondary/50 p-1 rounded-lg text-xs font-mono">
-                      <span className="px-2 py-0.5 rounded bg-background shadow-xs text-primary font-bold">App.tsx</span>
+                    <div className="hidden sm:flex items-center gap-1.5 ml-2 bg-slate-100 p-1 rounded-lg text-xs font-mono">
+                      <span className="px-2 py-0.5 rounded bg-white shadow-xs text-primary font-bold">App.tsx</span>
                       <span className="px-2 py-0.5 text-muted-foreground">schema.prisma</span>
                       <span className="px-2 py-0.5 text-muted-foreground">api.ts</span>
                     </div>
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 rounded-full bg-rose-500/80"></div>
-                    <div className="w-3 h-3 rounded-full bg-amber-500/80"></div>
-                    <div className="w-3 h-3 rounded-full bg-emerald-500/80"></div>
+                    <div className="w-3 h-3 rounded-full bg-rose-400"></div>
+                    <div className="w-3 h-3 rounded-full bg-amber-400"></div>
+                    <div className="w-3 h-3 rounded-full bg-emerald-400"></div>
                   </div>
                 </div>
                 
@@ -162,25 +162,25 @@ export default function HeroSection() {
                   initial={{ opacity: 0, y: 15 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.5 }}
-                  className="w-full rounded-2xl bg-secondary/25 p-5 border border-border/50 font-mono text-xs sm:text-sm shadow-inner"
+                  className="w-full rounded-2xl bg-slate-50 p-5 border border-slate-200/80 font-mono text-xs sm:text-sm shadow-inner"
                 >
-                  <div className="text-primary/70 mb-2 flex items-center gap-1.5">
+                  <div className="text-blue-600/75 mb-2 flex items-center gap-1.5 font-medium">
                     <Sparkles size={13} />
                     <span>// Engineering your custom digital platform</span>
                   </div>
-                  <div className="text-foreground"><span className="text-indigo-400 font-semibold">const</span> <span className="text-amber-400 font-semibold">clientSolution</span> = <span className="text-indigo-400 font-semibold">new</span> <span className="text-emerald-400 font-semibold">EdenProduct</span>({'{'}</div>
-                  <div className="pl-4 text-foreground">partner: <span className="text-amber-300">'Your Brand'</span>,</div>
-                  <div className="pl-4 text-foreground">stack: [<span className="text-amber-300">'Next.js'</span>, <span className="text-amber-300">'React Native'</span>, <span className="text-amber-300">'Node'</span>],</div>
-                  <div className="pl-4 text-foreground">scalability: <span className="text-purple-400">100% Cloud Native</span>,</div>
-                  <div className="pl-4 text-foreground">launch: <span className="text-emerald-400">'Ready for Market'</span></div>
-                  <div className="text-foreground">{'}'});</div>
+                  <div className="text-slate-800"><span className="text-blue-600 font-semibold">const</span> <span className="text-slate-900 font-bold">clientSolution</span> = <span className="text-blue-600 font-semibold">new</span> <span className="text-teal-600 font-bold">EdenProduct</span>({'{'}</div>
+                  <div className="pl-4 text-slate-700">partner: <span className="text-emerald-700 font-medium">'Your Brand'</span>,</div>
+                  <div className="pl-4 text-slate-700">stack: [<span className="text-emerald-700 font-medium">'Next.js'</span>, <span className="text-emerald-700 font-medium">'React Native'</span>, <span className="text-emerald-700 font-medium">'Node'</span>],</div>
+                  <div className="pl-4 text-slate-700">scalability: <span className="text-blue-600 font-semibold">100% Cloud Native</span>,</div>
+                  <div className="pl-4 text-slate-700">launch: <span className="text-emerald-700 font-medium">'Ready for Market'</span></div>
+                  <div className="text-slate-800">{'}'});</div>
                   
-                  <div className="mt-4 flex items-center justify-between pt-3 border-t border-border/30 text-xs text-muted-foreground">
+                  <div className="mt-4 flex items-center justify-between pt-3 border-t border-slate-200 text-xs text-muted-foreground">
                     <div className="flex items-center gap-2">
                       <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                      <span>Cluster active • 0 errors</span>
+                      <span className="text-slate-600 font-medium">Cluster active • 0 errors</span>
                     </div>
-                    <span className="font-mono text-xs text-muted-foreground/60">latency: 14ms</span>
+                    <span className="font-mono text-xs text-slate-400">latency: 14ms</span>
                   </div>
                 </motion.div>
                 
@@ -190,9 +190,9 @@ export default function HeroSection() {
                     initial={{ opacity: 0, x: -15 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8, delay: 0.7 }}
-                    className="rounded-2xl bg-gradient-to-br from-primary/10 via-primary/5 to-transparent border border-primary/20 p-5 flex flex-col justify-center"
+                    className="rounded-2xl bg-blue-50/50 border border-blue-100 p-5 flex flex-col justify-center"
                   >
-                    <h4 className="text-muted-foreground text-xs font-bold tracking-wider uppercase mb-1 flex items-center gap-1.5">
+                    <h4 className="text-slate-500 text-xs font-bold tracking-wider uppercase mb-1 flex items-center gap-1.5">
                       <CheckCircle size={13} className="text-primary" /> Lighthouse Score
                     </h4>
                     <p className="text-3xl font-black text-foreground flex items-center">
@@ -206,8 +206,8 @@ export default function HeroSection() {
                       />
                       <span className="text-lg text-primary ml-0.5">%</span>
                     </p>
-                    <div className="w-full h-1.5 bg-secondary rounded-full mt-3 overflow-hidden">
-                      <div className="w-[99.9%] h-full bg-gradient-to-r from-primary to-indigo-400 rounded-full"></div>
+                    <div className="w-full h-1.5 bg-blue-100/70 rounded-full mt-3 overflow-hidden">
+                      <div className="w-[99.9%] h-full bg-gradient-to-r from-blue-600 to-cyan-500 rounded-full"></div>
                     </div>
                   </motion.div>
                   
@@ -215,9 +215,9 @@ export default function HeroSection() {
                     initial={{ opacity: 0, x: 15 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.8, delay: 0.9 }}
-                    className="rounded-2xl bg-secondary/30 border border-border/60 p-5 flex flex-col justify-center relative overflow-hidden"
+                    className="rounded-2xl bg-slate-50/60 border border-border/70 p-5 flex flex-col justify-center relative overflow-hidden"
                   >
-                    <h4 className="text-muted-foreground text-xs font-bold tracking-wider uppercase mb-1">
+                    <h4 className="text-slate-500 text-xs font-bold tracking-wider uppercase mb-1">
                       Active Users Scaled
                     </h4>
                     <p className="text-3xl font-black text-foreground flex items-center">
@@ -233,7 +233,7 @@ export default function HeroSection() {
                     </p>
                     
                     {/* Animated chart bars */}
-                    <div className="absolute bottom-0 left-0 w-full h-1/2 flex items-end justify-between px-4 pb-2 opacity-30 gap-1 pointer-events-none">
+                    <div className="absolute bottom-0 left-0 w-full h-1/2 flex items-end justify-between px-4 pb-2 opacity-35 gap-1 pointer-events-none">
                       {[40, 65, 35, 85, 55, 95, 75].map((h, i) => (
                         <motion.div 
                           key={i}
