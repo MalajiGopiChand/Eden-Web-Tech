@@ -10,8 +10,9 @@ import {
   Rocket, 
   TrendingUp, 
   CheckCircle2, 
-  ArrowRight,
-  Clock
+  Clock,
+  ShieldCheck,
+  MessageSquare
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -70,28 +71,45 @@ export default function ProcessSection() {
           </p>
         </div>
 
-        {/* Step Switcher Tabs */}
-        <div className="mb-10 flex justify-start sm:justify-center overflow-x-auto pb-4 pt-1 gap-2 sm:gap-2.5 no-scrollbar select-none">
+        {/* Step Switcher Grid - 100% Responsive, Zero Horizontal Overflow Clipping */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 sm:gap-3 mb-10">
           {processSteps.map((step, idx) => {
             const isActive = activeStepIndex === idx;
             const Icon = processIcons[idx] || Compass;
+            const detail = stepDetails[step.id];
 
             return (
               <button
                 key={step.id}
                 onClick={() => setActiveStepIndex(idx)}
-                className={`relative px-4 py-2 rounded-2xl text-xs sm:text-sm font-bold transition-all duration-200 flex items-center gap-2 shrink-0 border cursor-pointer ${
+                className={`relative text-left p-3.5 sm:p-4 rounded-2xl border transition-all duration-200 cursor-pointer flex flex-col justify-between ${
                   isActive
-                    ? "bg-primary text-primary-foreground border-primary shadow-[0_4px_14px_rgba(37,99,235,0.25)]"
-                    : "bg-white/80 text-muted-foreground border-border/70 hover:text-foreground hover:border-primary/40"
+                    ? "bg-white border-primary shadow-[0_8px_24px_rgba(37,99,235,0.12)] ring-2 ring-primary/20 -translate-y-0.5"
+                    : "bg-white/80 border-border/70 hover:border-primary/40 hover:bg-white hover:-translate-y-0.5"
                 }`}
               >
-                <Icon size={14} />
-                <span>{step.id}. {step.title}</span>
+                <div className="flex items-center justify-between mb-2">
+                  <span className={`text-[11px] font-mono font-bold tracking-wider px-2 py-0.5 rounded-md ${
+                    isActive ? "bg-primary text-primary-foreground" : "bg-slate-100 text-muted-foreground"
+                  }`}>
+                    PHASE {step.id}
+                  </span>
+                  <Icon size={16} className={isActive ? "text-primary" : "text-muted-foreground"} />
+                </div>
+                <div>
+                  <h4 className={`text-xs sm:text-sm font-bold line-clamp-1 ${
+                    isActive ? "text-primary" : "text-foreground"
+                  }`}>
+                    {step.title}
+                  </h4>
+                  <p className="text-[11px] text-muted-foreground mt-0.5 font-medium">
+                    {detail?.duration || `Week ${idx + 1}`}
+                  </p>
+                </div>
                 {isActive && (
                   <motion.div
-                    layoutId="activeProcessPill"
-                    className="absolute inset-0 rounded-2xl border-2 border-primary -z-10"
+                    layoutId="activeProcessIndicator"
+                    className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-8 h-1 bg-primary rounded-full"
                     transition={{ type: "spring", stiffness: 400, damping: 30 }}
                   />
                 )}
@@ -110,56 +128,124 @@ export default function ProcessSection() {
             return (
               <motion.div
                 key={currentStep.id}
-                initial={{ opacity: 0, y: 15 }}
+                initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -15 }}
-                transition={{ duration: 0.3 }}
-                className="mb-14 p-8 sm:p-10 rounded-3xl bg-card border border-blue-100 shadow-[0_12px_36px_rgba(0,0,0,0.03)] relative overflow-hidden"
+                exit={{ opacity: 0, y: -12 }}
+                transition={{ duration: 0.25 }}
+                className="mb-14 p-6 sm:p-8 lg:p-10 rounded-3xl bg-white border border-blue-100 shadow-[0_12px_36px_rgba(0,0,0,0.04)] relative overflow-hidden"
               >
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch relative z-10">
                   {/* Left: Phase Info */}
-                  <div className="lg:col-span-7 space-y-4">
-                    <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-2xl bg-primary text-primary-foreground flex items-center justify-center shadow-xs">
-                        <Icon size={22} />
+                  <div className="lg:col-span-7 flex flex-col justify-between space-y-6">
+                    <div>
+                      <div className="flex flex-wrap items-center gap-2.5 mb-4">
+                        <span className="text-xs font-mono font-bold text-primary bg-blue-50 px-3 py-1 rounded-md border border-blue-100">
+                          PHASE {currentStep.id}
+                        </span>
+                        <span className="inline-flex items-center gap-1.5 text-xs font-semibold text-muted-foreground bg-slate-100 px-3 py-1 rounded-md">
+                          <Clock size={13} className="text-primary" /> {detail.duration}
+                        </span>
+                        <span className="text-xs font-semibold text-emerald-700 bg-emerald-50 border border-emerald-100 px-2.5 py-1 rounded-md">
+                          Step {activeStepIndex + 1} of 6
+                        </span>
                       </div>
-                      <div>
-                        <div className="flex items-center gap-2">
-                          <span className="text-xs font-mono font-bold text-primary">PHASE {currentStep.id}</span>
-                          <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-muted-foreground bg-slate-100 px-2.5 py-0.5 rounded-full">
-                            <Clock size={11} /> {detail.duration}
-                          </span>
+
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="w-10 h-10 rounded-xl bg-primary/10 text-primary flex items-center justify-center shrink-0">
+                          <Icon size={22} />
                         </div>
-                        <h3 className="text-2xl sm:text-3xl font-black text-foreground">
+                        <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-foreground tracking-tight">
                           {currentStep.title}
                         </h3>
                       </div>
+
+                      <p className="text-base sm:text-lg text-muted-foreground leading-relaxed mb-6">
+                        {currentStep.description}
+                      </p>
+
+                      <div className="bg-slate-50 p-4 sm:p-5 rounded-2xl border border-border/70">
+                        <div className="flex items-start gap-3">
+                          <span className="text-xl shrink-0 mt-0.5">💡</span>
+                          <div>
+                            <h5 className="text-xs font-bold uppercase tracking-wider text-primary mb-1">
+                              Client Benefit
+                            </h5>
+                            <p className="text-sm font-medium text-foreground/90 leading-relaxed">
+                              {detail.highlights}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
                     </div>
 
-                    <p className="text-base text-muted-foreground leading-relaxed">
-                      {currentStep.description}
-                    </p>
+                    {/* Step Navigation Controls */}
+                    <div className="flex items-center justify-between pt-4 border-t border-border/50">
+                      <button
+                        onClick={() => setActiveStepIndex((prev) => Math.max(0, prev - 1))}
+                        disabled={activeStepIndex === 0}
+                        className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold border transition-colors ${
+                          activeStepIndex === 0
+                            ? "opacity-40 cursor-not-allowed border-border/50 text-muted-foreground"
+                            : "border-border/80 text-foreground hover:border-primary hover:text-primary cursor-pointer bg-white"
+                        }`}
+                      >
+                        ← Previous Phase
+                      </button>
 
-                    <p className="text-sm font-medium text-foreground/90 bg-slate-50 p-4 rounded-2xl border border-border/60">
-                      💡 {detail.highlights}
-                    </p>
+                      <div className="flex items-center gap-1.5">
+                        {processSteps.map((_, i) => (
+                          <button
+                            key={i}
+                            onClick={() => setActiveStepIndex(i)}
+                            aria-label={`Jump to phase ${i + 1}`}
+                            className={`h-2 rounded-full transition-all cursor-pointer ${
+                              activeStepIndex === i ? "w-6 sm:w-8 bg-primary" : "w-2 sm:w-2.5 bg-slate-200 hover:bg-slate-300"
+                            }`}
+                          />
+                        ))}
+                      </div>
+
+                      <button
+                        onClick={() => setActiveStepIndex((prev) => Math.min(processSteps.length - 1, prev + 1))}
+                        disabled={activeStepIndex === processSteps.length - 1}
+                        className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold border transition-colors ${
+                          activeStepIndex === processSteps.length - 1
+                            ? "opacity-40 cursor-not-allowed border-border/50 text-muted-foreground"
+                            : "bg-primary text-primary-foreground border-primary hover:bg-primary/90 cursor-pointer shadow-xs"
+                        }`}
+                      >
+                        Next Phase →
+                      </button>
+                    </div>
                   </div>
 
                   {/* Right: Key Deliverables */}
-                  <div className="lg:col-span-5 bg-white p-6 rounded-2xl border border-border/80 shadow-xs">
-                    <h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground mb-4 flex items-center gap-1.5">
-                      <CheckCircle2 size={14} className="text-primary" /> Tangible Deliverables
-                    </h4>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                      {detail.deliverables.map((item, idx) => (
-                        <div
-                          key={idx}
-                          className="flex items-center gap-2 text-xs font-semibold text-foreground/90 bg-slate-50 px-3 py-2 rounded-xl border border-border/50"
-                        >
-                          <div className="w-1.5 h-1.5 rounded-full bg-primary shrink-0" />
-                          <span>{item}</span>
-                        </div>
-                      ))}
+                  <div className="lg:col-span-5 bg-slate-50/70 p-6 sm:p-7 rounded-2xl border border-border/80 flex flex-col justify-between">
+                    <div>
+                      <div className="flex items-center justify-between mb-4">
+                        <h4 className="text-xs font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-1.5">
+                          <CheckCircle2 size={15} className="text-primary" /> Tangible Deliverables
+                        </h4>
+                        <span className="text-[11px] font-semibold text-primary bg-blue-50 px-2 py-0.5 rounded">
+                          {detail.deliverables.length} Outputs
+                        </span>
+                      </div>
+                      <div className="space-y-2.5">
+                        {detail.deliverables.map((item, idx) => (
+                          <div
+                            key={idx}
+                            className="flex items-start gap-3 text-xs sm:text-sm font-semibold text-foreground/90 bg-white p-3 rounded-xl border border-border/60 shadow-xs"
+                          >
+                            <CheckCircle2 size={16} className="text-emerald-500 shrink-0 mt-0.5" />
+                            <span className="leading-snug">{item}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div className="mt-5 pt-4 border-t border-border/60 flex items-center gap-2 text-xs text-muted-foreground">
+                      <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
+                      <span>100% Client approval before advancing to the next phase.</span>
                     </div>
                   </div>
                 </div>
@@ -168,59 +254,43 @@ export default function ProcessSection() {
           })()}
         </AnimatePresence>
 
-        {/* 6-Card Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {processSteps.map((step, index) => {
-            const Icon = processIcons[index] || Compass;
-            const isSelected = activeStepIndex === index;
-            const detail = stepDetails[step.id];
+        {/* Sprint Guarantees & Quality Commitment */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div className="p-6 rounded-3xl bg-white border border-border/70 shadow-xs hover:border-primary/40 transition-all">
+            <div className="w-10 h-10 rounded-2xl bg-blue-50 text-primary flex items-center justify-center mb-4">
+              <Code2 size={20} />
+            </div>
+            <h4 className="text-base font-bold text-foreground mb-2">
+              Weekly Live Staging Demos
+            </h4>
+            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+              Every Friday, you receive a live private staging URL. Test every screen on your phone and laptop as we build — zero guesswork.
+            </p>
+          </div>
 
-            return (
-              <motion.div
-                key={step.id}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.4, delay: index * 0.06 }}
-                onClick={() => setActiveStepIndex(index)}
-                className={`group relative p-6 rounded-3xl bg-card border transition-all duration-200 cursor-pointer flex flex-col justify-between h-full ${
-                  isSelected
-                    ? "border-primary shadow-[0_8px_24px_rgba(37,99,235,0.1)] ring-2 ring-primary/20 -translate-y-1"
-                    : "border-border/70 hover:border-primary/40 hover:shadow-xs hover:-translate-y-0.5"
-                }`}
-              >
-                <div className="flex items-center justify-between mb-4">
-                  <div className={`w-10 h-10 rounded-2xl flex items-center justify-center transition-all duration-200 ${
-                    isSelected
-                      ? "bg-primary text-primary-foreground shadow-xs"
-                      : "bg-slate-100 text-primary group-hover:bg-primary group-hover:text-primary-foreground"
-                  }`}>
-                    <Icon size={18} />
-                  </div>
-                  <span className="text-xl font-bold text-muted-foreground/30 font-mono">
-                    {step.id}
-                  </span>
-                </div>
+          <div className="p-6 rounded-3xl bg-white border border-border/70 shadow-xs hover:border-primary/40 transition-all">
+            <div className="w-10 h-10 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4">
+              <ShieldCheck size={20} />
+            </div>
+            <h4 className="text-base font-bold text-foreground mb-2">
+              Fixed Scope & Budget Guarantee
+            </h4>
+            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+              We define every screen and feature before touching code. What we quote is what you pay — no surprise invoices or hidden hourly fees.
+            </p>
+          </div>
 
-                <div>
-                  <h4 className="text-base font-bold text-foreground mb-1.5 group-hover:text-primary transition-colors">
-                    {step.title}
-                  </h4>
-                  <p className="text-muted-foreground text-xs leading-relaxed mb-4">
-                    {step.description}
-                  </p>
-                </div>
-
-                <div className="pt-3 border-t border-border/40 flex items-center justify-between text-xs text-muted-foreground">
-                  <span className="font-semibold text-foreground/80">{detail.duration}</span>
-                  <span className="text-primary font-bold inline-flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                    <span>View Phase</span>
-                    <ArrowRight size={12} />
-                  </span>
-                </div>
-              </motion.div>
-            );
-          })}
+          <div className="p-6 rounded-3xl bg-white border border-border/70 shadow-xs hover:border-primary/40 transition-all">
+            <div className="w-10 h-10 rounded-2xl bg-purple-50 text-purple-600 flex items-center justify-center mb-4">
+              <MessageSquare size={20} />
+            </div>
+            <h4 className="text-base font-bold text-foreground mb-2">
+              Direct Founder Communication
+            </h4>
+            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+              No account managers or telephone games. You have a direct WhatsApp and Slack channel to the senior engineers building your app.
+            </p>
+          </div>
         </div>
 
       </div>
