@@ -20,7 +20,7 @@ export default function Footer() {
                 <span className="sr-only">LinkedIn</span>
                 <Globe size={20} />
               </a>
-              <a href="mailto:thegopichand@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="mailto:edenwebtechnologies@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
                 <span className="sr-only">Contact</span>
                 <Mail size={20} />
               </a>

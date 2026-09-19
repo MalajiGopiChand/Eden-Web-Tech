@@ -34,7 +34,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <h3 className="font-bold text-foreground mb-1">Email</h3>
-                  <a href="mailto:thegopichand@gmail.com" className="text-lg font-medium text-foreground hover:text-primary transition-colors">thegopichand@gmail.com</a>
+                  <a href="mailto:edenwebtechnologies@gmail.com" className="text-lg font-medium text-foreground hover:text-primary transition-colors">edenwebtechnologies@gmail.com</a>
                 </div>
               </div>
               

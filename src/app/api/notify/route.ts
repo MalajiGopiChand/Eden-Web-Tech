@@ -26,14 +26,14 @@ ${description}
       const transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
-          user: process.env.EMAIL_USER, // e.g., thegopichand@gmail.com
+          user: process.env.EMAIL_USER, // e.g., edenwebtechnologies@gmail.com
           pass: process.env.EMAIL_PASS, // Your Gmail App Password
         },
       });
 
       await transporter.sendMail({
         from: process.env.EMAIL_USER,
-        to: "thegopichand@gmail.com", // Send to yourself
+        to: "edenwebtechnologies@gmail.com", // Send to yourself
         subject: `New Inquiry from ${name} - ${projectType}`,
         text: messageBody,
       });
