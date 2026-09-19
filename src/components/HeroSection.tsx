@@ -86,7 +86,7 @@ export default function HeroSection() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
               </span>
-              <span>Available for Select Q3/Q4 Projects • 100% In-House</span>
+              <span>Now Accepting New Projects • 100% In-House Team</span>
             </motion.div>
 
             {/* Main Punchy Headline */}
