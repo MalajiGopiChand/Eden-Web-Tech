@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 mb-16">
           <div className="md:col-span-1">
             <Link href="/" className="mb-6 block">
-              <img src="/images/logo.png" alt="Eden Technologies" className="h-10 object-contain" />
+              <img src="/images/logo.jpg" alt="Eden Technologies" className="h-10 object-contain" />
             </Link>
             <p className="text-muted-foreground mt-4 mb-6 pr-4">
               We design and build websites, mobile apps and digital products for ambitious businesses.

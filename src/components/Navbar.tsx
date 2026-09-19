@@ -39,7 +39,7 @@ export default function Navbar() {
             href="/"
             className="flex items-center gap-2"
           >
-            <img src="/images/logo.png" alt="Eden Technologies" className="h-10 object-contain" />
+            <img src="/images/logo.jpg" alt="Eden Technologies" className="h-10 object-contain" />
           </Link>
 
           {/* Desktop Navigation */}
