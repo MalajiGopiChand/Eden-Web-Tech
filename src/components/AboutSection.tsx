@@ -55,120 +55,141 @@ export default function AboutSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 mb-20">
           
           {/* Founder: Malaji Gopichand */}
-          <div className="group p-8 sm:p-10 rounded-3xl bg-white border border-border/80 hover:border-primary/50 transition-all duration-300 shadow-xs hover:shadow-[0_16px_40px_rgba(37,99,235,0.08)] flex flex-col justify-between">
+          <div className="group p-6 sm:p-8 lg:p-9 rounded-3xl bg-white border border-border/80 hover:border-primary/50 transition-all duration-300 shadow-xs hover:shadow-[0_16px_40px_rgba(37,99,235,0.08)] flex flex-col justify-between">
             <div>
-              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 mb-6 text-center sm:text-left">
-                <div className="relative h-28 w-28 sm:h-32 sm:w-32 rounded-2xl overflow-hidden p-1 bg-gradient-to-tr from-blue-600 via-cyan-400 to-emerald-400 shrink-0 shadow-sm">
-                  <div className="relative w-full h-full rounded-xl overflow-hidden bg-slate-100">
-                    <Image 
-                      src="/images/ceo.jpg" 
-                      alt="Malaji Gopichand - Founder & Lead Systems Architect" 
-                      fill 
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      sizes="(max-width: 768px) 112px, 128px"
-                    />
+              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 lg:gap-7 mb-6 text-center sm:text-left">
+                {/* Arranged Executive Portrait Frame */}
+                <div className="relative w-40 sm:w-44 lg:w-48 aspect-[4/5] shrink-0 mx-auto sm:mx-0">
+                  <div className="relative w-full h-full p-2 rounded-2xl bg-white border-2 border-slate-200/90 shadow-md shadow-slate-200/60 ring-1 ring-slate-900/5 group-hover:border-primary/50 group-hover:shadow-lg transition-all duration-300">
+                    <div className="relative w-full h-full rounded-xl overflow-hidden bg-slate-100 border border-slate-200/80">
+                      <Image 
+                        src="/images/ceo.jpg" 
+                        alt="Malaji Gopichand - Founder & Lead Systems Architect" 
+                        fill 
+                        className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 640px) 160px, (max-width: 1024px) 176px, 192px"
+                        priority
+                      />
+                    </div>
+                    {/* Anchored Executive Badge */}
+                    <div className="absolute -bottom-2.5 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-white border border-slate-200 shadow-xs flex items-center gap-1.5 whitespace-nowrap z-10">
+                      <span className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse" />
+                      <span className="text-[10px] font-extrabold uppercase tracking-wider text-slate-800">Founder & CEO</span>
+                    </div>
                   </div>
                 </div>
 
-                <div>
-                  <h3 className="text-2xl font-black text-foreground tracking-tight">
+                {/* Identity & Direct Access */}
+                <div className="flex-1 min-w-0 pt-1">
+                  <h3 className="text-2xl lg:text-3xl font-black text-foreground tracking-tight">
                     Malaji Gopichand
                   </h3>
-                  <span className="inline-block px-3 py-0.5 rounded-full bg-blue-50 text-primary text-xs font-bold uppercase tracking-wider my-1.5 border border-blue-100">
-                    Founder & Lead Systems Architect
-                  </span>
-                  <p className="text-xs text-muted-foreground font-mono">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-primary text-xs font-bold uppercase tracking-wider my-2 border border-blue-100">
+                    <ShieldCheck size={13} className="text-primary shrink-0" />
+                    <span>Founder & Lead Systems Architect</span>
+                  </div>
+                  <p className="text-xs text-muted-foreground font-mono leading-relaxed mb-4">
                     Next.js • React Native • Node.js • Cloud Architecture
                   </p>
+
+                  <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 pt-1">
+                    <Link 
+                      href="https://www.linkedin.com/in/malajigopichand/" 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-slate-100 hover:bg-primary hover:text-white text-foreground transition-all text-xs font-bold shadow-xs cursor-pointer"
+                    >
+                      <span>LinkedIn Profile</span>
+                      <ArrowUpRight size={13} />
+                    </Link>
+
+                    <a 
+                      href="mailto:edenwebtechnologies@gmail.com" 
+                      className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-slate-100 hover:bg-primary hover:text-white text-foreground transition-all text-xs font-bold shadow-xs"
+                    >
+                      <Mail size={13} />
+                      <span>Email Gopichand</span>
+                    </a>
+                  </div>
                 </div>
               </div>
 
-              <blockquote className="p-4 rounded-2xl bg-slate-50/80 border border-border/60 text-xs sm:text-sm text-foreground/90 italic leading-relaxed mb-6">
+              <blockquote className="p-4 rounded-2xl bg-slate-50/80 border border-border/60 text-xs sm:text-sm text-foreground/90 italic leading-relaxed mb-5">
                 "We treat every client codebase as if our own capital was at stake. Clean architecture, strict type safety, and software that scales effortlessly."
               </blockquote>
 
-              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed mb-6">
+              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                 Leading engineering across 20+ shipped web and mobile products. Gopi works hands-on with founders to transform business requirements into robust, high-performing digital platforms.
               </p>
-            </div>
-
-            <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-border/60">
-              <Link 
-                href="https://www.linkedin.com/in/malajigopichand/" 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-slate-100 hover:bg-primary hover:text-white text-foreground transition-all text-xs font-bold shadow-xs cursor-pointer"
-              >
-                <span>LinkedIn Profile</span>
-                <ArrowUpRight size={14} />
-              </Link>
-
-              <a 
-                href="mailto:edenwebtechnologies@gmail.com" 
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-slate-100 hover:bg-primary hover:text-white text-foreground transition-all text-xs font-bold shadow-xs"
-              >
-                <Mail size={14} />
-                <span>Email Gopichand</span>
-              </a>
             </div>
           </div>
 
           {/* Co-Founder: Mercy */}
-          <div className="group p-8 sm:p-10 rounded-3xl bg-white border border-border/80 hover:border-primary/50 transition-all duration-300 shadow-xs hover:shadow-[0_16px_40px_rgba(37,99,235,0.08)] flex flex-col justify-between">
+          <div className="group p-6 sm:p-8 lg:p-9 rounded-3xl bg-white border border-border/80 hover:border-primary/50 transition-all duration-300 shadow-xs hover:shadow-[0_16px_40px_rgba(37,99,235,0.08)] flex flex-col justify-between">
             <div>
-              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 mb-6 text-center sm:text-left">
-                <div className="relative h-28 w-28 sm:h-32 sm:w-32 rounded-2xl overflow-hidden p-1 bg-gradient-to-tr from-cyan-400 via-blue-500 to-emerald-400 shrink-0 shadow-sm">
-                  <div className="relative w-full h-full rounded-xl overflow-hidden bg-slate-100">
-                    <Image 
-                      src="/images/co-ceo.jpg" 
-                      alt="Mercy - Co-Founder & Head of Operations" 
-                      fill 
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                      sizes="(max-width: 768px) 112px, 128px"
-                    />
+              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 lg:gap-7 mb-6 text-center sm:text-left">
+                {/* Arranged Executive Portrait Frame */}
+                <div className="relative w-40 sm:w-44 lg:w-48 aspect-[4/5] shrink-0 mx-auto sm:mx-0">
+                  <div className="relative w-full h-full p-2 rounded-2xl bg-white border-2 border-slate-200/90 shadow-md shadow-slate-200/60 ring-1 ring-slate-900/5 group-hover:border-primary/50 group-hover:shadow-lg transition-all duration-300">
+                    <div className="relative w-full h-full rounded-xl overflow-hidden bg-slate-100 border border-slate-200/80">
+                      <Image 
+                        src="/images/co-ceo.jpg" 
+                        alt="Mercy - Co-Founder & Head of Operations" 
+                        fill 
+                        className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                        sizes="(max-width: 640px) 160px, (max-width: 1024px) 176px, 192px"
+                      />
+                    </div>
+                    {/* Anchored Executive Badge */}
+                    <div className="absolute -bottom-2.5 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-white border border-slate-200 shadow-xs flex items-center gap-1.5 whitespace-nowrap z-10">
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                      <span className="text-[10px] font-extrabold uppercase tracking-wider text-slate-800">Co-Founder & COO</span>
+                    </div>
                   </div>
                 </div>
 
-                <div>
-                  <h3 className="text-2xl font-black text-foreground tracking-tight">
+                {/* Identity & Direct Access */}
+                <div className="flex-1 min-w-0 pt-1">
+                  <h3 className="text-2xl lg:text-3xl font-black text-foreground tracking-tight">
                     Mercy
                   </h3>
-                  <span className="inline-block px-3 py-0.5 rounded-full bg-blue-50 text-primary text-xs font-bold uppercase tracking-wider my-1.5 border border-blue-100">
-                    Co-Founder & Head of Operations
-                  </span>
-                  <p className="text-xs text-muted-foreground font-mono">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-primary text-xs font-bold uppercase tracking-wider my-2 border border-blue-100">
+                    <CheckCircle2 size={13} className="text-primary shrink-0" />
+                    <span>Co-Founder & Head of Operations</span>
+                  </div>
+                  <p className="text-xs text-muted-foreground font-mono leading-relaxed mb-4">
                     Sprint Delivery • Milestone Governance • Client Success
                   </p>
+
+                  <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 pt-1">
+                    <a 
+                      href="mailto:edenwebtechnologies@gmail.com" 
+                      className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-slate-100 hover:bg-primary hover:text-white text-foreground transition-all text-xs font-bold shadow-xs"
+                    >
+                      <Mail size={13} />
+                      <span>Email Mercy</span>
+                    </a>
+
+                    <a 
+                      href="https://wa.me/919705527264?text=Hi%20Mercy%2C%20I%20would%20like%20to%20discuss%20a%20new%20project%20with%20Eden." 
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-slate-100 hover:bg-emerald-600 hover:text-white text-foreground transition-all text-xs font-bold shadow-xs"
+                    >
+                      <span>WhatsApp Connect</span>
+                      <ArrowUpRight size={13} />
+                    </a>
+                  </div>
                 </div>
               </div>
 
-              <blockquote className="p-4 rounded-2xl bg-slate-50/80 border border-border/60 text-xs sm:text-sm text-foreground/90 italic leading-relaxed mb-6">
+              <blockquote className="p-4 rounded-2xl bg-slate-50/80 border border-border/60 text-xs sm:text-sm text-foreground/90 italic leading-relaxed mb-5">
                 "Predictability is our promise. Weekly Friday staging demos, zero surprise invoices, and direct, honest communication at every milestone."
               </blockquote>
 
-              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed mb-6">
+              <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
                 Managing sprint pipelines, cross-functional delivery, and milestone quality standards. Mercy ensures every build is delivered on schedule with total transparency.
               </p>
-            </div>
-
-            <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-border/60">
-              <a 
-                href="mailto:edenwebtechnologies@gmail.com" 
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-slate-100 hover:bg-primary hover:text-white text-foreground transition-all text-xs font-bold shadow-xs"
-              >
-                <Mail size={14} />
-                <span>Email Mercy</span>
-              </a>
-
-              <a 
-                href="https://wa.me/919705527264?text=Hi%20Mercy%2C%20I%20would%20like%20to%20discuss%20a%20new%20project%20with%20Eden." 
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-slate-100 hover:bg-emerald-600 hover:text-white text-foreground transition-all text-xs font-bold shadow-xs"
-              >
-                <span>WhatsApp Connect</span>
-                <ArrowUpRight size={14} />
-              </a>
             </div>
           </div>
 
