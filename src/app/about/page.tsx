@@ -50,7 +50,7 @@ const studioValues = [
 
 const studioStats = [
   { value: "20+", label: "Platforms Delivered", desc: "Across retail, healthcare, gym management, and custom software." },
-  { value: "100%", label: "In-House Engineering", desc: "Every line written by our senior technical team — zero outsourcing." },
+  { value: "100%", label: "In-House Engineering", desc: "Every line written by our senior technical team â€” zero outsourcing." },
   { value: "4.8 / 5", label: "Client Satisfaction", desc: "Consistent top ratings from startup founders and business directors." },
   { value: "0 hrs", label: "Surprise Billables", desc: "100% fixed milestone scopes agreed upon before work begins." }
 ];
@@ -63,30 +63,30 @@ export default function AboutPage() {
       <section className="pt-24 sm:pt-28 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full flex-grow">
         
         {/* ── Hero: Full-width dramatic header ── */}
-        <div className="relative mb-10 sm:mb-12 rounded-3xl overflow-hidden bg-slate-900 text-white shadow-xl">
+        <div className="relative mb-10 sm:mb-12 rounded-3xl overflow-hidden bg-white border border-border/80 shadow-sm">
           {/* Background glow orbs */}
-          <div className="absolute top-0 right-0 w-[500px] h-[350px] bg-blue-600/15 rounded-full blur-[100px] pointer-events-none" />
-          <div className="absolute bottom-0 left-0 w-[350px] h-[250px] bg-cyan-500/10 rounded-full blur-[80px] pointer-events-none" />
+          <div className="absolute top-0 right-0 w-[500px] h-[350px] bg-blue-100/50 rounded-full blur-[100px] pointer-events-none" />
+          <div className="absolute bottom-0 left-0 w-[350px] h-[250px] bg-cyan-100/50 rounded-full blur-[80px] pointer-events-none" />
 
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-0">
 
             {/* Left: headline + copy */}
             <div className="p-8 sm:p-10 lg:p-12 flex flex-col justify-between">
               <div>
-                <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-white/10 border border-white/15 text-white text-xs font-bold uppercase tracking-wider mb-5">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-100 text-primary text-xs font-bold uppercase tracking-wider mb-5">
                   <Sparkles size={12} />
                   <span>Our Story & Philosophy</span>
                 </div>
 
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-[1.12] mb-5">
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-foreground tracking-tight leading-[1.12] mb-5">
                   Engineered<br className="hidden sm:block" /> with rigor.{" "}
-                  <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-emerald-500 bg-clip-text text-transparent">
                     Built by founders.
                   </span>
                 </h1>
 
-                <p className="text-sm sm:text-base text-white/65 leading-relaxed max-w-lg mb-7">
-                  We founded Eden because we were tired of traditional agency bloat: endless meetings, junior contractors, and code that breaks the moment real traffic arrives. <span className="text-white font-semibold">Here is who builds your product.</span>
+                <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-lg mb-7">
+                  We founded Eden because we were tired of traditional agency bloat: endless meetings, junior contractors, and code that breaks the moment real traffic arrives. <span className="text-foreground font-semibold">Here is who builds your product.</span>
                 </p>
 
                 {/* Trust bullets */}
@@ -97,8 +97,8 @@ export default function AboutPage() {
                     "Live staging demo every Friday",
                     "Fixed scope, fixed price — guaranteed",
                   ].map((pt) => (
-                    <div key={pt} className="flex items-center gap-2.5 text-sm text-white/80">
-                      <CheckCircle2 size={14} className="text-emerald-400 shrink-0" />
+                    <div key={pt} className="flex items-center gap-2.5 text-sm text-foreground/80">
+                      <CheckCircle2 size={14} className="text-emerald-500 shrink-0" />
                       {pt}
                     </div>
                   ))}
@@ -109,13 +109,13 @@ export default function AboutPage() {
               <div className="mt-8 flex flex-wrap gap-3">
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white text-slate-900 text-sm font-bold hover:bg-blue-50 transition-all shadow-md"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-white text-sm font-bold hover:bg-primary/90 transition-all shadow-md"
                 >
                   Start a Project <ArrowRight size={15} />
                 </Link>
                 <Link
                   href="/work"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/10 border border-white/20 text-white text-sm font-bold hover:bg-white/15 transition-all"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white border border-border/80 text-foreground text-sm font-bold hover:bg-slate-50 transition-all shadow-sm"
                 >
                   See Our Work
                 </Link>
@@ -123,20 +123,20 @@ export default function AboutPage() {
             </div>
 
             {/* Right: Stats panel */}
-            <div className="border-t lg:border-t-0 lg:border-l border-white/10 grid grid-cols-2">
+            <div className="border-t lg:border-t-0 lg:border-l border-border/60 grid grid-cols-2 bg-slate-50/50">
               {studioStats.map((s, idx) => (
                 <div
                   key={idx}
-                  className={`p-6 sm:p-8 flex flex-col justify-between border-white/10 ${
+                  className={`p-6 sm:p-8 flex flex-col justify-between border-border/60 ${
                     idx === 0 ? "border-b border-r" :
                     idx === 1 ? "border-b" :
                     idx === 2 ? "border-r" : ""
                   }`}
                 >
                   <div>
-                    <span className="text-2xl sm:text-3xl font-black text-white tracking-tight block mb-1">{s.value}</span>
-                    <h4 className="text-[10px] font-bold uppercase tracking-widest text-cyan-400 mb-2">{s.label}</h4>
-                    <p className="text-xs text-white/45 leading-relaxed">{s.desc}</p>
+                    <span className="text-2xl sm:text-3xl font-black text-foreground tracking-tight block mb-1">{s.value}</span>
+                    <h4 className="text-[10px] font-bold uppercase tracking-widest text-primary mb-2">{s.label}</h4>
+                    <p className="text-xs text-muted-foreground leading-relaxed">{s.desc}</p>
                   </div>
                 </div>
               ))}
@@ -145,21 +145,21 @@ export default function AboutPage() {
         </div>
 
         {/* The Eden Manifesto / Origin Story */}
-        <div className="mb-10 sm:mb-12 rounded-3xl bg-slate-900 text-white overflow-hidden">
+        <div className="mb-10 sm:mb-12 rounded-3xl bg-white border border-border/80 shadow-sm overflow-hidden">
           <div className="grid grid-cols-1 lg:grid-cols-5">
-            {/* Left — dark headline panel */}
-            <div className="lg:col-span-2 p-6 sm:p-8 flex flex-col justify-between bg-blue-600/10 border-b lg:border-b-0 lg:border-r border-white/10">
+            {/* Left — headline panel */}
+            <div className="lg:col-span-2 p-6 sm:p-8 flex flex-col justify-between bg-slate-50/80 border-b lg:border-b-0 lg:border-r border-border/60">
               <div>
-                <div className="inline-flex items-center gap-2 px-3 py-0.5 rounded-full bg-white/10 border border-white/15 text-white text-xs font-bold uppercase tracking-wider mb-4">
+                <div className="inline-flex items-center gap-2 px-3 py-0.5 rounded-full bg-blue-50 border border-blue-100 text-primary text-xs font-bold uppercase tracking-wider mb-4">
                   <span>Why We Started Eden</span>
                 </div>
-                <h2 className="text-2xl sm:text-3xl font-black tracking-tight leading-[1.2] mb-4">
+                <h2 className="text-2xl sm:text-3xl font-black text-foreground tracking-tight leading-[1.2] mb-4">
                   Traditional agencies are{" "}
-                  <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">
                     fundamentally broken.
                   </span>
                 </h2>
-                <p className="text-sm text-white/60 leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   We built Eden as the antidote — a studio where the founders are the engineers, and every client speaks directly with the people writing their code.
                 </p>
               </div>
@@ -169,8 +169,8 @@ export default function AboutPage() {
                   "No offshore contractors",
                   "No surprise invoices — ever",
                 ].map((pt) => (
-                  <div key={pt} className="flex items-center gap-2.5 text-xs font-semibold text-white/80">
-                    <CheckCircle2 size={13} className="text-emerald-400 shrink-0" />
+                  <div key={pt} className="flex items-center gap-2.5 text-xs font-semibold text-foreground/80">
+                    <CheckCircle2 size={13} className="text-emerald-500 shrink-0" />
                     {pt}
                   </div>
                 ))}
@@ -180,41 +180,41 @@ export default function AboutPage() {
             {/* Right — story paragraphs */}
             <div className="lg:col-span-3 p-6 sm:p-8 flex flex-col gap-5 justify-center">
               <div className="flex gap-3">
-                <span className="w-7 h-7 rounded-lg bg-red-500/15 border border-red-500/20 flex items-center justify-center shrink-0 mt-0.5">
-                  <span className="text-red-400 text-sm font-black">✕</span>
+                <span className="w-7 h-7 rounded-lg bg-red-50 border border-red-100 flex items-center justify-center shrink-0 mt-0.5">
+                  <span className="text-red-500 text-sm font-black">✕</span>
                 </span>
                 <div>
-                  <h4 className="text-sm font-bold text-white mb-1">The agency model they sell you</h4>
-                  <p className="text-xs text-white/55 leading-relaxed">
+                  <h4 className="text-sm font-bold text-foreground mb-1">The agency model they sell you</h4>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
                     A polished sales rep makes sweeping promises. Your project is handed to a non-technical account manager. Actual coding is quietly offshored to junior contractors you'll never meet. Result: delayed timelines, bloated invoices, and fragile code that breaks under real traffic.
                   </p>
                 </div>
               </div>
 
-              <div className="h-px bg-white/10" />
+              <div className="h-px bg-border/60" />
 
               <div className="flex gap-3">
-                <span className="w-7 h-7 rounded-lg bg-emerald-500/15 border border-emerald-500/20 flex items-center justify-center shrink-0 mt-0.5">
-                  <CheckCircle2 size={14} className="text-emerald-400" />
+                <span className="w-7 h-7 rounded-lg bg-emerald-50 border border-emerald-100 flex items-center justify-center shrink-0 mt-0.5">
+                  <CheckCircle2 size={14} className="text-emerald-600" />
                 </span>
                 <div>
-                  <h4 className="text-sm font-bold text-white mb-1">The Eden model we built instead</h4>
-                  <p className="text-xs text-white/55 leading-relaxed">
+                  <h4 className="text-sm font-bold text-foreground mb-1">The Eden model we built instead</h4>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
                     You speak directly with the systems architects writing your code. Every sprint is disciplined, every milestone is fixed in scope, and every Friday you receive a live staging demo on your phone to verify real progress before a single rupee of the next milestone is invoiced.
                   </p>
                 </div>
               </div>
 
-              <div className="h-px bg-white/10" />
+              <div className="h-px bg-border/60" />
 
               <div className="flex gap-3">
-                <span className="w-7 h-7 rounded-lg bg-blue-500/15 border border-blue-500/20 flex items-center justify-center shrink-0 mt-0.5">
-                  <Terminal size={13} className="text-blue-400" />
+                <span className="w-7 h-7 rounded-lg bg-blue-50 border border-blue-100 flex items-center justify-center shrink-0 mt-0.5">
+                  <Terminal size={13} className="text-blue-600" />
                 </span>
                 <div>
-                  <h4 className="text-sm font-bold text-white mb-1">Our standard — no exceptions</h4>
-                  <p className="text-xs text-white/55 leading-relaxed">
-                    Whether it's a medical clinic appointment system, a multi-store grocery e-cart, or a gym management platform — our bar is the same: <span className="text-white font-semibold">world-class engineering, on time, with zero surprises.</span>
+                  <h4 className="text-sm font-bold text-foreground mb-1">Our standard — no exceptions</h4>
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    Whether it's a medical clinic appointment system, a multi-store grocery e-cart, or a gym management platform — our bar is the same: <span className="text-foreground font-semibold">world-class engineering, on time, with zero surprises.</span>
                   </p>
                 </div>
               </div>
@@ -269,7 +269,7 @@ export default function AboutPage() {
                       <span>Founder & Lead Systems Architect</span>
                     </div>
                     <p className="text-xs text-muted-foreground font-mono leading-relaxed mb-3">
-                      Next.js • React Native • Node.js • Cloud Architecture
+                      Next.js â€¢ React Native â€¢ Node.js â€¢ Cloud Architecture
                     </p>
 
                     <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
@@ -338,7 +338,7 @@ export default function AboutPage() {
                       <span>Co-Founder & Head of Operations</span>
                     </div>
                     <p className="text-xs text-muted-foreground font-mono leading-relaxed mb-3">
-                      Sprint Delivery • Milestone Governance • Client Success
+                      Sprint Delivery â€¢ Milestone Governance â€¢ Client Success
                     </p>
 
                     <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
@@ -467,3 +467,4 @@ export default function AboutPage() {
     </main>
   );
 }
+
