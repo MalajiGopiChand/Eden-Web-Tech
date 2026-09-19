@@ -8,7 +8,7 @@ export default function TechnologiesSection() {
   const row2 = [...technologies.slice().reverse(), ...technologies.slice().reverse(), ...technologies.slice().reverse()];
 
   return (
-    <section className="py-20 bg-card border-y border-border relative overflow-hidden">
+    <section className="py-20 bg-transparent border-y border-border/60 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 text-center">
         <h2 className="text-sm font-bold tracking-widest text-primary uppercase mb-2">
           Technology Stack
@@ -21,8 +21,8 @@ export default function TechnologiesSection() {
       {/* Marquee Wrapper with side fade gradients */}
       <div className="relative w-full overflow-hidden py-4 flex flex-col gap-4">
         {/* Left & Right Gradient Shadows (Magic UI signature) */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-24 md:w-48 bg-gradient-to-r from-card to-transparent z-10" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-24 md:w-48 bg-gradient-to-l from-card to-transparent z-10" />
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-24 md:w-48 bg-gradient-to-r from-background to-transparent z-10" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-24 md:w-48 bg-gradient-to-l from-background to-transparent z-10" />
 
         {/* Row 1: Scrolling Left */}
         <motion.div

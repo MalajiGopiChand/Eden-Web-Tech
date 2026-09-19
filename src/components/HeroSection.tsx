@@ -14,7 +14,7 @@ export default function HeroSection() {
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center pt-28 pb-16 overflow-hidden bg-background">
+    <section className="relative min-h-screen flex items-center pt-28 pb-16 overflow-hidden bg-transparent">
       {/* Soft Ambient Radial Lights */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-[1200px] pointer-events-none opacity-50">
         <div className="absolute top-[15%] left-[15%] w-[450px] h-[450px] rounded-full bg-primary/20 blur-[130px]" />

@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export default function CTASection() {
   return (
-    <section className="py-28 bg-card relative overflow-hidden border-t border-border">
+    <section className="py-28 bg-transparent relative overflow-hidden border-t border-border/60">
       {/* Aceternity style Animated Radial Glow */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[500px] rounded-full bg-gradient-to-r from-primary/15 via-accent/15 to-indigo-500/15 blur-[120px]"></div>
