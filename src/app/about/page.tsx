@@ -60,34 +60,34 @@ export default function AboutPage() {
     <main className="flex min-h-screen flex-col bg-transparent">
       <Navbar />
 
-      <section className="pt-28 sm:pt-36 pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full flex-grow">
+      <section className="pt-24 sm:pt-28 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full flex-grow">
         
         {/* Page Hero Header */}
-        <div className="max-w-4xl mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-primary text-xs font-bold uppercase tracking-wider mb-4 shadow-xs">
+        <div className="max-w-4xl mb-8 sm:mb-10">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-100 text-primary text-xs font-bold uppercase tracking-wider mb-2.5 shadow-xs">
             <Sparkles size={13} />
             <span>Our Story & Philosophy</span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-foreground tracking-tight mb-5 leading-[1.12]">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-foreground tracking-tight mb-3 leading-[1.12]">
             We build software with the craft of artisans and the{" "}
             <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-emerald-500 bg-clip-text text-transparent">
               speed of startups.
             </span>
           </h1>
 
-          <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-2xl">
+          <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-2xl">
             Eden Technologies is an independent software studio founded by senior engineers. We partner directly with founders and business owners to design, architect, and scale high-impact web and mobile products.
           </p>
         </div>
 
         {/* Studio Stats Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 mb-10 sm:mb-12">
           {studioStats.map((s, idx) => (
-            <div key={idx} className="p-6 rounded-3xl bg-white border border-border/80 shadow-xs flex flex-col justify-between">
+            <div key={idx} className="p-5 rounded-2xl bg-white border border-border/80 shadow-xs flex flex-col justify-between">
               <div>
-                <span className="text-3xl sm:text-4xl font-black text-foreground tracking-tight">{s.value}</span>
-                <h4 className="text-xs font-bold uppercase tracking-wider text-primary mt-1 mb-2">{s.label}</h4>
+                <span className="text-2xl sm:text-3xl font-black text-foreground tracking-tight">{s.value}</span>
+                <h4 className="text-xs font-bold uppercase tracking-wider text-primary mt-1 mb-1.5">{s.label}</h4>
                 <p className="text-xs text-muted-foreground leading-relaxed">{s.desc}</p>
               </div>
             </div>
@@ -95,17 +95,17 @@ export default function AboutPage() {
         </div>
 
         {/* The Eden Manifesto / Origin Story */}
-        <div className="mb-20 p-8 sm:p-12 rounded-3xl bg-slate-50/80 border border-border/80">
+        <div className="mb-10 sm:mb-12 p-6 sm:p-8 rounded-3xl bg-slate-50/80 border border-border/80">
           <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-primary text-xs font-bold uppercase tracking-wider mb-4">
+            <div className="inline-flex items-center gap-2 px-3 py-0.5 rounded-full bg-blue-50 border border-blue-100 text-primary text-xs font-bold uppercase tracking-wider mb-3">
               <span>Why We Started Eden</span>
             </div>
 
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-foreground tracking-tight mb-6">
+            <h2 className="text-2xl sm:text-3xl font-black text-foreground tracking-tight mb-4">
               Traditional software agencies are fundamentally broken.
             </h2>
 
-            <div className="space-y-4 text-sm sm:text-base text-muted-foreground leading-relaxed">
+            <div className="space-y-3 text-xs sm:text-sm text-muted-foreground leading-relaxed">
               <p>
                 In typical digital agencies, sales reps make sweeping promises, pass your project to non-technical account managers, who then secretly offshore the actual coding to inexperienced junior contractors. The end result is predictable: delayed timelines, bloated invoices, fragile code, and frustration.
               </p>
@@ -120,36 +120,36 @@ export default function AboutPage() {
         </div>
 
         {/* Leadership Duo Section */}
-        <div className="mb-20">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-foreground tracking-tight mb-2">
+        <div className="mb-10 sm:mb-12">
+          <div className="text-center max-w-2xl mx-auto mb-6 sm:mb-8">
+            <h2 className="text-2xl sm:text-3xl font-black text-foreground tracking-tight mb-1.5">
               Studio Leadership
             </h2>
-            <p className="text-sm sm:text-base text-muted-foreground">
+            <p className="text-xs sm:text-sm text-muted-foreground">
               Meet the founders leading engineering and operations at Eden.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-6">
             {/* Founder: Gopichand */}
-            <div className="group p-6 sm:p-8 lg:p-9 rounded-3xl bg-white border border-border/80 hover:border-primary/50 transition-all duration-300 shadow-xs hover:shadow-[0_16px_40px_rgba(37,99,235,0.08)] flex flex-col justify-between">
+            <div className="group p-5 sm:p-6 lg:p-7 rounded-3xl bg-white border border-border/80 hover:border-primary/50 transition-all duration-300 shadow-xs hover:shadow-[0_16px_40px_rgba(37,99,235,0.08)] flex flex-col justify-between">
               <div>
-                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 lg:gap-7 mb-6 text-center sm:text-left">
+                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-5 mb-4 text-center sm:text-left">
                   {/* Arranged Executive Portrait Frame */}
-                  <div className="relative w-40 sm:w-44 lg:w-48 aspect-[4/5] shrink-0 mx-auto sm:mx-0">
-                    <div className="relative w-full h-full p-2 rounded-2xl bg-white border-2 border-slate-200/90 shadow-md shadow-slate-200/60 ring-1 ring-slate-900/5 group-hover:border-primary/50 group-hover:shadow-lg transition-all duration-300">
+                  <div className="relative w-32 sm:w-36 lg:w-40 aspect-[4/5] shrink-0 mx-auto sm:mx-0">
+                    <div className="relative w-full h-full p-1.5 rounded-2xl bg-white border-2 border-slate-200/90 shadow-md shadow-slate-200/60 ring-1 ring-slate-900/5 group-hover:border-primary/50 group-hover:shadow-lg transition-all duration-300">
                       <div className="relative w-full h-full rounded-xl overflow-hidden bg-slate-100 border border-slate-200/80">
                         <Image 
                           src="/images/ceo.jpg" 
                           alt="Malaji Gopichand - Founder & Lead Systems Architect" 
                           fill 
                           className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                          sizes="(max-width: 640px) 160px, (max-width: 1024px) 176px, 192px"
+                          sizes="(max-width: 640px) 130px, (max-width: 1024px) 144px, 160px"
                           priority
                         />
                       </div>
                       {/* Anchored Executive Badge */}
-                      <div className="absolute -bottom-2.5 left-1/2 -translate-x-1/2 px-3 py-0.5 rounded-full bg-white border border-slate-200 shadow-xs flex items-center gap-1.5 whitespace-nowrap z-10">
+                      <div className="absolute -bottom-2.5 left-1/2 -translate-x-1/2 px-2.5 py-0.5 rounded-full bg-white border border-slate-200 shadow-xs flex items-center gap-1.5 whitespace-nowrap z-10">
                         <span className="w-1.5 h-1.5 rounded-full bg-blue-600 animate-pulse" />
                         <span className="text-[10px] font-extrabold uppercase tracking-wider text-slate-800">Founder & CEO</span>
                       </div>
@@ -157,41 +157,41 @@ export default function AboutPage() {
                   </div>
 
                   {/* Identity & Direct Access */}
-                  <div className="flex-1 min-w-0 pt-1">
-                    <h3 className="text-2xl lg:text-3xl font-black text-foreground tracking-tight">
+                  <div className="flex-1 min-w-0 pt-0.5">
+                    <h3 className="text-xl sm:text-2xl font-black text-foreground tracking-tight">
                       Malaji Gopichand
                     </h3>
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-primary text-xs font-bold uppercase tracking-wider my-2 border border-blue-100">
+                    <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-blue-50 text-primary text-xs font-bold uppercase tracking-wider my-1.5 border border-blue-100">
                       <ShieldCheck size={13} className="text-primary shrink-0" />
                       <span>Founder & Lead Systems Architect</span>
                     </div>
-                    <p className="text-xs text-muted-foreground font-mono leading-relaxed mb-4">
+                    <p className="text-xs text-muted-foreground font-mono leading-relaxed mb-3">
                       Next.js • React Native • Node.js • Cloud Architecture
                     </p>
 
-                    <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 pt-1">
+                    <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
                       <Link 
                         href="https://www.linkedin.com/in/malajigopichand/" 
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-slate-100 hover:bg-primary hover:text-white text-foreground transition-all text-xs font-bold shadow-xs cursor-pointer"
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-primary hover:text-white text-foreground transition-all text-xs font-bold shadow-xs cursor-pointer"
                       >
-                        <span>LinkedIn Profile</span>
+                        <span>LinkedIn</span>
                         <ArrowUpRight size={13} />
                       </Link>
 
                       <a 
                         href="mailto:edenwebtechnologies@gmail.com" 
-                        className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-slate-100 hover:bg-primary hover:text-white text-foreground transition-all text-xs font-bold shadow-xs"
+                        className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-100 hover:bg-primary hover:text-white text-foreground transition-all text-xs font-bold shadow-xs"
                       >
                         <Mail size={13} />
-                        <span>Email Gopichand</span>
+                        <span>Email</span>
                       </a>
                     </div>
                   </div>
                 </div>
 
-                <blockquote className="p-4 rounded-2xl bg-slate-50/80 border border-border/60 text-xs sm:text-sm text-foreground/90 italic leading-relaxed mb-5">
+                <blockquote className="p-3.5 rounded-2xl bg-slate-50/80 border border-border/60 text-xs sm:text-sm text-foreground/90 italic leading-relaxed mb-3">
                   "Every line of code is an investment in your company's scalability. We engineer with strict type safety, zero bloat, and long-term maintainability."
                 </blockquote>
 
@@ -202,12 +202,12 @@ export default function AboutPage() {
             </div>
 
             {/* Co-Founder: Mercy */}
-            <div className="group p-6 sm:p-8 lg:p-9 rounded-3xl bg-white border border-border/80 hover:border-primary/50 transition-all duration-300 shadow-xs hover:shadow-[0_16px_40px_rgba(37,99,235,0.08)] flex flex-col justify-between">
+            <div className="group p-5 sm:p-6 lg:p-7 rounded-3xl bg-white border border-border/80 hover:border-primary/50 transition-all duration-300 shadow-xs hover:shadow-[0_16px_40px_rgba(37,99,235,0.08)] flex flex-col justify-between">
               <div>
-                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6 lg:gap-7 mb-6 text-center sm:text-left">
+                <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-5 mb-4 text-center sm:text-left">
                   {/* Arranged Executive Portrait Frame */}
-                  <div className="relative w-40 sm:w-44 lg:w-48 aspect-[4/5] shrink-0 mx-auto sm:mx-0">
-                    <div className="relative w-full h-full p-2 rounded-2xl bg-white border-2 border-slate-200/90 shadow-md shadow-slate-200/60 ring-1 ring-slate-900/5 group-hover:border-primary/50 group-hover:shadow-lg transition-all duration-300">
+                  <div className="relative w-32 sm:w-36 lg:w-40 aspect-[4/5] shrink-0 mx-auto sm:mx-0">
+                    <div className="relative w-full h-full p-1.5 rounded-2xl bg-white border-2 border-slate-200/90 shadow-md shadow-slate-200/60 ring-1 ring-slate-900/5 group-hover:border-primary/50 group-hover:shadow-lg transition-all duration-300">
                       <div className="relative w-full h-full rounded-xl overflow-hidden bg-slate-100 border border-slate-200/80">
                         <Image 
                           src="/images/co-ceo.jpg" 
@@ -226,19 +226,19 @@ export default function AboutPage() {
                   </div>
 
                   {/* Identity & Direct Access */}
-                  <div className="flex-1 min-w-0 pt-1">
-                    <h3 className="text-2xl lg:text-3xl font-black text-foreground tracking-tight">
+                  <div className="flex-1 min-w-0 pt-0.5">
+                    <h3 className="text-xl lg:text-2xl font-black text-foreground tracking-tight">
                       Mercy
                     </h3>
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-primary text-xs font-bold uppercase tracking-wider my-2 border border-blue-100">
+                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-50 text-primary text-xs font-bold uppercase tracking-wider my-1.5 border border-blue-100">
                       <CheckCircle2 size={13} className="text-primary shrink-0" />
                       <span>Co-Founder & Head of Operations</span>
                     </div>
-                    <p className="text-xs text-muted-foreground font-mono leading-relaxed mb-4">
+                    <p className="text-xs text-muted-foreground font-mono leading-relaxed mb-3">
                       Sprint Delivery • Milestone Governance • Client Success
                     </p>
 
-                    <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 pt-1">
+                    <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
                       <a 
                         href="mailto:edenwebtechnologies@gmail.com" 
                         className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-slate-100 hover:bg-primary hover:text-white text-foreground transition-all text-xs font-bold shadow-xs"
@@ -260,7 +260,7 @@ export default function AboutPage() {
                   </div>
                 </div>
 
-                <blockquote className="p-4 rounded-2xl bg-slate-50/80 border border-border/60 text-xs sm:text-sm text-foreground/90 italic leading-relaxed mb-5">
+                <blockquote className="p-3.5 rounded-2xl bg-slate-50/80 border border-border/60 text-xs sm:text-sm text-foreground/90 italic leading-relaxed mb-3">
                   "Predictability is our promise. Weekly Friday staging demos, zero surprise invoices, and direct, honest communication at every milestone."
                 </blockquote>
 
@@ -273,8 +273,8 @@ export default function AboutPage() {
         </div>
 
         {/* Studio Core Values */}
-        <div className="mb-20">
-          <div className="text-center max-w-2xl mx-auto mb-10">
+        <div className="mb-10 sm:mb-12">
+          <div className="text-center max-w-2xl mx-auto mb-6 sm:mb-8">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-foreground tracking-tight mb-2">
               Our Core Principles
             </h2>
@@ -283,10 +283,10 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5">
             {studioValues.map((v) => (
-              <div key={v.number} className="p-7 sm:p-8 rounded-3xl bg-white border border-border/80 shadow-xs flex items-start gap-4">
-                <span className="w-10 h-10 rounded-2xl bg-blue-50 text-primary font-mono font-bold text-sm flex items-center justify-center shrink-0 border border-blue-100">
+              <div key={v.number} className="p-5 sm:p-6 rounded-2xl bg-white border border-border/80 shadow-xs flex items-start gap-4">
+                <span className="w-9 h-9 rounded-xl bg-blue-50 text-primary font-mono font-bold text-sm flex items-center justify-center shrink-0 border border-blue-100">
                   {v.number}
                 </span>
                 <div>
@@ -299,10 +299,10 @@ export default function AboutPage() {
         </div>
 
         {/* Regional Hubs & Presence */}
-        <div className="mb-20 p-8 sm:p-10 rounded-3xl bg-white border border-border/80 shadow-xs">
-          <div className="flex items-center gap-3 mb-4">
-            <div className="w-10 h-10 rounded-2xl bg-blue-50 text-primary flex items-center justify-center shrink-0">
-              <MapPin size={20} />
+        <div className="mb-10 sm:mb-12 p-6 sm:p-8 rounded-3xl bg-white border border-border/80 shadow-xs">
+          <div className="flex items-center gap-3 mb-3.5">
+            <div className="w-9 h-9 rounded-xl bg-blue-50 text-primary flex items-center justify-center shrink-0">
+              <MapPin size={18} />
             </div>
             <div>
               <h3 className="text-xl font-black text-foreground">Our Operating Hubs</h3>
@@ -310,20 +310,20 @@ export default function AboutPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-4 border-t border-border/60">
-            <div className="p-4 rounded-2xl bg-slate-50 border border-border/60">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-3.5 border-t border-border/60">
+            <div className="p-3.5 rounded-2xl bg-slate-50 border border-border/60">
               <span className="text-xs font-mono font-bold text-primary uppercase tracking-wider block mb-1">Headquarters</span>
               <h4 className="text-base font-bold text-foreground">Vijayawada</h4>
               <p className="text-xs text-muted-foreground mt-0.5">Andhra Pradesh, India</p>
             </div>
 
-            <div className="p-4 rounded-2xl bg-slate-50 border border-border/60">
+            <div className="p-3.5 rounded-2xl bg-slate-50 border border-border/60">
               <span className="text-xs font-mono font-bold text-primary uppercase tracking-wider block mb-1">Engineering Hub</span>
               <h4 className="text-base font-bold text-foreground">Hyderabad</h4>
               <p className="text-xs text-muted-foreground mt-0.5">Telangana, India</p>
             </div>
 
-            <div className="p-4 rounded-2xl bg-slate-50 border border-border/60">
+            <div className="p-3.5 rounded-2xl bg-slate-50 border border-border/60">
               <span className="text-xs font-mono font-bold text-primary uppercase tracking-wider block mb-1">Product Hub</span>
               <h4 className="text-base font-bold text-foreground">Bangalore</h4>
               <p className="text-xs text-muted-foreground mt-0.5">Karnataka, India</p>

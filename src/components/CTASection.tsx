@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export default function CTASection() {
   return (
-    <section className="py-24 bg-transparent relative overflow-hidden border-t border-border/60">
+    <section className="py-12 sm:py-16 bg-transparent relative overflow-hidden border-t border-border/60">
       {/* Gentle ambient light aura */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-40">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[450px] rounded-full bg-gradient-to-r from-blue-400/15 via-cyan-400/15 to-emerald-400/15 blur-[120px]" />

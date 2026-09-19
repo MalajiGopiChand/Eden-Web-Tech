@@ -102,7 +102,7 @@ function ServiceCard({ service, index }: { service: (typeof services)[number]; i
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="py-24 bg-transparent relative overflow-hidden">
+    <section id="services" className="py-12 sm:py-16 bg-transparent relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Human Section Header */}
@@ -111,7 +111,7 @@ export default function ServicesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-40px" }}
           transition={{ duration: 0.6 }}
-          className="mb-16 max-w-3xl"
+          className="mb-10 max-w-3xl"
         >
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-primary text-xs font-bold uppercase tracking-wider mb-4">
             <span>What We Do Best</span>

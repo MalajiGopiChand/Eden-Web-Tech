@@ -62,7 +62,7 @@ export default function HeroSection() {
   const activeProject = featuredProjects[activeTab];
 
   return (
-    <section className="relative min-h-[92vh] flex items-center pt-32 pb-20 overflow-hidden bg-transparent">
+    <section className="relative min-h-[92vh] flex items-center pt-20 pb-14 overflow-hidden bg-transparent">
       {/* Subtle ambient light aura */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-7xl pointer-events-none opacity-40">
         <div className="absolute top-[8%] left-[10%] w-[550px] h-[550px] rounded-full bg-blue-400/10 blur-[140px]" />

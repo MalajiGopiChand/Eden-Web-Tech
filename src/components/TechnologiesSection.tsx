@@ -8,13 +8,13 @@ export default function TechnologiesSection() {
   const row2 = [...technologies.slice().reverse(), ...technologies.slice().reverse(), ...technologies.slice().reverse()];
 
   return (
-    <section className="py-20 bg-transparent border-y border-border/60 relative overflow-hidden">
+    <section className="py-10 sm:py-14 bg-transparent border-y border-border/60 relative overflow-hidden">
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-40px" }}
         transition={{ duration: 0.6 }}
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 text-center"
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8 text-center"
       >
         <h2 className="text-sm font-bold tracking-widest text-primary uppercase mb-2">
           Technology Stack

@@ -57,11 +57,11 @@ export default function ProcessSection() {
   const [activeStepIndex, setActiveStepIndex] = useState(0);
 
   return (
-    <section id="process" className="py-24 bg-transparent relative overflow-hidden">
+    <section id="process" className="py-12 sm:py-16 bg-transparent relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Human Section Header */}
-        <div className="mb-14 text-center max-w-3xl mx-auto">
+        <div className="mb-8 sm:mb-10 text-center max-w-3xl mx-auto">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-primary text-xs font-bold uppercase tracking-wider mb-4">
             <span>How We Work</span>
           </div>
@@ -134,7 +134,7 @@ export default function ProcessSection() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -12 }}
                 transition={{ duration: 0.25 }}
-                className="mb-14 p-6 sm:p-8 lg:p-10 rounded-3xl bg-white border border-blue-100 shadow-[0_12px_36px_rgba(0,0,0,0.04)] relative overflow-hidden"
+                className="mb-8 sm:mb-10 p-6 sm:p-8 lg:p-10 rounded-3xl bg-white border border-blue-100 shadow-[0_12px_36px_rgba(0,0,0,0.04)] relative overflow-hidden"
               >
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch relative z-10">
                   {/* Left: Phase Info */}
@@ -296,7 +296,7 @@ export default function ProcessSection() {
         </div>
 
         {/* Full Methodology Link Button */}
-        <div className="mt-12 text-center">
+        <div className="mt-8 text-center">
           <Link
             href="/process"
             className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white hover:bg-slate-50 border border-border/80 hover:border-primary/50 text-foreground hover:text-primary text-xs sm:text-sm font-bold transition-all shadow-xs hover:shadow-sm group cursor-pointer"
