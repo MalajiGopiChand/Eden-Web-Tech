@@ -10,22 +10,31 @@ export default function HeroSection() {
 
   const featuredProjects = [
     {
-      name: "NexaPay Global",
-      category: "FinTech & Payments",
-      tagline: "Next-gen cross-border treasury & liquidity management for modern global enterprises.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80",
-      slug: "nexapay-global",
-      tech: ["Next.js", "TypeScript", "PostgreSQL", "Stripe Connect"],
-      highlight: "$140M+ Processed"
+      name: "PulseFit Gym",
+      category: "Fitness & Gym Centers",
+      tagline: "All-in-one gym membership pass, trainer booking & automated recurring billing.",
+      image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1600&q=80",
+      slug: "pulsefit-gym",
+      tech: ["Next.js", "TypeScript", "PostgreSQL", "Stripe Recurring"],
+      highlight: "+42% Renewals"
     },
     {
-      name: "Aura Telehealth",
-      category: "Healthcare & Biotech",
-      tagline: "HIPAA-compliant video triage, smart scheduling, and instant prescription routing.",
+      name: "CarePoint Clinic",
+      category: "Healthcare & Clinics",
+      tagline: "Token-based doctor appointments, live waiting queue & digital prescription vault.",
       image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1600&q=80",
-      slug: "aura-health-ai",
-      tech: ["React Native", "WebRTC", "FastAPI", "Python"],
-      highlight: "85,000+ Patients"
+      slug: "carepoint-medical",
+      tech: ["React Native", "WebRTC", "Node.js", "PostgreSQL"],
+      highlight: "12,000+ Bookings"
+    },
+    {
+      name: "QuickMart E-Cart",
+      category: "Retail & Supermarkets",
+      tagline: "Fast grocery e-cart ordering, barcode POS billing & WhatsApp delivery receipts.",
+      image: "https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&w=1600&q=80",
+      slug: "quickmart-ecart",
+      tech: ["Next.js", "TypeScript", "MongoDB", "WhatsApp API"],
+      highlight: "600+ Daily Orders"
     },
     {
       name: "Lumina Living",
@@ -35,15 +44,6 @@ export default function HeroSection() {
       slug: "lumina-living",
       tech: ["Next.js", "Three.js", "Shopify", "Stripe"],
       highlight: "+38% Conversion"
-    },
-    {
-      name: "Strata Cloud",
-      category: "Enterprise Cloud SaaS",
-      tagline: "Multi-cloud observability, automated anomaly detection, & unified telemetry.",
-      image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1600&q=80",
-      slug: "strata-cloud-intelligence",
-      tech: ["React", "TypeScript", "ClickHouse", "Go"],
-      highlight: "-58% MTTR"
     },
   ];
 

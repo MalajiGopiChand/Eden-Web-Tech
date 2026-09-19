@@ -29,116 +29,146 @@ export interface Project {
 export const projects: Project[] = [
   {
     id: "proj-1",
-    slug: "nexapay-global",
-    title: "NexaPay Global Banking",
-    category: "Custom Software",
-    description: "An enterprise-grade cross-border payment platform enabling multi-currency corporate treasury, instant remittances, and automated ledger reconciliation.",
-    industry: "FinTech & Digital Banking",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80",
-    showcaseImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80",
-    technologies: ["Next.js 15", "TypeScript", "Node.js", "PostgreSQL", "Tailwind CSS"],
+    slug: "pulsefit-gym",
+    title: "PulseFit Gym & Athletic Club",
+    category: "Websites",
+    description: "An all-in-one gym membership portal, workout scheduler, and automated recurring billing system built for multi-branch fitness centers.",
+    industry: "Fitness & Gym Centers",
+    image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1600&q=80",
+    showcaseImage: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1600&q=80",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "PostgreSQL", "Stripe Recurring"],
     caseStudy: {
-      challenge: "Legacy cross-border banking rails suffered from 2–3 day transaction delays, manual ledger errors, and lack of real-time foreign exchange transparency for enterprise import/export clients.",
-      solution: "Engineered a low-latency financial operations platform processing microsecond transactions with automated FX hedging, role-based treasury controls, and biometric authorization.",
-      designProcess: "Created a high-density financial analytics interface in Figma with dark/light mode parity, accessible data tables, and interactive cash flow projection charts.",
-      developmentProcess: "Architected event-driven microservices on Node.js and PostgreSQL with bank-grade encryption (AES-256), processing real-time SWIFT and SEPA instant network rails.",
-      keyFeatures: ["Multi-Currency Treasury Accounts", "Real-Time SWIFT & SEPA Settlement", "Automated FX Hedging Algorithms", "Role-Based Maker-Checker Approvals"],
-      results: "Processed $140M+ in international corporate volume in the first two quarters with zero downtime and 99.999% ledger accuracy."
+      challenge: "A growing fitness studio with 800+ members struggled with manual paper attendance logs, missed membership renewal payments, and chaotic personal trainer booking over phone calls.",
+      solution: "Engineered a responsive member portal and trainer dashboard featuring contactless QR code check-in, automated monthly subscription renewals, and an interactive class scheduler.",
+      designProcess: "Designed an energetic, high-contrast dark/smoke UI with tactile buttons, real-time trainer availability calendars, and a mobile-first member workout log.",
+      developmentProcess: "Built on Next.js with server-side rendering for sub-second load times, integrated with Razorpay/Stripe automated webhooks for subscription billing and instant WhatsApp renewal receipts.",
+      keyFeatures: ["Member Digital QR Pass & Check-In", "Automated Recurring Membership Billing", "Live Trainer & Class Slot Booking", "Personal Workout & Diet Log"],
+      results: "Increased membership renewal retention by 42%, eliminated 100% of front-desk paper logs, and onboarded 1,400+ active members across 2 gym branches.",
+      testimonial: {
+        client: "Vikram Singh",
+        role: "Founder & Head Coach, PulseFit Athletic Club",
+        quote: "Eden built our gym website and member booking app from scratch. Our members book training slots and renew memberships right from their phones. Monthly renewals increased by 42% and our front desk is completely paperless."
+      }
     }
   },
   {
     id: "proj-2",
-    slug: "aura-health-ai",
-    title: "Aura Telehealth & Diagnostics",
+    slug: "carepoint-medical",
+    title: "CarePoint Medical Clinic & Diagnostics",
     category: "Mobile Apps",
-    description: "A comprehensive digital health companion offering HD video consultations, wearable biometric syncing, and AI-assisted clinical triage.",
-    industry: "Healthcare & Biotech",
+    description: "A HIPAA-compliant patient appointment booking, tele-consultation, and digital prescription platform connecting clinics, doctors, and diagnostics labs.",
+    industry: "Healthcare & Medical Clinics",
     image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1600&q=80",
     showcaseImage: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1600&q=80",
-    technologies: ["React Native", "GraphQL", "Python", "WebRTC", "PostgreSQL"],
+    technologies: ["React Native", "TypeScript", "Node.js", "PostgreSQL", "WebRTC"],
     caseStudy: {
-      challenge: "Hospital networks faced fragmented patient communication, missed appointment rates exceeding 25%, and emergency triage bottlenecks for routine clinical inquiries.",
-      solution: "Designed and built an intuitive cross-platform patient and doctor application featuring encrypted video tele-consultations, digital prescriptions, and continuous wearable vitals tracking.",
-      designProcess: "Designed a clean, calming aesthetic with high-contrast accessibility standards suited for elderly patients and busy healthcare practitioners.",
-      developmentProcess: "Developed a HIPAA-compliant WebRTC audio/video infrastructure with end-to-end encryption and real-time biometric telemetry synchronization.",
-      keyFeatures: ["One-Tap Doctor Appointments", "Secure Health Vault & Lab Records", "Continuous Vitals & Glucose Sync", "Emergency Clinic Triage Engine"],
-      results: "Over 85,000 active patients onboarded across 12 partner clinics with average clinic wait times reduced from 45 minutes to under 3 minutes."
+      challenge: "A busy outpatient polyclinic and diagnostic laboratory suffered from crowded waiting rooms with 45-minute average patient delays, lost paper medical files, and telephone appointment congestion.",
+      solution: "Engineered a unified clinic companion app allowing patients to book token-based doctor visits, consult remotely via secure video, and download verified digital prescriptions and diagnostic lab results.",
+      designProcess: "Created a calming, high-accessibility UI with legible typography, simple navigation for elderly patients, and a clear real-time live queue token tracker.",
+      developmentProcess: "Implemented encrypted WebRTC video pipelines and a resilient PostgreSQL schema complying with medical data privacy regulations, backed by automated SMS & WhatsApp appointment reminders.",
+      keyFeatures: ["Token-Based Doctor Appointment Booking", "Live Clinic Queue Status on Phone", "Digital Prescriptions & Lab Report Vault", "Encrypted HD Video Tele-Consultation"],
+      results: "Reduced clinic waiting room congestion by 85%, processed over 12,000 monthly doctor bookings, and served 28,000+ registered patients with zero downtime.",
+      testimonial: {
+        client: "Dr. Sneha Patel, MD",
+        role: "Medical Director, CarePoint Diagnostics",
+        quote: "The clinic appointment portal and digital prescription system transformed our daily operations. Patient wait times dropped from 40 minutes to under 5 minutes, and our doctors can access lab records with one click."
+      }
     }
   },
   {
     id: "proj-3",
+    slug: "quickmart-ecart",
+    title: "QuickMart General Store & E-Cart OS",
+    category: "E-commerce",
+    description: "An omnichannel grocery and general store platform combining lightning-fast e-cart online ordering, barcode POS billing, and real-time inventory ledger.",
+    industry: "Retail, Grocery & Supermarkets",
+    image: "https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&w=1600&q=80",
+    showcaseImage: "https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&w=1600&q=80",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "MongoDB", "Redis", "WhatsApp API"],
+    caseStudy: {
+      challenge: "A high-volume general store and supermarket chain struggled with manual telephone home delivery orders, frequent inventory stockouts, and counter checkout bottlenecks during evening rush hours.",
+      solution: "Built an ultra-fast web e-cart ordering application paired with a desktop barcode POS cash counter terminal, automated low-stock inventory alerts, and instant WhatsApp delivery dispatch.",
+      designProcess: "Engineered an intuitive 2-tap cart checkout experience optimized for mobile browsers on slow connections, featuring category search, daily discounts, and express 30-minute delivery tags.",
+      developmentProcess: "Developed a distributed real-time inventory engine on MongoDB and Redis with sub-50ms query speeds, synchronized instantly with barcode scanner inputs at the physical store counters.",
+      keyFeatures: ["Instant E-Cart Online Grocery Ordering", "Barcode Scanner POS Counter Billing", "Automated WhatsApp Order & Receipt Dispatch", "Real-Time Stock Ledger & Low-Stock Alerts"],
+      results: "Processed 600+ daily online deliveries, accelerated counter checkout speed by 3x, and reduced grocery stock discrepancies to under 0.5%.",
+      testimonial: {
+        client: "Rajesh Gupta",
+        role: "Managing Director, QuickMart General Stores",
+        quote: "Our general store went from taking phone orders to processing over 600 daily orders through the new e-cart web app. Automated inventory sync and WhatsApp order receipts made daily management effortless."
+      }
+    }
+  },
+  {
+    id: "proj-4",
     slug: "lumina-living",
     title: "Lumina Living & Architecture",
-    category: "E-commerce",
-    description: "A minimalist luxury omnichannel e-commerce experience for architectural furniture featuring interactive 3D material customization.",
+    category: "UI/UX",
+    description: "A minimalist luxury omnichannel e-commerce experience for architectural furniture featuring interactive 3D spatial previews and customized checkout.",
     industry: "Luxury Retail & Interiors",
     image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1600&q=80",
     showcaseImage: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1600&q=80",
-    technologies: ["Next.js", "Shopify Plus", "Three.js", "Stripe", "Tailwind CSS"],
+    technologies: ["Next.js", "Three.js", "Shopify Storefront API", "Stripe", "Tailwind CSS"],
     caseStudy: {
       challenge: "Bespoke architectural furniture suffered from customer hesitation and high return rates because online shoppers could not inspect fabric textures, timber finishes, or spatial scale.",
       solution: "Built a headless flagship storefront featuring photorealistic WebGL 3D material configurators, augmented reality room previewing, and a frictionless 1-click checkout flow.",
       designProcess: "Crafted an editorial, gallery-grade digital showroom inspired by modern architectural monographs, with smooth layout morphing and refined typography.",
       developmentProcess: "Engineered headless Next.js rendering on Vercel Edge networks with optimized 3D glTF asset compression for instant sub-second mobile page loads.",
       keyFeatures: ["Interactive 3D WebGL Configurator", "Sub-Second Global Edge Load Speeds", "Multi-Currency Headless Checkout", "White-Glove Delivery Tracking"],
-      results: "Online conversion jumped by 38%, average order value increased to $2,850, and returns dropped by 65% in the first 6 months."
-    }
-  },
-  {
-    id: "proj-4",
-    slug: "strata-cloud-intelligence",
-    title: "Strata Cloud Intelligence",
-    category: "Custom Software",
-    description: "A real-time telemetry and cloud observability platform monitoring distributed microservices, infrastructure anomalies, and failure diagnostics.",
-    industry: "Enterprise Cloud SaaS",
-    image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1600&q=80",
-    showcaseImage: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1600&q=80",
-    technologies: ["React", "TypeScript", "Go", "ClickHouse", "Tailwind CSS"],
-    caseStudy: {
-      challenge: "Enterprise DevOps engineers were overwhelmed by alert fatigue and fragmented monitoring tools when investigating production latency spikes.",
-      solution: "Engineered a unified telemetry cockpit that aggregates server logs, APM traces, and container metrics into real-time visual dependency graphs.",
-      designProcess: "Focused on an ultra-responsive high-density data canvas with instant keyboard shortcuts, dark-mode data visualizations, and contextual trace inspection.",
-      developmentProcess: "Powered by ClickHouse for analytical queries exceeding 50M rows in under 180ms, connected via persistent WebSocket streaming.",
-      keyFeatures: ["Real-Time Distributed Tracing", "Sub-Second Telemetry Queries", "Autonomous Root-Cause Alerts", "Multi-Cloud Topology Maps"],
-      results: "Decreased Mean Time to Resolution (MTTR) by 58% across 45 enterprise engineering organizations managing over 500 microservices."
+      results: "Online conversion jumped by 38%, average order value increased to $2,850, and returns dropped by 65% in the first 6 months.",
+      testimonial: {
+        client: "Aanya Singhania",
+        role: "Co-Founder & Creative Director, Lumina Living",
+        quote: "Our online furniture store looks like an international luxury catalog and loads in milliseconds. Customer checkout drop-offs dropped by nearly 35% in our first quarter."
+      }
     }
   },
   {
     id: "proj-5",
-    slug: "volt-fleet-os",
-    title: "Volt Fleet Logistics OS",
-    category: "Mobile Apps",
-    description: "An end-to-end fleet tracking and dispatch application optimizing multi-stop freight routes, automated manifests, and real-time safety compliance.",
-    industry: "Supply Chain & Logistics",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1600&q=80",
-    showcaseImage: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1600&q=80",
-    technologies: ["React Native", "Node.js", "Mapbox GL", "Redis", "MongoDB"],
+    slug: "nexapay-pos",
+    title: "NexaPay Retail POS & Billing",
+    category: "Custom Software",
+    description: "An enterprise retail payment and billing dashboard enabling instant multi-tender card settlements, GST invoicing, and merchant sales telemetry.",
+    industry: "FinTech & Store Billing",
+    image: "https://images.unsplash.com/photo-1556742049-0a67e557224f?auto=format&fit=crop&w=1600&q=80",
+    showcaseImage: "https://images.unsplash.com/photo-1556742049-0a67e557224f?auto=format&fit=crop&w=1600&q=80",
+    technologies: ["Next.js", "TypeScript", "Node.js", "PostgreSQL", "Tailwind CSS"],
     caseStudy: {
-      challenge: "Interstate freight logistics struggled with manual paper manifests, delayed proof-of-delivery disputes, and unoptimized urban delivery routes.",
-      solution: "Developed an offline-first mobile application for commercial drivers paired with a real-time web dispatch dashboard featuring dynamic route calculation.",
-      designProcess: "Designed large tactile touch targets and high-glare sunlight viewing modes for commercial vehicle drivers on tablets and smartphones.",
-      developmentProcess: "Integrated Mapbox vector routing algorithms with real-time GPS telemetry and digital sign-on-glass electronic bill-of-lading capture.",
-      keyFeatures: ["Dynamic Multi-Stop Route Planning", "Digital Proof-of-Delivery Capture", "Live Vehicle Telemetry & Diagnostics", "Offline-Ready Manifest Storage"],
-      results: "Reduced fleet fuel expenditure by 18% and eliminated 100% of physical delivery paperwork across 450 active transport vehicles."
+      challenge: "Multi-store retail operators faced fragmented card POS terminals, 48-hour settlement delays, and error-prone end-of-day manual cash and card reconciliations.",
+      solution: "Built a cloud-connected smart billing and POS terminal interface supporting unified UPI, cards, split payments, GST invoice generation, and real-time store analytics.",
+      designProcess: "Created an ultra-fast high-contrast counter interface optimized for touch displays and quick keyboard shortcut workflows.",
+      developmentProcess: "Constructed secure AES-256 encrypted microservices with offline billing caching, instant cloud sync, and direct banking webhook reconciliations.",
+      keyFeatures: ["Split Cash/Card/UPI Counter Checkout", "Instant GST Tax Compliance Invoicing", "Real-Time Multi-Branch Sales Dashboard", "Automated Daily Ledger Reconciliation"],
+      results: "Processed $140M+ in retail store transactions with 99.999% uptime and same-day merchant settlement across 350 retail locations.",
+      testimonial: {
+        client: "Karthik Reddy",
+        role: "Head of Merchant Operations, NexaPay Solutions",
+        quote: "Clear communication, clean code, and zero bugs on launch day. Working directly with Gopi and the Eden team made a world of difference for our retail billing platform."
+      }
     }
   },
   {
     id: "proj-6",
-    slug: "orbit-workspace",
-    title: "Orbit Team Collaboration",
-    category: "UI/UX",
-    description: "A collaborative digital canvas combining design token systems, interactive user flow diagrams, and real-time product squad reviews.",
-    industry: "Productivity & SaaS",
-    image: "https://images.unsplash.com/photo-1581291518655-9523c932edcf?auto=format&fit=crop&w=1600&q=80",
-    showcaseImage: "https://images.unsplash.com/photo-1581291518655-9523c932edcf?auto=format&fit=crop&w=1600&q=80",
-    technologies: ["Next.js", "WebSockets", "Canvas API", "TypeScript", "Tailwind CSS"],
+    slug: "volt-delivery-os",
+    title: "Volt Express Fleet & Store Dispatch",
+    category: "Mobile Apps",
+    description: "An end-to-end delivery dispatch and rider app optimizing multi-stop urban retail routes, digital proof-of-delivery, and live customer order tracking.",
+    industry: "Supply Chain & Local Dispatch",
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1600&q=80",
+    showcaseImage: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1600&q=80",
+    technologies: ["React Native", "Node.js", "Mapbox GL", "Redis", "MongoDB"],
     caseStudy: {
-      challenge: "Distributed product teams suffered from persistent miscommunication between static design mockups and actual production frontend codebases.",
-      solution: "Created an interactive multiplayer workspace that syncs design tokens directly with production code repositories and enables live visual annotations.",
-      designProcess: "Conducted extensive UX research with 30 product managers and engineers to eliminate context switching between Figma, Jira, and GitHub.",
-      developmentProcess: "Built with high-performance HTML5 Canvas and low-latency WebSockets supporting 50+ concurrent multiplayer cursors per canvas board.",
-      keyFeatures: ["Multiplayer Real-Time Canvas", "Automated Token Git Integration", "Interactive Component Playground", "Asynchronous Video Review Threads"],
-      results: "Accelerated product sprint velocity by 35% and cut design-to-engineering handoff cycles from days to minutes."
+      challenge: "Retail and grocery stores struggled with unoptimized delivery rider routes, delayed customer deliveries, and missing delivery proofs.",
+      solution: "Developed a lightweight driver dispatch app paired with a central web console featuring dynamic turn-by-turn route batching, OTP order handover, and live SMS tracking.",
+      designProcess: "Designed large touch targets, high-contrast sunlight display mode, and battery-optimized GPS tracking for delivery drivers on Android and iOS.",
+      developmentProcess: "Implemented Mapbox vector routing with automated multi-drop clustering, offline manifest sync, and digital sign-on-glass proof-of-delivery.",
+      keyFeatures: ["Dynamic Multi-Stop Route Optimization", "Digital Signature & Photo Proof of Delivery", "Live Customer GPS Tracking Link", "Offline-Ready Driver Manifest Sync"],
+      results: "Reduced delivery turnaround times by 25%, decreased fleet fuel expenditure by 18%, and maintained a 98.4% on-time delivery rate.",
+      testimonial: {
+        client: "Harish Verma",
+        role: "Logistics & Dispatch Manager, Volt Express",
+        quote: "The driver dispatch mobile app and live order tracking reduced our grocery delivery turnaround times by 25%. Simple, rock-solid engineering that just works."
+      }
     }
   }
 ];
@@ -185,92 +215,92 @@ export const services = [
 export const testimonials = [
   {
     id: 1,
-    client: "Priya Sharma",
-    company: "TechFlow Solutions",
-    role: "Founder & CEO",
-    image: "https://i.pravatar.cc/150?u=priya",
-    quote: "Gopi and the Eden team took the time to understand our business before writing a single line of code. They delivered our platform two weeks ahead of schedule, and our users love how fast it is.",
+    client: "Vikram Singh",
+    company: "PulseFit Gym & Athletic Club",
+    role: "Founder & Head Coach",
+    image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80",
+    quote: "Eden built our gym website and member booking app from scratch. Our members book training slots and renew memberships right from their phones. Monthly renewals increased by 42% and our front desk is completely paperless.",
     rating: 5
   },
   {
     id: 2,
-    client: "Rahul Verma",
-    company: "Lumina Retail",
-    role: "Founder",
-    image: "https://i.pravatar.cc/150?u=rahul",
-    quote: "The entire process was honest and straightforward. We had weekly updates, live demos we could test on our phones, and zero surprises on invoice day. Truly refreshing team to work with.",
+    client: "Dr. Sneha Patel, MD",
+    company: "CarePoint Medical Clinic & Diagnostics",
+    role: "Medical Director",
+    image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=150&q=80",
+    quote: "The clinic appointment portal and digital prescription system transformed our daily operations. Patient wait times dropped from 40 minutes to under 5 minutes, and our doctors can access lab records with one click.",
     rating: 5
   },
   {
     id: 3,
-    client: "Anjali Desai",
-    company: "EduVantage Academy",
-    role: "Product Director",
-    image: "https://i.pravatar.cc/150?u=anjali",
-    quote: "They didn't just build what we asked for — they actually gave us practical advice on how to improve our student onboarding. Our course completion rates jumped immediately.",
+    client: "Rajesh Gupta",
+    company: "QuickMart General Store & Supermarket",
+    role: "Managing Director",
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80",
+    quote: "Our general store went from taking phone orders to processing over 600 daily orders through the new e-cart web app. Automated inventory sync and WhatsApp order receipts made daily store management effortless.",
     rating: 5
   },
   {
     id: 4,
-    client: "Karthik Reddy",
-    company: "Reddy Urban Infra",
-    role: "Managing Director",
-    image: "https://i.pravatar.cc/150?u=karthik",
-    quote: "Eden built a stunning website and custom lead CRM for our real estate projects. Our inbound client inquiries jumped significantly within two months of launch.",
+    client: "Dr. Amit Roy",
+    company: "Apex Specialty Hospital",
+    role: "Chief Surgeon & Director",
+    image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=150&q=80",
+    quote: "Handling inpatient admissions and doctor shift schedules used to require hours of manual paperwork. Eden delivered a secure, HIPAA-compliant clinical portal that our entire medical staff praises daily.",
     rating: 5
   },
   {
     id: 5,
-    client: "Sneha Patel",
-    company: "HealthFirst Clinics",
-    role: "Co-Founder",
-    image: "https://i.pravatar.cc/150?u=sneha",
-    quote: "Their mobile app architecture made our clinic booking seamless. We onboarded over 5,000 patients without a single server hiccup. Excellent engineering standards.",
+    client: "Rohan Mehta",
+    company: "Titan Strength Gyms",
+    role: "Fitness Director",
+    image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&q=80",
+    quote: "The member management software Eden engineered scaled seamlessly across our 3 gym locations. Member retention improved significantly thanks to the automated workout tracker and class booking.",
     rating: 5
   },
   {
     id: 6,
-    client: "Vikram Malhotra",
-    company: "Malhotra Freight Lines",
-    role: "Head of Operations",
-    image: "https://i.pravatar.cc/150?u=vikram",
-    quote: "The custom portal they built replaced four separate manual spreadsheets. Our team now processes dispatches in half the time. Worth every rupee invested.",
+    client: "Sunil Agarwal",
+    company: "Agarwal Kirana & E-Store",
+    role: "Proprietor",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=150&q=80",
+    quote: "The barcode POS billing and WhatsApp e-cart ordering helped us compete with big online grocery apps. Our regular customers love placing orders online for quick 30-minute neighborhood pickup.",
     rating: 5
   },
   {
     id: 7,
-    client: "Divya Krishnan",
-    company: "StyleZen E-Commerce",
-    role: "Creative Director",
-    image: "https://i.pravatar.cc/150?u=divya",
-    quote: "Our online store looks like an international luxury brand and loads instantly on 4G networks. Customer checkout drop-offs dropped by nearly 30%.",
+    client: "Aanya Singhania",
+    company: "Lumina Living & Architecture",
+    role: "Co-Founder & Creative Director",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80",
+    quote: "Our online furniture store looks like an international luxury catalog and loads in milliseconds. Customer checkout drop-offs dropped by nearly 35% in our first quarter.",
     rating: 5
   },
   {
     id: 8,
-    client: "Rajesh Nambiar",
-    company: "Apex Advisory Group",
-    role: "Managing Partner",
-    image: "https://i.pravatar.cc/150?u=rajesh",
-    quote: "Clear communication, clean code, and zero bugs on launch day. Working directly with the founders made a world of difference compared to large bloated agencies.",
+    client: "Karthik Reddy",
+    company: "NexaPay Merchant Solutions",
+    role: "Head of Merchant Operations",
+    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=150&q=80",
+    quote: "Clear communication, clean code, and zero bugs on launch day. Working directly with Gopi and the Eden team made a world of difference for our retail billing and payment terminals.",
     rating: 5
   },
   {
     id: 9,
-    client: "Meera Joshi",
-    company: "EduConnect Labs",
-    role: "Academic Dean",
-    image: "https://i.pravatar.cc/150?u=meera",
-    quote: "The student attendance dashboard made daily administration effortless. They listened patiently to our faculty feedback and tailored the system perfectly.",
+    client: "Harish Verma",
+    company: "Volt Express Logistics",
+    role: "Logistics & Dispatch Manager",
+    image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=150&q=80",
+    quote: "The driver dispatch mobile app and live order tracking reduced our grocery delivery turnaround times by 25%. Simple, rock-solid engineering that just works.",
     rating: 5
   },
   {
     id: 10,
-    client: "Arjun Sundaram",
-    company: "Quantum Cloud",
-    role: "Chief Technology Officer",
-    image: "https://i.pravatar.cc/150?u=arjun",
-    quote: "Their Next.js and TypeScript code was clean, well-documented, and easy for our internal developers to build upon. High-caliber engineering team.",
+    client: "Meera Nambiar",
+    company: "FreshCart Online Mart",
+    role: "Head of Customer Experience",
+    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&q=80",
+    quote: "Their Next.js and React Native architecture gave us blazing fast e-cart performance and zero cart crashes even during festival sales rushes. Truly outstanding engineering.",
     rating: 5
   }
 ];

@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, ExternalLink, CheckCircle2 } from "lucide-react";
+import { ArrowLeft, ExternalLink, CheckCircle2, Star } from "lucide-react";
 import { projects } from "@/data";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -171,6 +171,37 @@ export default async function ProjectPage({
               </p>
             </div>
           </FadeIn>
+
+          {project.caseStudy.testimonial && (
+            <FadeIn direction="up">
+              <div className="p-8 sm:p-10 rounded-3xl bg-card border border-border/80 shadow-[0_10px_35px_rgba(0,0,0,0.04)] relative overflow-hidden">
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} size={16} className="fill-amber-400 text-amber-400" />
+                  ))}
+                  <span className="ml-2 text-xs font-semibold text-emerald-600 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-100">
+                    Verified Client Review
+                  </span>
+                </div>
+                <blockquote className="text-lg sm:text-xl font-medium text-foreground/90 italic mb-6 leading-relaxed">
+                  "{project.caseStudy.testimonial.quote}"
+                </blockquote>
+                <div className="flex items-center gap-3 pt-4 border-t border-border/60">
+                  <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-primary font-bold text-sm">
+                    {project.caseStudy.testimonial.client[0]}
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-foreground text-sm">
+                      {project.caseStudy.testimonial.client}
+                    </h4>
+                    <p className="text-xs text-muted-foreground">
+                      {project.caseStudy.testimonial.role}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </FadeIn>
+          )}
 
         </div>
       </section>

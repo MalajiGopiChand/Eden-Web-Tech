@@ -9,7 +9,7 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function PortfolioSection({ limit }: { limit?: number }) {
   const [filter, setFilter] = useState<ProjectCategory>("All");
   
-  const categories: ProjectCategory[] = ["All", "Websites", "Mobile Apps", "E-commerce", "UI/UX"];
+  const categories: ProjectCategory[] = ["All", "Websites", "Mobile Apps", "E-commerce", "Custom Software", "UI/UX"];
   
   const filteredProjects = projects.filter(
     (project) => filter === "All" || project.category === filter
