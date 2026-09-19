@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { processSteps } from "@/data";
 import { 
   Compass, 
@@ -10,9 +11,10 @@ import {
   Rocket, 
   TrendingUp, 
   CheckCircle2, 
-  Clock,
-  ShieldCheck,
-  MessageSquare
+  Clock, 
+  ShieldCheck, 
+  MessageSquare,
+  ArrowRight
 } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -291,6 +293,17 @@ export default function ProcessSection() {
               No account managers or telephone games. You have a direct WhatsApp and Slack channel to the senior engineers building your app.
             </p>
           </div>
+        </div>
+
+        {/* Full Methodology Link Button */}
+        <div className="mt-12 text-center">
+          <Link
+            href="/process"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white hover:bg-slate-50 border border-border/80 hover:border-primary/50 text-foreground hover:text-primary text-xs sm:text-sm font-bold transition-all shadow-xs hover:shadow-sm group cursor-pointer"
+          >
+            <span>Explore Our Full 6-Phase Engineering Playbook & Sprint Cadence</span>
+            <ArrowRight size={15} className="group-hover:translate-x-1 transition-transform text-primary" />
+          </Link>
         </div>
 
       </div>
