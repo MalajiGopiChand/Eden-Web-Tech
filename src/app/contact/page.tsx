@@ -2,7 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
 import FadeIn from "@/components/FadeIn";
-import { Mail, Phone, MapPin, Sparkles } from "lucide-react";
+import { Mail, Phone, MapPin } from "lucide-react";
 
 export const metadata = {
   title: "Contact Us | Premium Digital Agency",
@@ -17,18 +17,20 @@ export default function ContactPage() {
       <section className="pt-32 pb-24 md:pt-40 md:pb-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full flex-grow">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20">
           
-          <div className="lg:col-span-5 flex flex-col justify-between">
+          <div className="lg:col-span-5 flex flex-col space-y-8">
             <FadeIn direction="up">
               <div>
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-semibold tracking-wide uppercase mb-4">
-                  <Sparkles size={13} className="animate-spin" />
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-primary text-xs font-bold uppercase tracking-wider mb-4">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                   <span>Let's Discuss Your Project</span>
                 </div>
-                <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-foreground tracking-tight mb-6 leading-[1.08]">
-                  LET'S BUILD <br/>
-                  <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-emerald-500 bg-clip-text text-transparent">SOMETHING GREAT.</span>
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-foreground tracking-tight mb-5 leading-[1.1]">
+                  Let's build something{" "}
+                  <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-emerald-500 bg-clip-text text-transparent">
+                    exceptional.
+                  </span>
                 </h1>
-                <p className="text-lg sm:text-xl text-muted-foreground mb-12 leading-relaxed">
+                <p className="text-base sm:text-lg text-muted-foreground mb-8 leading-relaxed">
                   Whether you have a fully fleshed-out product roadmap or just a rough idea, our engineering architects are ready to guide you from concept to market launch.
                 </p>
               </div>

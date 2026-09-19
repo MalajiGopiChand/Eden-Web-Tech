@@ -32,24 +32,26 @@ export default async function ProjectPage({
       <Navbar />
       
       {/* Project Hero */}
-      <section className="pt-32 pb-16 md:pt-40 md:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto w-full">
+      <section className="pt-32 pb-12 md:pt-36 md:pb-16 px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto w-full">
         <FadeIn direction="left">
-          <Link href="/work" className="inline-flex items-center text-muted-foreground hover:text-primary mb-12 transition-colors group">
-            <ArrowLeft size={16} className="mr-2 group-hover:-translate-x-1.5 transition-transform" />
-            Back to Work
+          <Link href="/work" className="inline-flex items-center text-xs font-bold uppercase tracking-wider text-muted-foreground hover:text-primary mb-8 transition-colors group">
+            <ArrowLeft size={14} className="mr-2 group-hover:-translate-x-1 transition-transform" />
+            Back to All Projects
           </Link>
         </FadeIn>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 mb-16">
-          <FadeIn direction="up" delay={0.1}>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-12">
+          <FadeIn direction="up" delay={0.1} className="lg:col-span-7">
             <div>
-              <div className="text-primary font-bold tracking-widest text-xs uppercase mb-4 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-100 inline-block">
-                {project.category} • {project.industry}
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-primary text-xs font-bold uppercase tracking-wider mb-4">
+                <span>{project.category}</span>
+                <span className="text-slate-300">•</span>
+                <span>{project.industry}</span>
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-7xl font-black tracking-tight text-foreground mb-6 leading-[1.1]">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight text-foreground mb-4 leading-tight">
                 {project.title}
               </h1>
-              <p className="text-xl text-muted-foreground leading-relaxed">
+              <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
                 {project.description}
               </p>
               
@@ -58,61 +60,58 @@ export default async function ProjectPage({
                   href={project.liveUrl} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="mt-8 relative group overflow-hidden inline-flex items-center gap-2 px-7 py-3.5 bg-primary text-primary-foreground font-semibold rounded-full hover:bg-primary/95 transition-all shadow-[0_6px_20px_rgba(37,99,235,0.25)] hover:shadow-[0_10px_25px_rgba(37,99,235,0.35)]"
+                  className="mt-6 relative group overflow-hidden inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground font-bold rounded-full hover:bg-primary/95 transition-all shadow-xs text-sm"
                 >
                   <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out" />
-                  <span>Visit Live Site</span>
-                  <ExternalLink size={17} className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+                  <span>Visit Live Product</span>
+                  <ExternalLink size={15} />
                 </a>
               )}
             </div>
           </FadeIn>
           
-          <FadeIn direction="up" delay={0.25}>
-            <div className="space-y-8 p-8 rounded-3xl bg-card border border-border/80 shadow-[0_8px_30px_rgba(0,0,0,0.03)] h-fit">
+          <FadeIn direction="up" delay={0.2} className="lg:col-span-5">
+            <div className="space-y-6 p-6 sm:p-7 rounded-3xl bg-card border border-border/80 shadow-xs">
               <div>
-                <h3 className="text-xs text-muted-foreground uppercase tracking-widest font-bold mb-3">Technologies</h3>
-                <div className="flex flex-wrap gap-2">
+                <h3 className="text-xs text-muted-foreground uppercase tracking-widest font-bold mb-3">Core Tech Stack</h3>
+                <div className="flex flex-wrap gap-1.5">
                   {project.technologies.map((tech) => (
-                    <span key={tech} className="px-3.5 py-1.5 bg-secondary text-secondary-foreground border border-border/60 rounded-full text-xs font-semibold">
+                    <span key={tech} className="px-3 py-1 bg-slate-50 text-slate-700 border border-slate-200/70 rounded-lg text-xs font-medium">
                       {tech}
                     </span>
                   ))}
                 </div>
               </div>
               
-              <div className="grid grid-cols-2 gap-8 pt-8 border-t border-border/60">
+              <div className="grid grid-cols-2 gap-4 pt-6 border-t border-border/60">
                 <div>
-                  <h3 className="text-xs text-muted-foreground uppercase tracking-widest font-bold mb-1">Client</h3>
+                  <h3 className="text-xs text-muted-foreground uppercase tracking-widest font-bold mb-0.5">Client</h3>
                   <p className="font-bold text-foreground text-sm">{project.caseStudy.testimonial?.client || "Confidential"}</p>
                 </div>
                 <div>
-                  <h3 className="text-xs text-muted-foreground uppercase tracking-widest font-bold mb-1">Timeline</h3>
-                  <p className="font-bold text-foreground text-sm">12 Weeks</p>
+                  <h3 className="text-xs text-muted-foreground uppercase tracking-widest font-bold mb-0.5">Timeline</h3>
+                  <p className="font-bold text-foreground text-sm">8–12 Weeks</p>
                 </div>
               </div>
             </div>
           </FadeIn>
         </div>
-      </section>
 
-      {/* Hero Image with Fade In */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mb-24">
-        <FadeIn direction="up" delay={0.2}>
-          <div className="w-full h-[400px] md:h-[600px] lg:h-[700px] bg-secondary/20 rounded-3xl overflow-hidden relative group border border-border shadow-md">
+        {/* Hero Showcase Image */}
+        <FadeIn direction="up" delay={0.25}>
+          <div className="w-full h-[320px] sm:h-[440px] md:h-[500px] bg-slate-100 rounded-3xl overflow-hidden relative group border border-border/80 shadow-xs mb-16">
             <img 
               src={project.showcaseImage}
               alt={`${project.title} Interface Showcase`}
-              className="w-full h-full object-cover object-top group-hover:scale-103 transition-transform duration-700"
+              className="w-full h-full object-cover object-top group-hover:scale-102 transition-transform duration-700"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none"></div>
           </div>
         </FadeIn>
       </section>
 
       {/* Case Study Content */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 w-full mb-24">
-        <div className="space-y-20">
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 w-full mb-24">
+        <div className="space-y-10">
           
           <FadeIn direction="up">
             <div className="p-8 sm:p-10 rounded-3xl bg-card border border-border/80 shadow-xs">

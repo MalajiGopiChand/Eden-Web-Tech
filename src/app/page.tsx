@@ -9,46 +9,20 @@ import TechnologiesSection from "@/components/TechnologiesSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
-import FadeIn from "@/components/FadeIn";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col">
+    <main className="flex min-h-screen flex-col bg-transparent">
       <Navbar />
       <HeroSection />
-      
-      <FadeIn delay={0.2} direction="up">
-        <TrustSection />
-      </FadeIn>
-      
-      <FadeIn direction="up">
-        <ServicesSection />
-      </FadeIn>
-      
-      <FadeIn direction="up">
-        <PortfolioSection limit={4} />
-      </FadeIn>
-      
-      <FadeIn direction="up">
-        <AboutSection />
-      </FadeIn>
-      
-      <FadeIn direction="up">
-        <ProcessSection />
-      </FadeIn>
-      
-      <FadeIn direction="up">
-        <TechnologiesSection />
-      </FadeIn>
-      
-      <FadeIn direction="up">
-        <TestimonialsSection />
-      </FadeIn>
-      
-      <FadeIn direction="none">
-        <CTASection />
-      </FadeIn>
-      
+      <TrustSection />
+      <ServicesSection />
+      <PortfolioSection limit={4} />
+      <AboutSection />
+      <ProcessSection />
+      <TechnologiesSection />
+      <TestimonialsSection />
+      <CTASection />
       <Footer />
     </main>
   );
