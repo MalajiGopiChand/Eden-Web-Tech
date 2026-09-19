@@ -12,6 +12,12 @@ export default function BackgroundAnimation() {
   const springX = useSpring(mouseX, { damping: 50, stiffness: 300 });
   const springY = useSpring(mouseY, { damping: 50, stiffness: 300 });
 
+  // Move useTransform above the early return to follow Rules of Hooks
+  const backgroundTransform = useTransform(
+    [springX, springY],
+    ([x, y]) => `radial-gradient(600px circle at ${x}px ${y}px, rgba(37,99,235,0.15), transparent 80%)`
+  );
+
   useEffect(() => {
     setMounted(true);
     const updateMouse = (e: MouseEvent) => {
@@ -62,10 +68,7 @@ export default function BackgroundAnimation() {
       <motion.div
         className="absolute inset-0 opacity-50 transition-opacity duration-300"
         style={{
-          background: useTransform(
-            [springX, springY],
-            ([x, y]) => `radial-gradient(600px circle at ${x}px ${y}px, rgba(37,99,235,0.15), transparent 80%)`
-          )
+          background: backgroundTransform
         }}
       />
 
