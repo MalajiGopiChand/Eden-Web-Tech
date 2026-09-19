@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { ArrowRight, ArrowDown } from "lucide-react";
+import Logo from "./Logo";
 import { motion } from "framer-motion";
 
 export default function HeroSection() {
@@ -96,7 +97,7 @@ export default function HeroSection() {
               <div className="p-8 h-full flex flex-col gap-6 opacity-90">
                 <div className="flex justify-between items-center mb-2 pb-4 border-b border-border/50">
                   <div className="flex items-center gap-3">
-                    <img src="/images/logo.jpg" alt="Eden" className="h-6 object-contain" />
+                    <Logo className="h-6 w-auto grayscale opacity-50 group-hover:grayscale-0 group-hover:opacity-100 transition-all" />
                     <span className="text-sm font-bold text-foreground tracking-wider">WORKSPACE</span>
                   </div>
                   <div className="flex gap-2">

@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
+import Logo from "./Logo";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -39,7 +40,7 @@ export default function Navbar() {
             href="/"
             className="flex items-center gap-2"
           >
-            <img src="/images/logo.jpg" alt="Eden Technologies" className="h-10 object-contain" />
+            <Logo className="h-10 w-auto" />
           </Link>
 
           {/* Desktop Navigation */}
