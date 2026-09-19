@@ -70,14 +70,14 @@ export default function AboutPage() {
           </div>
 
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-foreground tracking-tight mb-3 leading-[1.12]">
-            We build software with the craft of artisans and the{" "}
+            Engineered with rigor.{" "}
             <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-emerald-500 bg-clip-text text-transparent">
-              speed of startups.
+              Built by founders.
             </span>
           </h1>
 
           <p className="text-sm sm:text-base text-muted-foreground leading-relaxed max-w-2xl">
-            Eden Technologies is an independent software studio founded by senior engineers. We partner directly with founders and business owners to design, architect, and scale high-impact web and mobile products.
+            We founded Eden because we were tired of traditional agency bloat — endless meetings, junior contractors, and code that breaks the moment real traffic arrives. Here is who builds your product.
           </p>
         </div>
 
@@ -95,26 +95,79 @@ export default function AboutPage() {
         </div>
 
         {/* The Eden Manifesto / Origin Story */}
-        <div className="mb-10 sm:mb-12 p-6 sm:p-8 rounded-3xl bg-slate-50/80 border border-border/80">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 px-3 py-0.5 rounded-full bg-blue-50 border border-blue-100 text-primary text-xs font-bold uppercase tracking-wider mb-3">
-              <span>Why We Started Eden</span>
+        <div className="mb-10 sm:mb-12 rounded-3xl bg-slate-900 text-white overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-5">
+            {/* Left — dark headline panel */}
+            <div className="lg:col-span-2 p-6 sm:p-8 flex flex-col justify-between bg-blue-600/10 border-b lg:border-b-0 lg:border-r border-white/10">
+              <div>
+                <div className="inline-flex items-center gap-2 px-3 py-0.5 rounded-full bg-white/10 border border-white/15 text-white text-xs font-bold uppercase tracking-wider mb-4">
+                  <span>Why We Started Eden</span>
+                </div>
+                <h2 className="text-2xl sm:text-3xl font-black tracking-tight leading-[1.2] mb-4">
+                  Traditional agencies are{" "}
+                  <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">
+                    fundamentally broken.
+                  </span>
+                </h2>
+                <p className="text-sm text-white/60 leading-relaxed">
+                  We built Eden as the antidote — a studio where the founders are the engineers, and every client speaks directly with the people writing their code.
+                </p>
+              </div>
+              <div className="mt-6 flex flex-col gap-2.5">
+                {[
+                  "No account managers or middlemen",
+                  "No offshore contractors",
+                  "No surprise invoices — ever",
+                ].map((pt) => (
+                  <div key={pt} className="flex items-center gap-2.5 text-xs font-semibold text-white/80">
+                    <CheckCircle2 size={13} className="text-emerald-400 shrink-0" />
+                    {pt}
+                  </div>
+                ))}
+              </div>
             </div>
 
-            <h2 className="text-2xl sm:text-3xl font-black text-foreground tracking-tight mb-4">
-              Traditional software agencies are fundamentally broken.
-            </h2>
+            {/* Right — story paragraphs */}
+            <div className="lg:col-span-3 p-6 sm:p-8 flex flex-col gap-5 justify-center">
+              <div className="flex gap-3">
+                <span className="w-7 h-7 rounded-lg bg-red-500/15 border border-red-500/20 flex items-center justify-center shrink-0 mt-0.5">
+                  <span className="text-red-400 text-sm font-black">✕</span>
+                </span>
+                <div>
+                  <h4 className="text-sm font-bold text-white mb-1">The agency model they sell you</h4>
+                  <p className="text-xs text-white/55 leading-relaxed">
+                    A polished sales rep makes sweeping promises. Your project is handed to a non-technical account manager. Actual coding is quietly offshored to junior contractors you'll never meet. Result: delayed timelines, bloated invoices, and fragile code that breaks under real traffic.
+                  </p>
+                </div>
+              </div>
 
-            <div className="space-y-3 text-xs sm:text-sm text-muted-foreground leading-relaxed">
-              <p>
-                In typical digital agencies, sales reps make sweeping promises, pass your project to non-technical account managers, who then secretly offshore the actual coding to inexperienced junior contractors. The end result is predictable: delayed timelines, bloated invoices, fragile code, and frustration.
-              </p>
-              <p>
-                We built <strong className="text-foreground">Eden Technologies</strong> as the antidote to agency bloat. When you work with us, you speak directly with the systems architects writing your code. Every sprint is disciplined, every milestone is fixed in scope, and every Friday you receive a live staging demo on your phone.
-              </p>
-              <p>
-                Whether building an end-to-end medical clinic appointment system, a multi-store grocery e-cart, or a gym management platform — our standard is simple: <strong className="text-foreground">world-class engineering, delivered on time, with zero surprises.</strong>
-              </p>
+              <div className="h-px bg-white/10" />
+
+              <div className="flex gap-3">
+                <span className="w-7 h-7 rounded-lg bg-emerald-500/15 border border-emerald-500/20 flex items-center justify-center shrink-0 mt-0.5">
+                  <CheckCircle2 size={14} className="text-emerald-400" />
+                </span>
+                <div>
+                  <h4 className="text-sm font-bold text-white mb-1">The Eden model we built instead</h4>
+                  <p className="text-xs text-white/55 leading-relaxed">
+                    You speak directly with the systems architects writing your code. Every sprint is disciplined, every milestone is fixed in scope, and every Friday you receive a live staging demo on your phone to verify real progress before a single rupee of the next milestone is invoiced.
+                  </p>
+                </div>
+              </div>
+
+              <div className="h-px bg-white/10" />
+
+              <div className="flex gap-3">
+                <span className="w-7 h-7 rounded-lg bg-blue-500/15 border border-blue-500/20 flex items-center justify-center shrink-0 mt-0.5">
+                  <Terminal size={13} className="text-blue-400" />
+                </span>
+                <div>
+                  <h4 className="text-sm font-bold text-white mb-1">Our standard — no exceptions</h4>
+                  <p className="text-xs text-white/55 leading-relaxed">
+                    Whether it's a medical clinic appointment system, a multi-store grocery e-cart, or a gym management platform — our bar is the same: <span className="text-white font-semibold">world-class engineering, on time, with zero surprises.</span>
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
