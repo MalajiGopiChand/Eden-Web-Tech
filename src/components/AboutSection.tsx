@@ -1,135 +1,207 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import { Mail, Phone } from "lucide-react";
+import { Mail, ArrowUpRight, CheckCircle2 } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function AboutSection() {
   const advantages = [
-    { title: "BUSINESS-MINDED DEVELOPMENT", desc: "We don't start with technology. We start with your business problem." },
-    { title: "BUILT FOR YOUR BUSINESS", desc: "No unnecessary features. No generic templates. Your product is built around your actual requirements." },
-    { title: "DESIGN THAT SELLS", desc: "Beautiful isn't enough. We design experiences that guide users toward action." },
-    { title: "TECHNOLOGY THAT SCALES", desc: "Build today without limiting tomorrow. Our solutions are designed with future growth in mind." },
-    { title: "CLEAR COMMUNICATION", desc: "No disappearing developers. No confusing technical language. You always know what's happening with your project." },
-    { title: "LONG-TERM PARTNERSHIP", desc: "Your success doesn't end at launch. We're here when you need the next feature, improvement, or upgrade." },
+    { 
+      id: "01",
+      title: "BUSINESS-MINDED DEVELOPMENT", 
+      desc: "We don't start with code. We start by deeply understanding your business goals and customer funnel." 
+    },
+    { 
+      id: "02",
+      title: "CUSTOM TAILORED ARCHITECTURE", 
+      desc: "Zero bloated templates. We engineer every product specifically tailored to your scalability requirements." 
+    },
+    { 
+      id: "03",
+      title: "CONVERSION-DRIVEN DESIGN", 
+      desc: "Aesthetics that drive real sales. Every UX interaction is crafted to guide your visitors towards action." 
+    },
+    { 
+      id: "04",
+      title: "FUTURE-PROOF TECH STACK", 
+      desc: "Built with Next.js, React Native, and cloud-native backends ensuring high speed and enterprise security." 
+    },
+    { 
+      id: "05",
+      title: "TRANSPARENT SPRINT UPDATES", 
+      desc: "Direct communication with founders and developers. You always know what is deployed and what comes next." 
+    },
+    { 
+      id: "06",
+      title: "POST-LAUNCH PARTNERSHIP", 
+      desc: "Our collaboration extends beyond deployment. We support your growth with proactive maintenance and scaling." 
+    },
   ];
 
   return (
-    <section id="about" className="py-24 bg-transparent border-y border-border">
+    <section id="about" className="py-28 bg-transparent border-y border-border relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-24">
-          <div className="text-center mb-16">
-            <h2 className="text-sm font-bold tracking-widest text-primary uppercase mb-4">
-              Our Leadership
-            </h2>
-            <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-              THE VISION BEHIND EDEN
-            </h3>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              We believe great digital products combine thoughtful design, reliable technology, and a clear understanding of the business behind them.
-            </p>
+        
+        {/* Leadership Header */}
+        <div className="text-center mb-20">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-semibold tracking-wide uppercase mb-4">
+            <CheckCircle2 size={13} />
+            <span>Executive Leadership</span>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 lg:gap-24 items-start">
-            {/* Founder & CEO */}
-            <div className="flex flex-col items-center text-center">
-              <div className="relative h-64 w-64 md:h-72 md:w-72 rounded-full overflow-hidden p-2 border-4 border-background shadow-2xl bg-gradient-to-br from-primary/20 to-accent/20 mb-8">
-                <div className="absolute inset-0 z-0 bg-gradient-to-br from-primary/10 to-accent/5"></div>
-                <div className="relative z-10 w-full h-full rounded-full overflow-hidden border-2 border-border/50 bg-background">
-                  <Image 
-                    src="/images/ceo.jpg" 
-                    alt="Malaji Gopichand - Founder & CEO" 
-                    fill 
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                </div>
-              </div>
-              <h3 className="text-3xl font-bold text-foreground mb-2">MALAJI GOPICHAND</h3>
-              <p className="text-primary font-bold uppercase tracking-wider mb-6">Founder & CEO</p>
-              <p className="text-muted-foreground leading-relaxed mb-6 max-w-md">
-                I am a passionate leader and technologist with a mission to help ambitious companies thrive in the digital age by building world-class scalable platforms.
-              </p>
-              <div className="flex gap-4">
-                <Link 
-                  href="https://www.linkedin.com/in/malajigopichand/" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors"
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" /><rect width="4" height="12" x="2" y="9" /><circle cx="4" cy="4" r="2" /></svg>
-                </Link>
-                <Link 
-                  href="https://www.instagram.com/mr.gopichand.7/" 
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors"
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                </Link>
-                <Link 
-                  href="mailto:edenwebtechnologies@gmail.com" 
-                  className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors"
-                >
-                  <Mail size={18} />
-                </Link>
-              </div>
-            </div>
-
-            {/* Co-Founder & COO */}
-            <div className="flex flex-col items-center text-center">
-              <div className="relative h-64 w-64 md:h-72 md:w-72 rounded-full overflow-hidden p-2 border-4 border-background shadow-2xl bg-gradient-to-br from-primary/10 to-secondary/20 mb-8">
-                <div className="absolute inset-0 z-0 bg-gradient-to-br from-primary/5 to-secondary/10"></div>
-                <div className="relative z-10 w-full h-full rounded-full overflow-hidden border-2 border-border/50 bg-background flex items-center justify-center">
-                  <Image 
-                    src="/images/co-ceo.jpg" 
-                    alt="Mercy - Co-Founder & COO" 
-                    fill 
-                    className="object-cover"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
-                </div>
-              </div>
-              <h3 className="text-3xl font-bold text-foreground mb-2">MERCY</h3>
-              <p className="text-primary font-bold uppercase tracking-wider mb-6">Co-Founder & COO</p>
-              <p className="text-muted-foreground leading-relaxed mb-6 max-w-md">
-                As the operational backbone of Eden Technologies, Mercy ensures that every project is executed flawlessly. Her strategic vision guarantees we meet our clients' goals on time and with absolute precision.
-              </p>
-              <div className="flex gap-4">
-                <Link 
-                  href="mailto:mercy@example.com" 
-                  className="flex items-center justify-center w-10 h-10 rounded-full bg-primary/10 text-primary hover:bg-primary hover:text-white transition-colors"
-                >
-                  <Mail size={18} />
-                </Link>
-              </div>
-            </div>
-          </div>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-foreground tracking-tight mb-4">
+            THE MINDS BEHIND EDEN
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            We believe world-class digital products combine visionary design, rock-solid engineering, and a sharp understanding of the business behind them.
+          </p>
         </div>
 
+        {/* Leadership Profiles Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 mb-28">
+          
+          {/* Founder & CEO */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.6 }}
+            className="group relative p-8 md:p-10 rounded-3xl bg-card border border-border/80 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_20px_50px_rgba(79,70,229,0.12)] flex flex-col items-center text-center"
+          >
+            <div className="relative h-48 w-48 md:h-56 md:w-56 rounded-full p-2 bg-gradient-to-tr from-primary via-indigo-400 to-sky-400 shadow-xl mb-6 group-hover:scale-105 transition-transform duration-500">
+              <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-background bg-background">
+                <Image 
+                  src="/images/ceo.jpg" 
+                  alt="Malaji Gopichand - Founder & CEO" 
+                  fill 
+                  className="object-cover"
+                  sizes="(max-width: 768px) 192px, 224px"
+                />
+              </div>
+            </div>
+
+            <h3 className="text-2xl md:text-3xl font-black text-foreground tracking-tight mb-1">
+              MALAJI GOPICHAND
+            </h3>
+            <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-4">
+              Founder & Chief Executive Officer
+            </span>
+            <p className="text-muted-foreground leading-relaxed mb-6 max-w-md text-sm sm:text-base">
+              Passionate technologist and software architect dedicated to helping ambitious companies build scalable, high-performance web platforms and mobile apps.
+            </p>
+
+            <div className="flex items-center gap-3 mt-auto">
+              <Link 
+                href="https://www.linkedin.com/in/malajigopichand/" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 px-4 py-2 rounded-full bg-secondary/80 text-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-200 text-xs font-semibold shadow-xs"
+              >
+                <span>LinkedIn</span>
+                <ArrowUpRight size={14} />
+              </Link>
+              <Link 
+                href="https://www.instagram.com/mr.gopichand.7/" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 px-4 py-2 rounded-full bg-secondary/80 text-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-200 text-xs font-semibold shadow-xs"
+              >
+                <span>Instagram</span>
+                <ArrowUpRight size={14} />
+              </Link>
+              <Link 
+                href="mailto:thegopichand@gmail.com" 
+                className="flex items-center justify-center w-9 h-9 rounded-full bg-secondary/80 text-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-200 shadow-xs"
+                title="Email CEO"
+              >
+                <Mail size={15} />
+              </Link>
+            </div>
+          </motion.div>
+
+          {/* Co-Founder & COO */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="group relative p-8 md:p-10 rounded-3xl bg-card border border-border/80 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_20px_50px_rgba(79,70,229,0.12)] flex flex-col items-center text-center"
+          >
+            <div className="relative h-48 w-48 md:h-56 md:w-56 rounded-full p-2 bg-gradient-to-tr from-sky-400 via-indigo-400 to-primary shadow-xl mb-6 group-hover:scale-105 transition-transform duration-500">
+              <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-background bg-background">
+                <Image 
+                  src="/images/co-ceo.jpg" 
+                  alt="Mercy - Co-Founder & COO" 
+                  fill 
+                  className="object-cover"
+                  sizes="(max-width: 768px) 192px, 224px"
+                />
+              </div>
+            </div>
+
+            <h3 className="text-2xl md:text-3xl font-black text-foreground tracking-tight mb-1">
+              MERCY
+            </h3>
+            <span className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider mb-4">
+              Co-Founder & Chief Operating Officer
+            </span>
+            <p className="text-muted-foreground leading-relaxed mb-6 max-w-md text-sm sm:text-base">
+              The operational backbone of Eden Technologies, ensuring flawless sprint execution, quality standards, and precision delivery for all client ventures.
+            </p>
+
+            <div className="flex items-center gap-3 mt-auto">
+              <Link 
+                href="mailto:mercy@example.com" 
+                className="flex items-center gap-1.5 px-4 py-2 rounded-full bg-secondary/80 text-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-200 text-xs font-semibold shadow-xs"
+              >
+                <Mail size={14} />
+                <span>Contact COO</span>
+              </Link>
+            </div>
+          </motion.div>
+
+        </div>
+
+        {/* Why Choose Us Grid */}
         <div>
-          <div className="text-center mb-16">
-            <h2 className="text-sm font-bold tracking-widest text-primary uppercase mb-4">
-              Why Work With Us?
+          <div className="text-center mb-14">
+            <h2 className="text-sm font-bold tracking-widest text-primary uppercase mb-3">
+              Why Partner With Eden?
             </h2>
-            <h3 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
-              BECAUSE YOUR PROJECT IS MORE THAN A PROJECT.
+            <h3 className="text-3xl md:text-4xl font-black text-foreground">
+              BECAUSE YOUR PRODUCT DESERVES UNCOMPROMISING QUALITY
             </h3>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {advantages.map((adv, index) => (
-              <div key={index} className="p-6 rounded-2xl bg-background border border-border">
-                <div className="text-primary font-bold mb-3 flex flex-col gap-3">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-lg">
-                    {index + 1}
-                  </div>
-                  {adv.title}
+              <motion.div 
+                key={index}
+                initial={{ opacity: 0, y: 15 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{ duration: 0.4, delay: index * 0.08 }}
+                className="group p-7 rounded-3xl bg-card border border-border/70 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_10px_30px_rgba(79,70,229,0.08)] hover:-translate-y-1"
+              >
+                <div className="flex items-center justify-between mb-4">
+                  <span className="w-10 h-10 rounded-2xl bg-primary/10 text-primary font-mono font-bold text-sm flex items-center justify-center group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
+                    {adv.id}
+                  </span>
+                  <div className="w-2 h-2 rounded-full bg-primary/40 group-hover:bg-primary group-hover:scale-125 transition-all" />
                 </div>
+
+                <h4 className="text-base font-bold text-foreground tracking-tight mb-2 group-hover:text-primary transition-colors">
+                  {adv.title}
+                </h4>
+
                 <p className="text-muted-foreground text-sm leading-relaxed">
                   {adv.desc}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
+
       </div>
     </section>
   );

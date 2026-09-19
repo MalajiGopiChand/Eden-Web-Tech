@@ -20,7 +20,7 @@ export default function TestimonialsSection() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
             </span>
-            <span>Verified Client Feedback • 5.0 Rating</span>
+            <span>Verified Client Feedback • 4.8 out of 5 Rating</span>
           </div>
           <h3 className="text-3xl md:text-4xl lg:text-5xl font-black text-foreground tracking-tight">
             WHAT OUR CLIENTS SAY
