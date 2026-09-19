@@ -1,10 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 
 export default function BackgroundAnimation() {
-  const [mounted, setMounted] = useState(false);
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
@@ -19,7 +18,6 @@ export default function BackgroundAnimation() {
   );
 
   useEffect(() => {
-    setMounted(true);
     const updateMouse = (e: MouseEvent) => {
       mouseX.set(e.clientX);
       mouseY.set(e.clientY);
@@ -27,8 +25,6 @@ export default function BackgroundAnimation() {
     window.addEventListener("mousemove", updateMouse, { passive: true });
     return () => window.removeEventListener("mousemove", updateMouse);
   }, [mouseX, mouseY]);
-
-  if (!mounted) return <div className="fixed inset-0 z-[-1] bg-background"></div>;
 
   return (
     <div className="fixed inset-0 z-[-1] overflow-hidden pointer-events-none bg-background">
