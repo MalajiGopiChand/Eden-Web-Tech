@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ArrowRight, ArrowDown } from "lucide-react";
 
 import { motion } from "framer-motion";
+import { SlidingNumber } from "@/components/animate-ui/primitives/texts/sliding-number";
 
 export default function HeroSection() {
   return (
@@ -135,7 +136,17 @@ export default function HeroSection() {
                     className="rounded-2xl bg-gradient-to-br from-primary/10 to-transparent border border-primary/20 p-5 flex flex-col justify-center"
                   >
                     <h4 className="text-muted-foreground text-xs font-bold tracking-wider uppercase mb-1">Performance</h4>
-                    <p className="text-3xl font-black text-foreground">99.9<span className="text-lg text-primary">%</span></p>
+                    <p className="text-3xl font-black text-foreground flex items-center">
+                      <SlidingNumber 
+                        number={99.9} 
+                        fromNumber={0} 
+                        decimalPlaces={1} 
+                        inView={true} 
+                        inViewOnce={true}
+                        transition={{ stiffness: 90, damping: 25, mass: 0.5 }}
+                      />
+                      <span className="text-lg text-primary">%</span>
+                    </p>
                     <div className="w-full h-1 bg-secondary rounded-full mt-3 overflow-hidden">
                       <div className="w-[99%] h-full bg-primary rounded-full"></div>
                     </div>
@@ -148,7 +159,17 @@ export default function HeroSection() {
                     className="rounded-2xl bg-gradient-to-br from-secondary/50 to-transparent border border-border/50 p-5 flex flex-col justify-center relative overflow-hidden"
                   >
                     <h4 className="text-muted-foreground text-xs font-bold tracking-wider uppercase mb-1">Active Users</h4>
-                    <p className="text-3xl font-black text-foreground">10k<span className="text-lg text-primary">+</span></p>
+                    <p className="text-3xl font-black text-foreground flex items-center">
+                      <SlidingNumber 
+                        number={10} 
+                        fromNumber={0} 
+                        inView={true} 
+                        inViewOnce={true}
+                        transition={{ stiffness: 100, damping: 20, mass: 0.5 }}
+                      />
+                      <span>k</span>
+                      <span className="text-lg text-primary">+</span>
+                    </p>
                     
                     {/* Tiny animated chart */}
                     <div className="absolute bottom-0 left-0 w-full h-1/2 flex items-end justify-between px-4 pb-2 opacity-30 gap-1">
