@@ -13,7 +13,7 @@ export default function AboutSection() {
   ];
 
   return (
-    <section id="about" className="py-24 bg-card border-y border-border">
+    <section id="about" className="py-24 bg-transparent border-y border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-24">
           <div className="text-center mb-16">

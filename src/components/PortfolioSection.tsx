@@ -17,7 +17,7 @@ export default function PortfolioSection({ limit }: { limit?: number }) {
   const displayedProjects = limit ? filteredProjects.slice(0, limit) : filteredProjects;
 
   return (
-    <section className="py-24 bg-card">
+    <section className="py-24 bg-transparent">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
           <div className="max-w-2xl">
@@ -56,7 +56,7 @@ export default function PortfolioSection({ limit }: { limit?: number }) {
           {displayedProjects.map((project) => (
             <div 
               key={project.id}
-              className="group relative rounded-3xl overflow-hidden bg-background border border-border hover:border-primary/50 transition-all duration-500"
+              className="group relative rounded-3xl overflow-hidden bg-background/40 backdrop-blur-xl border border-white/10 dark:border-white/5 hover:border-primary/50 transition-all duration-500"
             >
               <Link href={`/work/${project.slug}`} className="absolute inset-0 z-30" aria-label={`View ${project.title} case study`} />
               
