@@ -146,3 +146,15 @@ body {
     @apply font-sans;
   }
 }
+
+/* Hide native cursor on desktop, restore on touch devices */
+@media (pointer: fine) {
+  *, *::before, *::after {
+    cursor: none !important;
+  }
+}
+@media (pointer: coarse) {
+  *, *::before, *::after {
+    cursor: auto !important;
+  }
+}
