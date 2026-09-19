@@ -23,9 +23,19 @@ const serviceTags: Record<string, string[]> = {
   "06": ["Uptime Monitoring", "Security Updates", "Speed Audits", "Feature Additions"],
 };
 
+const serviceTimelines: Record<string, string> = {
+  "01": "2–4 Week Sprints",
+  "02": "4–6 Week Sprints",
+  "03": "3–5 Week Sprints",
+  "04": "4–8 Week Sprints",
+  "05": "2–3 Week Sprints",
+  "06": "Ongoing SLA Retainers",
+};
+
 function ServiceCard({ service, index }: { service: (typeof services)[number]; index: number }) {
   const IconComponent = iconMap[service.icon];
   const tags = serviceTags[service.id] || [];
+  const timeline = serviceTimelines[service.id] || "2–4 Weeks";
 
   return (
     <motion.div
@@ -34,20 +44,16 @@ function ServiceCard({ service, index }: { service: (typeof services)[number]; i
       viewport={{ once: true, margin: "-40px" }}
       transition={{ duration: 0.5, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
       whileHover={{ y: -5 }}
-      className="group relative p-8 rounded-3xl bg-card border border-border/80 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_14px_35px_rgba(37,99,235,0.08)] flex flex-col justify-between h-full cursor-default overflow-hidden"
+      className="group relative p-8 rounded-3xl bg-white border border-border/80 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_16px_40px_rgba(37,99,235,0.08)] flex flex-col justify-between h-full cursor-default overflow-hidden shadow-xs"
     >
       <div className="relative z-10 flex flex-col h-full">
         {/* Card Header */}
-        <div className="flex justify-between items-start mb-6">
-          <motion.div 
-            whileHover={{ scale: 1.1 }}
-            transition={{ type: "spring", stiffness: 350, damping: 15 }}
-            className="w-12 h-12 rounded-2xl bg-blue-50/90 border border-blue-100 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 shadow-xs"
-          >
+        <div className="flex justify-between items-start mb-5">
+          <div className="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-100 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 shadow-xs">
             {IconComponent && <IconComponent size={22} />}
-          </motion.div>
-          <span className="text-2xl font-bold text-muted-foreground/30 font-mono group-hover:text-primary/40 transition-colors">
-            {service.id}
+          </div>
+          <span className="text-xs font-mono font-bold text-primary bg-blue-50 px-2.5 py-1 rounded-md border border-blue-100">
+            {timeline}
           </span>
         </div>
 
@@ -66,7 +72,7 @@ function ServiceCard({ service, index }: { service: (typeof services)[number]; i
           {tags.map((tag, i) => (
             <span
               key={i}
-              className="text-[11px] font-medium px-2.5 py-1 rounded-full bg-slate-100/80 text-slate-700 border border-border/50 group-hover:border-primary/20 transition-colors cursor-default"
+              className="text-[11px] font-semibold px-2.5 py-1 rounded-lg bg-slate-50 text-slate-700 border border-border/60 group-hover:border-primary/20 transition-colors cursor-default"
             >
               {tag}
             </span>
@@ -74,19 +80,19 @@ function ServiceCard({ service, index }: { service: (typeof services)[number]; i
         </div>
 
         {/* Action Button */}
-        <div className="mt-auto pt-4 border-t border-border/50 flex items-center justify-between">
+        <div className="mt-auto pt-4 border-t border-border/60 flex items-center justify-between">
           <Link
             href="/contact"
-            className="inline-flex items-center text-xs font-bold uppercase tracking-wider text-primary group-hover:text-primary transition-all duration-200 group/link"
+            className="inline-flex items-center text-xs font-bold uppercase tracking-wider text-primary group-hover:text-primary transition-all duration-200 group/link cursor-pointer"
           >
-            <span>Discuss This Service</span>
+            <span>Inquire About This</span>
             <ArrowRight
               size={14}
               className="ml-1.5 group-hover/link:translate-x-1.5 transition-transform duration-200"
             />
           </Link>
-          <span className="text-[11px] font-semibold text-muted-foreground flex items-center gap-1">
-            <CheckCircle2 size={12} className="text-emerald-500" /> Fixed Scope
+          <span className="text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-0.5 rounded-full border border-emerald-100 flex items-center gap-1">
+            <CheckCircle2 size={11} className="text-emerald-500" /> Fixed Scope
           </span>
         </div>
       </div>

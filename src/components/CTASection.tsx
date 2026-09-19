@@ -43,30 +43,45 @@ export default function CTASection() {
             >
               <Link 
                 href="/contact" 
-                className="relative group overflow-hidden flex items-center justify-center gap-2 px-8 py-4 bg-primary text-primary-foreground font-bold rounded-full hover:bg-primary/95 transition-all shadow-[0_6px_20px_rgba(37,99,235,0.25)] hover:shadow-[0_10px_30px_rgba(37,99,235,0.35)] w-full sm:w-auto"
+                className="relative group overflow-hidden flex items-center justify-center gap-2 px-8 py-4 bg-primary text-primary-foreground font-bold rounded-2xl hover:bg-primary/95 transition-all shadow-[0_8px_24px_rgba(37,99,235,0.25)] hover:shadow-[0_12px_32px_rgba(37,99,235,0.35)] w-full sm:w-auto cursor-pointer"
               >
                 <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out" />
-                <span>Start a Project</span>
+                <span>Start Your Project</span>
                 <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform duration-200" />
               </Link>
             </motion.div>
             
             <motion.div
-              whileHover={{ scale: 1.03 }}
-              whileTap={{ scale: 0.97 }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               transition={{ type: "spring", stiffness: 400, damping: 20 }}
               className="w-full sm:w-auto"
             >
               <a 
-                href="https://wa.me/919705527264"
+                href="https://wa.me/919705527264?text=Hi%20Eden%20Technologies%2C%20I%20would%20like%20to%20discuss%20a%20new%20project."
                 target="_blank"
                 rel="noopener noreferrer" 
-                className="group flex items-center justify-center gap-2 px-7 py-4 bg-white text-foreground font-semibold rounded-full hover:bg-slate-50 transition-all border border-border w-full sm:w-auto hover:border-primary/40 shadow-xs"
+                className="group flex items-center justify-center gap-2 px-8 py-4 bg-white text-foreground font-bold rounded-2xl hover:bg-slate-50 transition-all border border-border w-full sm:w-auto hover:border-primary/40 shadow-xs cursor-pointer"
               >
                 <MessageSquare size={17} className="text-emerald-600" />
                 <span>Chat on WhatsApp</span>
               </a>
             </motion.div>
+          </div>
+
+          <div className="mt-8 pt-6 border-t border-border/50 flex flex-wrap items-center justify-center gap-6 text-xs text-muted-foreground">
+            <span className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+              100% Confidential • Mutual NDA
+            </span>
+            <span className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
+              Free Architecture & Budget Estimate
+            </span>
+            <span className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-purple-500" />
+              Direct Founder Communication
+            </span>
           </div>
         </motion.div>
       </div>

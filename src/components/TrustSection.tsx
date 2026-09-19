@@ -54,7 +54,7 @@ export default function TrustSection() {
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.5, delay: index * 0.08, ease: [0.22, 1, 0.36, 1] }}
                 whileHover={{ y: -5, scale: 1.02 }}
-                className="group relative p-6 rounded-3xl bg-card border border-border/80 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_12px_32px_rgba(37,99,235,0.08)] flex flex-col justify-between cursor-default"
+                className="group relative p-6 rounded-3xl bg-white border border-border/80 hover:border-primary/50 transition-all duration-300 hover:shadow-[0_12px_32px_rgba(37,99,235,0.08)] flex flex-col justify-between cursor-default shadow-xs"
               >
                 <div className="flex items-center justify-between mb-4">
                   <motion.div 
