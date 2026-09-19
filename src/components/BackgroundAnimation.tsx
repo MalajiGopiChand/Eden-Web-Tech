@@ -28,32 +28,32 @@ export default function BackgroundAnimation() {
   }, [mouseX, mouseY]);
 
   return (
-    <div className="fixed inset-0 z-[-1] overflow-hidden pointer-events-none bg-[#080b12]">
-      {/* 1. Deep Obsidian Base with Radial Vignette */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_100%_100%_at_50%_0%,#0f172a_0%,#080b12_70%)]" />
+    <div className="fixed inset-0 z-[-1] overflow-hidden pointer-events-none bg-[#f8fafc]">
+      {/* 1. Luminous Light Base with Subtle Top Radial Glow */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-10%,rgba(79,70,229,0.08),rgba(248,250,252,0))]" />
 
-      {/* 2. Interactive Cursor Ambient Spotlight (Illuminates content under mouse) */}
+      {/* 2. Interactive Cursor Ambient Spotlight (Follows mouse on light background) */}
       <motion.div
-        className="absolute top-0 left-0 w-[650px] h-[650px] rounded-full will-change-transform"
+        className="absolute top-0 left-0 w-[600px] h-[600px] rounded-full will-change-transform"
         style={{
           x: smoothMouseX,
           y: smoothMouseY,
           translateX: "-50%",
           translateY: "-50%",
-          background: "radial-gradient(circle, rgba(99, 102, 241, 0.16) 0%, rgba(56, 189, 248, 0.08) 40%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(79, 70, 229, 0.09) 0%, rgba(2, 132, 199, 0.05) 45%, transparent 70%)",
         }}
       />
 
-      {/* 3. Celestial Aurora Glow (Drifting Ambient Beams) */}
+      {/* 3. Soft Ambient Floating Pastel Aura Beams */}
       <motion.div
-        className="absolute top-[-10%] right-[10%] w-[550px] h-[550px] rounded-full will-change-transform"
+        className="absolute top-[5%] right-[5%] w-[500px] h-[500px] rounded-full will-change-transform"
         style={{
-          background: "radial-gradient(circle, rgba(99, 102, 241, 0.18) 0%, rgba(168, 85, 247, 0.08) 45%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(99, 102, 241, 0.08) 0%, rgba(56, 189, 248, 0.05) 45%, transparent 70%)",
         }}
         animate={{
-          x: [0, -60, 0],
-          y: [0, 50, 0],
-          scale: [1, 1.12, 1],
+          x: [0, -50, 0],
+          y: [0, 40, 0],
+          scale: [1, 1.08, 1],
         }}
         transition={{
           duration: 18,
@@ -63,14 +63,14 @@ export default function BackgroundAnimation() {
       />
 
       <motion.div
-        className="absolute bottom-[-15%] left-[5%] w-[600px] h-[600px] rounded-full will-change-transform"
+        className="absolute bottom-[5%] left-[5%] w-[550px] h-[550px] rounded-full will-change-transform"
         style={{
-          background: "radial-gradient(circle, rgba(56, 189, 248, 0.15) 0%, rgba(99, 102, 241, 0.07) 50%, transparent 70%)",
+          background: "radial-gradient(circle, rgba(2, 132, 199, 0.07) 0%, rgba(99, 102, 241, 0.04) 50%, transparent 70%)",
         }}
         animate={{
-          x: [0, 70, 0],
-          y: [0, -40, 0],
-          scale: [1, 1.1, 1],
+          x: [0, 50, 0],
+          y: [0, -35, 0],
+          scale: [1, 1.06, 1],
         }}
         transition={{
           duration: 22,
@@ -79,12 +79,12 @@ export default function BackgroundAnimation() {
         }}
       />
 
-      {/* 4. Elegant Cybernetic Micro-Grid Pattern */}
+      {/* 4. Crisp Architecture Micro-Grid Pattern */}
       <div 
-        className="absolute inset-0 opacity-[0.035]"
+        className="absolute inset-0 opacity-[0.04]"
         style={{
-          backgroundImage: "linear-gradient(to right, rgba(255, 255, 255, 0.3) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.3) 1px, transparent 1px)",
-          backgroundSize: "48px 48px",
+          backgroundImage: "linear-gradient(to right, rgba(15, 23, 42, 0.3) 1px, transparent 1px), linear-gradient(to bottom, rgba(15, 23, 42, 0.3) 1px, transparent 1px)",
+          backgroundSize: "44px 44px",
           maskImage: "radial-gradient(ellipse 90% 70% at 50% 30%, #000 40%, transparent 95%)",
         }}
       />

@@ -43,7 +43,7 @@ export default function AnimatedCursor() {
         const deg = (rad * 180) / Math.PI;
         setAngle(deg);
         // Subtle elongation based on speed
-        setVelocityScale(Math.min(1 + distance * 0.015, 1.4));
+        setVelocityScale(Math.min(1 + distance * 0.015, 1.35));
       }
 
       lastPos.current = { x: e.clientX, y: e.clientY };
@@ -94,9 +94,9 @@ export default function AnimatedCursor() {
 
   return (
     <div className="pointer-events-none fixed inset-0 z-[9999] overflow-hidden select-none">
-      {/* 1. Fluid Trailing Magnetic Halo (Organically rotates & stretches with velocity) */}
+      {/* 1. Fluid Trailing Magnetic Halo (Organically stretches with velocity on light canvas) */}
       <motion.div
-        className="fixed top-0 left-0 rounded-full will-change-transform pointer-events-none flex items-center justify-center"
+        className="fixed top-0 left-0 rounded-full will-change-transform pointer-events-none flex items-center justify-center border"
         style={{
           x: smoothX,
           y: smoothY,
@@ -107,29 +107,29 @@ export default function AnimatedCursor() {
           scaleY: isHovered ? 1 : 1 / Math.sqrt(velocityScale),
         }}
         animate={{
-          width: isHovered ? 58 : isClicking ? 26 : 38,
-          height: isHovered ? 58 : isClicking ? 26 : 38,
-          borderColor: isHovered ? "rgba(99, 102, 241, 0.9)" : "rgba(56, 189, 248, 0.45)",
-          backgroundColor: isHovered ? "rgba(99, 102, 241, 0.18)" : "rgba(99, 102, 241, 0.05)",
+          width: isHovered ? 56 : isClicking ? 26 : 36,
+          height: isHovered ? 56 : isClicking ? 26 : 36,
+          borderColor: isHovered ? "rgba(79, 70, 229, 0.85)" : "rgba(79, 70, 229, 0.4)",
+          backgroundColor: isHovered ? "rgba(79, 70, 229, 0.12)" : "rgba(79, 70, 229, 0.05)",
           boxShadow: isHovered 
-            ? "0 0 25px rgba(99, 102, 241, 0.45)" 
-            : "0 0 15px rgba(56, 189, 248, 0.2)",
+            ? "0 0 20px rgba(79, 70, 229, 0.25)" 
+            : "0 0 10px rgba(79, 70, 229, 0.1)",
         }}
         transition={{ type: "spring", stiffness: 350, damping: 25 }}
       >
-        {/* Subtle crosshair center mark when hovered */}
+        {/* Subtle center dot on hover */}
         {isHovered && (
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
-            className="w-1.5 h-1.5 rounded-full bg-cyan-400 shadow-[0_0_8px_#38bdf8]"
+            className="w-1.5 h-1.5 rounded-full bg-primary shadow-[0_0_6px_rgba(79,70,229,0.6)]"
           />
         )}
       </motion.div>
 
-      {/* 2. Precision Glowing Focal Core */}
+      {/* 2. Precision Glowing Core Dot */}
       <motion.div
-        className="fixed top-0 left-0 w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_12px_#38bdf8] will-change-transform pointer-events-none"
+        className="fixed top-0 left-0 w-2.5 h-2.5 rounded-full bg-primary shadow-[0_0_8px_rgba(79,70,229,0.7)] will-change-transform pointer-events-none"
         style={{
           x: cursorX,
           y: cursorY,
