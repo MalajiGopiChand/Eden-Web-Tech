@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 
 export default function AnimatedCursor() {
@@ -8,30 +8,57 @@ export default function AnimatedCursor() {
   const [isHovered, setIsHovered] = useState(false);
   const [isClicking, setIsClicking] = useState(false);
 
-  const mouseX = useMotionValue(-100);
-  const mouseY = useMotionValue(-100);
+  // Exact mouse coordinate (zero latency)
+  const cursorX = useMotionValue(-100);
+  const cursorY = useMotionValue(-100);
 
-  // High-performance spring for trailing follower ring (bypasses React renders)
-  const springConfig = { damping: 28, stiffness: 320, mass: 0.5 };
-  const smoothX = useSpring(mouseX, springConfig);
-  const smoothY = useSpring(mouseY, springConfig);
+  // Smooth fluid spring follower
+  const springConfig = { damping: 26, stiffness: 280, mass: 0.5 };
+  const smoothX = useSpring(cursorX, springConfig);
+  const smoothY = useSpring(cursorY, springConfig);
+
+  // Dynamic velocity angle tracking for fluid elongation
+  const [angle, setAngle] = useState(0);
+  const [velocityScale, setVelocityScale] = useState(1);
+  const lastPos = useRef({ x: 0, y: 0 });
 
   useEffect(() => {
-    // Only enable on devices with a mouse/trackpad (disable on mobile/touch)
+    // Only enable for desktop pointer devices
     if (typeof window === "undefined") return;
     if (window.matchMedia("(pointer: coarse)").matches) return;
 
+    let frameId: number;
+
     const handleMouseMove = (e: MouseEvent) => {
-      mouseX.set(e.clientX);
-      mouseY.set(e.clientY);
+      cursorX.set(e.clientX);
+      cursorY.set(e.clientY);
       if (!isVisible) setIsVisible(true);
+
+      const dx = e.clientX - lastPos.current.x;
+      const dy = e.clientY - lastPos.current.y;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+
+      if (distance > 1) {
+        const rad = Math.atan2(dy, dx);
+        const deg = (rad * 180) / Math.PI;
+        setAngle(deg);
+        // Subtle elongation based on speed
+        setVelocityScale(Math.min(1 + distance * 0.015, 1.4));
+      }
+
+      lastPos.current = { x: e.clientX, y: e.clientY };
+
+      // Return smoothly to circle
+      cancelAnimationFrame(frameId);
+      frameId = requestAnimationFrame(() => {
+        setVelocityScale(1);
+      });
     };
 
     const handleMouseDown = () => setIsClicking(true);
     const handleMouseUp = () => setIsClicking(false);
     const handleMouseLeave = () => setIsVisible(false);
 
-    // Detect clickable elements for hover expansion
     const handleMouseOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement | null;
       if (!target) return;
@@ -41,7 +68,8 @@ export default function AnimatedCursor() {
         target.closest('[role="button"]') ||
         target.closest("input") ||
         target.closest("textarea") ||
-        target.closest(".group");
+        target.closest(".group") ||
+        target.closest(".cursor-pointer");
 
       setIsHovered(!!isInteractive);
     };
@@ -58,42 +86,59 @@ export default function AnimatedCursor() {
       window.removeEventListener("mouseup", handleMouseUp);
       document.removeEventListener("mouseleave", handleMouseLeave);
       document.removeEventListener("mouseover", handleMouseOver);
+      cancelAnimationFrame(frameId);
     };
-  }, [mouseX, mouseY, isVisible]);
+  }, [cursorX, cursorY, isVisible]);
 
   if (!isVisible) return null;
 
   return (
-    <div className="pointer-events-none fixed inset-0 z-50 overflow-hidden">
-      {/* 1. Trailing Spring Aura Ring */}
+    <div className="pointer-events-none fixed inset-0 z-[9999] overflow-hidden select-none">
+      {/* 1. Fluid Trailing Magnetic Halo (Organically rotates & stretches with velocity) */}
       <motion.div
-        className="fixed top-0 left-0 rounded-full border border-primary/40 bg-primary/10 will-change-transform pointer-events-none"
+        className="fixed top-0 left-0 rounded-full will-change-transform pointer-events-none flex items-center justify-center"
         style={{
           x: smoothX,
           y: smoothY,
           translateX: "-50%",
           translateY: "-50%",
+          rotate: `${angle}deg`,
+          scaleX: isHovered ? 1 : velocityScale,
+          scaleY: isHovered ? 1 : 1 / Math.sqrt(velocityScale),
         }}
         animate={{
-          width: isHovered ? 52 : isClicking ? 26 : 34,
-          height: isHovered ? 52 : isClicking ? 26 : 34,
-          borderColor: isHovered ? "rgba(79, 70, 229, 0.75)" : "rgba(79, 70, 229, 0.35)",
-          backgroundColor: isHovered ? "rgba(79, 70, 229, 0.15)" : "rgba(79, 70, 229, 0.05)",
+          width: isHovered ? 58 : isClicking ? 26 : 38,
+          height: isHovered ? 58 : isClicking ? 26 : 38,
+          borderColor: isHovered ? "rgba(99, 102, 241, 0.9)" : "rgba(56, 189, 248, 0.45)",
+          backgroundColor: isHovered ? "rgba(99, 102, 241, 0.18)" : "rgba(99, 102, 241, 0.05)",
+          boxShadow: isHovered 
+            ? "0 0 25px rgba(99, 102, 241, 0.45)" 
+            : "0 0 15px rgba(56, 189, 248, 0.2)",
         }}
-        transition={{ type: "spring", stiffness: 400, damping: 28 }}
-      />
+        transition={{ type: "spring", stiffness: 350, damping: 25 }}
+      >
+        {/* Subtle crosshair center mark when hovered */}
+        {isHovered && (
+          <motion.div
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            className="w-1.5 h-1.5 rounded-full bg-cyan-400 shadow-[0_0_8px_#38bdf8]"
+          />
+        )}
+      </motion.div>
 
-      {/* 2. Precision Center Dot */}
+      {/* 2. Precision Glowing Focal Core */}
       <motion.div
-        className="fixed top-0 left-0 w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_rgba(79,70,229,0.8)] will-change-transform pointer-events-none"
+        className="fixed top-0 left-0 w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_12px_#38bdf8] will-change-transform pointer-events-none"
         style={{
-          x: mouseX,
-          y: mouseY,
+          x: cursorX,
+          y: cursorY,
           translateX: "-50%",
           translateY: "-50%",
         }}
         animate={{
-          scale: isClicking ? 0.6 : isHovered ? 1.3 : 1,
+          scale: isClicking ? 0.5 : isHovered ? 0 : 1,
+          opacity: isHovered ? 0 : 1,
         }}
         transition={{ type: "spring", stiffness: 500, damping: 25 }}
       />

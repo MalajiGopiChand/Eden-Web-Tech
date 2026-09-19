@@ -28,7 +28,7 @@ export default async function ProjectPage({
   }
 
   return (
-    <main className="flex min-h-screen flex-col bg-background">
+    <main className="flex min-h-screen flex-col bg-transparent">
       <Navbar />
       
       {/* Project Hero */}
