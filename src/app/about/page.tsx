@@ -344,20 +344,10 @@ export default function AboutPage() {
                     <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
                       <a 
                         href="mailto:edenwebtechnologies@gmail.com" 
-                        className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-slate-100 hover:bg-primary hover:text-white text-foreground transition-all text-xs font-bold shadow-xs"
+                        className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-slate-100 hover:bg-primary hover:text-white text-foreground transition-all text-xs font-bold shadow-xs cursor-pointer"
                       >
                         <Mail size={13} />
                         <span>Email Mercy</span>
-                      </a>
-
-                      <a 
-                        href="https://wa.me/919705527264?text=Hi%20Mercy%2C%20I%20would%20like%20to%20discuss%20a%20new%20project%20with%20Eden." 
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-slate-100 hover:bg-emerald-600 hover:text-white text-foreground transition-all text-xs font-bold shadow-xs"
-                      >
-                        <span>WhatsApp Connect</span>
-                        <ArrowUpRight size={13} />
                       </a>
                     </div>
                   </div>
