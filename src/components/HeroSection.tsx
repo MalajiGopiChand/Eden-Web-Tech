@@ -10,40 +10,40 @@ export default function HeroSection() {
 
   const featuredProjects = [
     {
-      name: "Learnify Education",
-      category: "Web Platform",
-      tagline: "Live classes and course progress tracking for 3,000+ active students.",
-      image: "/images/projects/learnify.png",
-      slug: "learnify-platform",
-      tech: ["Next.js", "React", "Node.js", "MongoDB"],
-      highlight: "94% Course Completion"
+      name: "NexaPay Global",
+      category: "FinTech & Payments",
+      tagline: "Next-gen cross-border treasury & liquidity management for modern global enterprises.",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80",
+      slug: "nexapay-global",
+      tech: ["Next.js", "TypeScript", "PostgreSQL", "Stripe Connect"],
+      highlight: "$140M+ Processed"
     },
     {
-      name: "MediCare Health App",
-      category: "Mobile App",
-      tagline: "Doctor appointments & health records across 4 clinic branches.",
-      image: "/images/projects/medicare-dashboard.jpg",
-      slug: "medicare-app",
-      tech: ["React Native", "PostgreSQL", "Node.js"],
-      highlight: "12,000+ Appointments"
+      name: "Aura Telehealth",
+      category: "Healthcare & Biotech",
+      tagline: "HIPAA-compliant video triage, smart scheduling, and instant prescription routing.",
+      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1600&q=80",
+      slug: "aura-health-ai",
+      tech: ["React Native", "WebRTC", "FastAPI", "Python"],
+      highlight: "85,000+ Patients"
     },
     {
-      name: "EduTrack Portal",
-      category: "Custom Software",
-      tagline: "Automated student attendance & institutional reporting system.",
-      image: "/images/projects/edutrack.png",
-      slug: "edutrack-system",
-      tech: ["React", "Express.js", "PostgreSQL"],
-      highlight: "Saved 15+ Hours / Week"
+      name: "Lumina Living",
+      category: "Luxury E-Commerce",
+      tagline: "Ultra-fast headless commerce with interactive 3D spatial previews & checkout.",
+      image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1600&q=80",
+      slug: "lumina-living",
+      tech: ["Next.js", "Three.js", "Shopify", "Stripe"],
+      highlight: "+38% Conversion"
     },
     {
-      name: "Billora Invoicing",
-      category: "Business Software",
-      tagline: "Fast GST billing & inventory ledger built for modern retail shops.",
-      image: "/images/projects/billora.png",
-      slug: "billora-billing",
-      tech: ["Next.js", "Tailwind CSS", "Firebase"],
-      highlight: "25,000+ Invoices Processed"
+      name: "Strata Cloud",
+      category: "Enterprise Cloud SaaS",
+      tagline: "Multi-cloud observability, automated anomaly detection, & unified telemetry.",
+      image: "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1600&q=80",
+      slug: "strata-cloud-intelligence",
+      tech: ["React", "TypeScript", "ClickHouse", "Go"],
+      highlight: "-58% MTTR"
     },
   ];
 
@@ -214,7 +214,7 @@ export default function HeroSection() {
                     transition={{ duration: 0.35 }}
                     className="space-y-5"
                   >
-                    {/* Actual Screenshot from public/images/projects/ */}
+                    {/* High-Resolution Flagship Product Showcase */}
                     <div className="relative w-full h-[260px] sm:h-[300px] rounded-2xl overflow-hidden bg-slate-100 border border-border/70 group shadow-inner">
                       <img 
                         src={activeProject.image} 
