@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import FadeIn from "@/components/FadeIn";
 
 export const metadata = {
   title: "Privacy Policy | Eden Technologies",
@@ -12,63 +13,78 @@ export default function PrivacyPage() {
       <Navbar />
       
       <section className="pt-32 pb-16 md:pt-40 md:pb-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto w-full">
-        <div className="mb-12">
-          <h1 className="text-4xl md:text-5xl font-black tracking-tight text-foreground mb-4">
-            PRIVACY <span className="text-primary">POLICY</span>
-          </h1>
-          <p className="text-muted-foreground">Last updated: September 19, 2026</p>
-        </div>
+        <FadeIn direction="up">
+          <div className="mb-12">
+            <div className="inline-block px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-100 text-primary text-xs font-bold uppercase tracking-wider mb-4">
+              Legal Documentation
+            </div>
+            <h1 className="text-4xl md:text-5xl font-black tracking-tight text-foreground mb-4">
+              PRIVACY <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-emerald-500 bg-clip-text text-transparent">POLICY</span>
+            </h1>
+            <p className="text-muted-foreground text-sm">Last updated: September 19, 2026</p>
+          </div>
+        </FadeIn>
 
         <div className="space-y-8 text-muted-foreground leading-relaxed">
-          <section>
-            <h2 className="text-2xl font-bold text-foreground mb-4">1. Introduction</h2>
-            <p>
-              Welcome to Eden Technologies Pvt. Ltd. ("we," "our," or "us"). We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you as to how we look after your personal data when you visit our website and tell you about your privacy rights and how the law protects you.
-            </p>
-          </section>
+          <FadeIn direction="up" delay={0.1}>
+            <section className="p-7 rounded-3xl bg-card border border-border/80 shadow-xs hover:border-primary/40 transition-all duration-300">
+              <h2 className="text-xl font-bold text-foreground mb-3">1. Introduction</h2>
+              <p>
+                Welcome to Eden Technologies Pvt. Ltd. ("we," "our," or "us"). We respect your privacy and are committed to protecting your personal data. This privacy policy informs you how we look after your data when you visit our website or interact with our digital engineering services.
+              </p>
+            </section>
+          </FadeIn>
 
-          <section>
-            <h2 className="text-2xl font-bold text-foreground mb-4">2. The Data We Collect About You</h2>
-            <p className="mb-4">
-              We may collect, use, store and transfer different kinds of personal data about you which we have grouped together as follows:
-            </p>
-            <ul className="list-disc pl-6 space-y-2">
-              <li><strong>Identity Data</strong> includes first name, last name, username or similar identifier.</li>
-              <li><strong>Contact Data</strong> includes billing address, email address, and telephone numbers.</li>
-              <li><strong>Technical Data</strong> includes internet protocol (IP) address, your login data, browser type and version, time zone setting and location, browser plug-in types and versions, operating system and platform.</li>
-              <li><strong>Usage Data</strong> includes information about how you use our website, products and services.</li>
-            </ul>
-          </section>
+          <FadeIn direction="up" delay={0.15}>
+            <section className="p-7 rounded-3xl bg-card border border-border/80 shadow-xs hover:border-primary/40 transition-all duration-300">
+              <h2 className="text-xl font-bold text-foreground mb-3">2. The Data We Collect</h2>
+              <p className="mb-4">
+                We may collect, use, and process the following categories of information:
+              </p>
+              <ul className="list-disc pl-6 space-y-2 text-sm">
+                <li><strong>Identity Data:</strong> First name, last name, username, and company title.</li>
+                <li><strong>Contact Data:</strong> Email address, phone number, and billing details.</li>
+                <li><strong>Technical Data:</strong> IP address, device fingerprints, operating system, browser type, and time zone.</li>
+                <li><strong>Usage Data:</strong> How you engage with our services, features, and performance metrics.</li>
+              </ul>
+            </section>
+          </FadeIn>
 
-          <section>
-            <h2 className="text-2xl font-bold text-foreground mb-4">3. How We Use Your Personal Data</h2>
-            <p className="mb-4">
-              We will only use your personal data when the law allows us to. Most commonly, we will use your personal data in the following circumstances:
-            </p>
-            <ul className="list-disc pl-6 space-y-2">
-              <li>Where we need to perform the contract we are about to enter into or have entered into with you.</li>
-              <li>Where it is necessary for our legitimate interests (or those of a third party) and your interests and fundamental rights do not override those interests.</li>
-              <li>Where we need to comply with a legal obligation.</li>
-            </ul>
-          </section>
+          <FadeIn direction="up" delay={0.2}>
+            <section className="p-7 rounded-3xl bg-card border border-border/80 shadow-xs hover:border-primary/40 transition-all duration-300">
+              <h2 className="text-xl font-bold text-foreground mb-3">3. How We Use Your Data</h2>
+              <p className="mb-4">
+                Your data is utilized strictly for lawful purposes:
+              </p>
+              <ul className="list-disc pl-6 space-y-2 text-sm">
+                <li>To deliver custom web, mobile, and software development contracts.</li>
+                <li>To maintain system security, thwart fraud, and improve application speed.</li>
+                <li>To communicate sprint updates, deploy code releases, and invoice project milestones.</li>
+              </ul>
+            </section>
+          </FadeIn>
 
-          <section>
-            <h2 className="text-2xl font-bold text-foreground mb-4">4. Data Security</h2>
-            <p>
-              We have put in place appropriate security measures to prevent your personal data from being accidentally lost, used, or accessed in an unauthorized way, altered, or disclosed. In addition, we limit access to your personal data to those employees, agents, contractors, and other third parties who have a business need to know.
-            </p>
-          </section>
+          <FadeIn direction="up" delay={0.25}>
+            <section className="p-7 rounded-3xl bg-card border border-border/80 shadow-xs hover:border-primary/40 transition-all duration-300">
+              <h2 className="text-xl font-bold text-foreground mb-3">4. Security & Encryption</h2>
+              <p>
+                We employ enterprise-grade TLS 1.3 transport encryption, role-based access control, and strict cloud infrastructure partitioning. Access to client source code and personal data is restricted strictly to authorized development personnel.
+              </p>
+            </section>
+          </FadeIn>
 
-          <section>
-            <h2 className="text-2xl font-bold text-foreground mb-4">5. Contact Details</h2>
-            <p>
-              If you have any questions about this privacy policy or our privacy practices, please contact us in the following ways:<br /><br />
-              <strong>Eden Technologies Pvt. Ltd.</strong><br />
-              Email address: edenwebtechnologies@gmail.com<br />
-              Phone number: +91 9705527264<br />
-              Location: Vijayawada, Andhra Pradesh, India
-            </p>
-          </section>
+          <FadeIn direction="up" delay={0.3}>
+            <section className="p-7 rounded-3xl bg-card border border-border/80 shadow-xs hover:border-primary/40 transition-all duration-300">
+              <h2 className="text-xl font-bold text-foreground mb-3">5. Contact Privacy Team</h2>
+              <p>
+                If you have inquiries regarding this policy or data management, please contact us:<br /><br />
+                <strong>Eden Technologies Pvt. Ltd.</strong><br />
+                Email: edenwebtechnologies@gmail.com<br />
+                Phone: +91 9705527264<br />
+                Office: Vijayawada, Andhra Pradesh, India
+              </p>
+            </section>
+          </FadeIn>
         </div>
       </section>
 
