@@ -190,6 +190,69 @@ export const testimonials = [
     image: "https://i.pravatar.cc/150?u=anjali",
     quote: "They didn't simply develop an app. They helped us think through the product and build something our users genuinely enjoy.",
     rating: 5
+  },
+  {
+    id: 4,
+    client: "Karthik Reddy",
+    company: "Reddy Urban Infra",
+    role: "Managing Director",
+    image: "https://i.pravatar.cc/150?u=karthik",
+    quote: "Eden Technologies built a stunning website and custom lead CRM for our commercial projects. Our client inquiries jumped by 45%.",
+    rating: 5
+  },
+  {
+    id: 5,
+    client: "Sneha Patel",
+    company: "HealthFirst Clinics",
+    role: "Co-Founder",
+    image: "https://i.pravatar.cc/150?u=sneha",
+    quote: "Their healthcare mobile application architecture and on-time delivery helped us onboard over 5,000 patients in the first month alone.",
+    rating: 5
+  },
+  {
+    id: 6,
+    client: "Vikram Malhotra",
+    company: "Malhotra Freight & Logistics",
+    role: "VP Operations",
+    image: "https://i.pravatar.cc/150?u=vikram",
+    quote: "The customized ERP and tracking software they engineered completely automated our dispatch operations. Incredible engineering team.",
+    rating: 5
+  },
+  {
+    id: 7,
+    client: "Divya Krishnan",
+    company: "StyleZen E-Commerce",
+    role: "Founder & Creative Director",
+    image: "https://i.pravatar.cc/150?u=divya",
+    quote: "Our modern web store looks world-class and loads in under a second. We couldn't be happier with their UI/UX and development expertise.",
+    rating: 5
+  },
+  {
+    id: 8,
+    client: "Rajesh Nambiar",
+    company: "Apex Advisory Group",
+    role: "Director",
+    image: "https://i.pravatar.cc/150?u=rajesh",
+    quote: "Clear communication, clean scalable code, and zero bugs on launch day. Gopichand and the Eden team are true professionals.",
+    rating: 5
+  },
+  {
+    id: 9,
+    client: "Meera Joshi",
+    company: "EduConnect Labs",
+    role: "Academic Head",
+    image: "https://i.pravatar.cc/150?u=meera",
+    quote: "The interactive attendance and live portal made student management effortless. Their attention to detail was outstanding.",
+    rating: 5
+  },
+  {
+    id: 10,
+    client: "Arjun Sundaram",
+    company: "Quantum Cloud Labs",
+    role: "CTO",
+    image: "https://i.pravatar.cc/150?u=arjun",
+    quote: "Fast, scalable, and built strictly with modern Next.js and TypeScript standards. They delivered a high-performance backend and seamless UI.",
+    rating: 5
   }
 ];
 

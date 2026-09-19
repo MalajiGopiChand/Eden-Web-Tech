@@ -13,6 +13,7 @@ export const metadata: Metadata = {
 };
 
 import BackgroundAnimation from "@/components/BackgroundAnimation";
+import AnimatedCursor from "@/components/AnimatedCursor";
 import { cn } from "@/lib/utils";
 
 const geist = Geist({subsets:['latin'],variable:'--font-sans'});
@@ -26,6 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={cn("h-full", "antialiased", inter.variable, "font-sans", geist.variable)}>
       <body className="min-h-full flex flex-col relative">
+        <AnimatedCursor />
         <BackgroundAnimation />
         {children}
       </body>

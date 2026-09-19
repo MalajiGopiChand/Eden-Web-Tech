@@ -28,19 +28,6 @@ export default function HeroSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="flex flex-col items-start text-left space-y-8">
-            <motion.div
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full border border-primary/30 bg-primary/5 text-primary text-xs font-semibold tracking-wide uppercase shadow-[0_0_15px_rgba(79,70,229,0.12)]"
-            >
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-              </span>
-              <span>Premium Web, Mobile & Software Engineering</span>
-            </motion.div>
-
             <motion.h1 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
